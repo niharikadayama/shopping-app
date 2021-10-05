@@ -6,9 +6,9 @@ import styles from "./styles";
 const Header = () =>{
     return <View style = {styles.container}>
         <View style={styles.header}>
-        <Icon name="bars" size={25} color={'#353d5e'}/>
+        <Icon name="bars" size={25} style={styles.iconStyle}/>
         <Image source={require('../../../assets/images/Nida.png')} style={styles.logo}/>
-        <Icon name="user-circle-o" size={25} color={'#353d5e'}/>
+        <Icon name="user-circle-o" size={25} style={styles.iconStyle}/>
         </View>
        
     </View>

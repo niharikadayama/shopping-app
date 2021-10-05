@@ -31,7 +31,7 @@ const Details = ({navigation}) =>{
     return (
         <View style={styles.container}>
             
-            <Header />
+            <Header navigation = {navigation}/>
 
             <SearchBar/>
 

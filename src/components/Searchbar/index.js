@@ -1,6 +1,7 @@
 import React from "react";
 import {View,Text,Image,StyleSheet,TextInput} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
+import Colors from '../UI/Reusable'
 
 const SearchBar = () =>{
     return <View style={{marginTop:20,flexDirection:'row',alignItems:'center',justifyContent:'space-evenly'}}>
@@ -14,7 +15,7 @@ const SearchBar = () =>{
 const styles = StyleSheet.create({
     searchContainer:{
         height:50,
-        backgroundColor:'#F5F5F5',
+        backgroundColor: Colors.lightGrey,
         borderRadius:10,
         marginHorizontal:15,
         flex:1,
