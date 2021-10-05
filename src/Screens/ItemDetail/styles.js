@@ -1,25 +1,25 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-     header:{
-         paddingHorizontal:20,
-         paddingVertical:10,
-         flexDirection:'row',
-         justifyContent:'space-between'
+     
+     image:{
+            width:'100%',
+            height: '100%',
+            justifyContent:'center',
+            alignItems:'center'
      },
-     imgContainer:{
-         flex:1,
-         marginTop:20,
-         justifyContent:'center',
-         alignItems:'center'
+     iconn:{
+        position:'absolute',
+        top:10,
+        left:10
      },
+
      detailsContainer:{
-         flex:0.6,
-         backgroundColor:'#fdf0ee',
-         marginHorizontal:7,
-         marginBottom:7,
+         position:'absolute',
+         bottom:2,
+         width:'90%',
+         backgroundColor:'rgba(240,240,240,0.8)',
          borderRadius:20,
-         marginTop:30,
          padding:10,
          paddingLeft:20
      },
@@ -59,20 +59,11 @@ const styles = StyleSheet.create({
      },
      detailBottom:{
          flexDirection:'row',
-         justifyContent:'space-between',
+         justifyContent:'flex-start',
          alignItems:'center',
          marginTop:15
      },
-     btn:{
-         fontSize:19,
-         paddingHorizontal:50,
-         paddingVertical:10,
-         borderWidth:1,
-         borderRadius:2,
-         borderColor:'#ce8f86',
-         backgroundColor:'#ce8f86',
-         color:'white'
-     }
+     
 })
 
 export default styles

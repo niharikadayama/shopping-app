@@ -1,13 +1,15 @@
 import React from "react";
 import {View,Text,Image} from 'react-native'
-import Header from '../../components/Header'
+import Header from './Header'
 import Category from "../../components/HomeCategory";
+import SearchBar from "../../components/Searchbar";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from "./styles";
 
 const HomeScreen = ({navigation}) =>{
     return <View style={styles.container}>
-       <Header/>
+        <Header/>
+        <SearchBar/>
         <Category navigation = {navigation}/> 
     </View>
 }
