@@ -22,10 +22,10 @@ import {
 
 
 
-import HomeScreen from './src/Screens/HomeScreen'
-import Details from "./src/Screens/Details";
-import Cart from './src/Screens/Cart';
-import ItemDetail from './src/Screens/ItemDetail';
+import HomeScreen from './Screens/HomeScreen'
+import Details from "./Screens/Details";
+import Cart from './Screens/Cart';
+import ItemDetail from './Screens/ItemDetail';
 
 const Stack = createNativeStackNavigator();
 
