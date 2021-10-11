@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import Colors from '../../components/UI/Reusable'
+import {colors} from '../../assets/arrays/filters'
 
 const styles = StyleSheet.create({
     container:{
@@ -22,11 +22,11 @@ const styles = StyleSheet.create({
       lineHeight: 90,
       fontWeight: "bold",
       textAlign: "center",
-      backgroundColor: Colors.transparentBg
+      backgroundColor: colors.transparentBg
     },
     child: {
       flex: 1,
-      backgroundColor: Colors.transparentBg
+      backgroundColor: colors.transparentBg
     }
   })
 

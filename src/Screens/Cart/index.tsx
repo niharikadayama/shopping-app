@@ -3,8 +3,8 @@ import React from "react";
 import {View,Text,Image,Button,TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles";
-import PrimaryBtn from '../../components/UI/Button/primaryBtn'
-import Colors from '../../components/UI/Reusable'
+import PrimaryBtn from '../../components/button/primaryBtn'
+import { colors } from "../../assets/arrays/filters";
 
 const Cart = ({navigation,route}) =>{
     const item = route.params
@@ -12,10 +12,10 @@ const Cart = ({navigation,route}) =>{
     return (
     <View style={styles.container}>
            <View style={styles.header}>
-                <Icon name="arrow-left" size={25} color={Colors.darkGrey}
+                <Icon name="arrow-left" size={25} color={colors.darkGrey}
                 onPress={()=>navigation.navigate('details')}/>
                 
-                <Icon name="user-circle-o" size={28} color={Colors.darkGrey}
+                <Icon name="user-circle-o" size={28} color={colors.darkGrey}
                 onPress={()=>navigation.navigate('details')}/>
            </View>
 

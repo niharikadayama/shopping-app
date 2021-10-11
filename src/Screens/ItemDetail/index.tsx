@@ -1,8 +1,8 @@
 import React from "react";
 import{View,Text,TouchableOpacity,ImageBackground,SafeAreaView,Dimensions} from 'react-native'
 import styles from "./styles";
-import  Icon from "react-native-vector-icons/FontAwesome";
-import SecondaryBtn from '../../components/UI/Button/secondaryBtn'
+import Icon from 'react-native-vector-icons/FontAwesome'
+import SecondaryBtn from '../../components/button/secondaryBtn'
 
 const ItemDetail = ({navigation,route}) =>{
     const item = route.params
