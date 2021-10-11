@@ -1,7 +1,9 @@
-import { StyleSheet } from "react-native";
+import { StyleSheet , Dimensions} from "react-native";
 
 const styles = StyleSheet.create({
-     
+     container:{
+        width:'100%',height:Dimensions.get('screen').height
+     },
      image:{
             width:'100%',
             height: '100%',
@@ -45,7 +47,7 @@ const styles = StyleSheet.create({
      },
      detailColor:{
          flexDirection:'row',
-         justifyContent:'space-evenly'
+         justifyContent:'space-evenly',
      },
      detailSize:{
          fontSize:17,
@@ -55,7 +57,8 @@ const styles = StyleSheet.create({
          borderColor:'black',
          borderRadius:15,
          paddingHorizontal:5,
-         paddingVertical:4
+         paddingVertical:4,
+         marginHorizontal:19
      },
      detailBottom:{
          flexDirection:'row',

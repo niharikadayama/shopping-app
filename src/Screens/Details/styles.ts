@@ -9,22 +9,7 @@ const styles = StyleSheet.create({
        marginVertical:20,
        backgroundColor:'#fff'
     },
-    filterlist:{
-       flexDirection:'row',
-       marginVertical:20,
-       justifyContent:'space-between',
-       marginHorizontal:20,
-    },
-    filterlistText:{
-       fontSize:16,
-       fontWeight:'bold',
-
-    },
-    filterlistTextSelected:{
-       color:'#ce8f86',
-       paddingBottom:5,
-       fontSize:17
-    },
+    
     card:{
       height: 260,
       backgroundColor: 'hsla(0, 100%, 30%, 0.3)',

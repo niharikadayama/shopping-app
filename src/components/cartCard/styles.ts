@@ -1,31 +1,6 @@
 import { StyleSheet } from "react-native";
 
 const styles = StyleSheet.create({
-    container:{
-        width:'100%',
-        height:'100%',
-        backgroundColor:'rgba(255, 99, 71, 0.1)',
-    },
-    header:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center',
-        paddingHorizontal:15,
-        marginTop:50,  
-    },
-    titleView:{
-        marginTop:25,
-        marginBottom:15,
-        paddingHorizontal:20
-    },
-    title:{
-       fontSize:30,
-       fontWeight:'bold',
-       marginBottom:5
-    },
-    subTitle:{
-       color:'#333'
-    },
     cartCard:{
          height:160,
          backgroundColor:'white',
@@ -84,6 +59,9 @@ const styles = StyleSheet.create({
         paddingTop:10,
         justifyContent:'flex-start',
         alignItems:'center' 
+    },
+    pricestyle:{
+        fontWeight:'bold',fontSize:17,marginLeft:5
     },
     totalCard:{
         flexDirection:'row',

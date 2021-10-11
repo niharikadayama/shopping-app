@@ -1,4 +1,5 @@
-import { StyleSheet} from "react-native";
+import { StyleSheet } from "react-native";
+import {colors} from '../../assets/arrays/theme';
 
 const styles = StyleSheet.create({
     container:{
@@ -19,7 +20,12 @@ const styles = StyleSheet.create({
     logo:{
         width:100,
         height:100
-        
+    },
+    iconLeft:{
+        color: colors.darkGrey
+    },
+    iconRight:{
+        color: colors.darkGrey
     }
 })
 

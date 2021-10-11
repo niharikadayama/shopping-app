@@ -1,41 +1,26 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React ,{useState} from "react";
-import {View,Text,Image, TouchableOpacity,FlatList, Alert} from 'react-native'
+import {View,Text,Image, TouchableOpacity,FlatList} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import SearchBar from "../../components/searchBar";
 import styles from "./styles";
-import Header from "./Header";
-import Woman from "../../assets/arrays/woman";
+import FilterList from "../../components/filterList"
+import Header from "../../components/header"
+import {Woman} from "../../assets/arrays/data";
 
 const Details = ({navigation}) =>{
-    const Filters = ['POPULAR','CASUAL','ETHNIC','SPORTS']
-
     const [FilterIndex, setfilterIndex] = useState(0)
-
-    const FilterList = () =>{
-        return(
-            <View style={styles.filterlist}>
-               {Filters.map((item,index)=>(
-                   <TouchableOpacity 
-                    onPress={()=>setfilterIndex(index)}> 
-
-                    <Text key={index}
-                    style={[styles.filterlistText, FilterIndex==index && styles.filterlistTextSelected]}>
-                    {item}</Text>
-
-                   </TouchableOpacity>
-               ))}
-            </View>
-        )
-    }
     return (
         <View style={styles.container}>
             
-            <Header navigation = {navigation}/>
+            <Header icon1={"arrow-left"} icon2={"shopping-cart"} size={28}
+                onpress1 ={()=>{ navigation.navigate('Home') }}
+                onpress2 ={()=>{ navigation.navigate('cart') }}
+                image= {true} />
 
             <SearchBar/>
 
-            <FilterList/>
+            <FilterList onPress={()=>setfilterIndex(0)}/>
          
             <FlatList 
             numColumns={2}
