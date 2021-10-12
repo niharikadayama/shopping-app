@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { FlatList, SafeAreaView, ImageBackground,View,StatusBar, StyleSheet, Text, TouchableOpacity, Image, TextInput} from "react-native";
-import DATA from '../arrays/homeData'
+import {DATA} from "constants/index"
 import styles from "./styles";
 
 const Category = ({navigation}) =>{

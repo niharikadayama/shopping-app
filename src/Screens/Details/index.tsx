@@ -1,41 +1,24 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React ,{useState} from "react";
 import {View,Text,Image, TouchableOpacity,FlatList} from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome'
-import SearchBar from "../../components/Searchbar";
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {SearchBar,FilterList,Header} from "components"
 import styles from "./styles";
-import Header from "./Header";
-import Woman from "../../components/arrays/woman";
+import {Woman} from "constants/index";
 
 const Details = ({navigation}) =>{
-    const Filters = ['POPULAR','CASUAL','ETHNIC','SPORTS']
-
     const [FilterIndex, setfilterIndex] = useState(0)
-
-    const FilterList = () =>{
-        return(
-            <View style={styles.filterlist}>
-               {Filters.map((item,index)=>(
-                   <TouchableOpacity 
-                    onPress={()=>setfilterIndex(index)}> 
-
-                    <Text key={index}
-                    style={[styles.filterlistText, FilterIndex==index && styles.filterlistTextSelected]}>
-                    {item}</Text>
-
-                   </TouchableOpacity>
-               ))}
-            </View>
-        )
-    }
     return (
         <View style={styles.container}>
             
-            <Header navigation = {navigation}/>
+            <Header leftIcon ={"arrow-left"} rightIcon ={"shopping-cart"} size={28}
+                onLeftIconPress ={()=>{ navigation.navigate('Home') }}
+                onRightIconPress ={()=>{ navigation.navigate('cart') }}
+                image= {true} />
 
             <SearchBar/>
 
-            <FilterList/>
+            <FilterList onPress={()=>setfilterIndex(0)}/>
          
             <FlatList 
             numColumns={2}
@@ -52,9 +35,7 @@ const Details = ({navigation}) =>{
                            <Image source={item.img} style={styles.cardImg}/>
                         </View>
 
-                        <Icon name="gittip" size={30} style={styles.icon}
-                             onPress={()=>{
-                              alert('Added to Wishlist')  }}/>
+                        <Icon name="gittip" size={30} style={styles.icon}/>
 
                         <View style={styles.cardBottom}>
                             <Text style={styles.cardText}>{item.name}</Text>

@@ -1,7 +1,11 @@
 import { StyleSheet } from "react-native";
+import { colors,screenHeight } from "theme";
 
 const styles = StyleSheet.create({
-     
+     container:{
+        width:'100%',
+        height: screenHeight,
+     },
      image:{
             width:'100%',
             height: '100%',
@@ -18,7 +22,7 @@ const styles = StyleSheet.create({
          position:'absolute',
          bottom:2,
          width:'90%',
-         backgroundColor:'rgba(240,240,240,0.8)',
+         backgroundColor: colors.transparentlightBg,
          borderRadius:20,
          padding:10,
          paddingLeft:20
@@ -32,11 +36,15 @@ const styles = StyleSheet.create({
          fontSize:16,
          marginBottom:10
      },
+     detailPrice:{
+        fontSize:25,
+        fontWeight:'bold'
+     },
      detailHeart:{
          position:'absolute',
          top:25,
          right:20,
-         color:'#F67280'
+         color: colors.red
      },
      detailNormal:{
          fontSize:16,
@@ -45,7 +53,7 @@ const styles = StyleSheet.create({
      },
      detailColor:{
          flexDirection:'row',
-         justifyContent:'space-evenly'
+         justifyContent:'space-evenly',
      },
      detailSize:{
          fontSize:17,
@@ -55,7 +63,8 @@ const styles = StyleSheet.create({
          borderColor:'black',
          borderRadius:15,
          paddingHorizontal:5,
-         paddingVertical:4
+         paddingVertical:4,
+         marginHorizontal:19
      },
      detailBottom:{
          flexDirection:'row',

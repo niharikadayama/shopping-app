@@ -2,34 +2,9 @@ import { StyleSheet } from "react-native";
 import { colors } from "theme";
 
 const styles = StyleSheet.create({
-    container:{
-        width:'100%',
-        height:'100%',
-        backgroundColor:colors.coralbg,
-    },
-    header:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center',
-        paddingHorizontal:15,
-        marginTop:50,  
-    },
-    titleView:{
-        marginTop:25,
-        marginBottom:15,
-        paddingHorizontal:20
-    },
-    title:{
-       fontSize:30,
-       fontWeight:'bold',
-       marginBottom:5
-    },
-    subTitle:{
-       color:'#333'
-    },
     cartCard:{
          height:160,
-         backgroundColor:'white',
+         backgroundColor:colors.white,
          marginVertical:15,
          marginHorizontal:15,
         flexDirection:'row',
@@ -79,7 +54,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:10
     },
     quantIcon:{
-       color:colors.mediumGrey,
+       color: colors.mediumGrey,
        paddingHorizontal:7
     },
     Price:{
@@ -88,6 +63,11 @@ const styles = StyleSheet.create({
         justifyContent:'flex-start',
         alignItems:'center' 
     },
+    pricestyle:{
+        fontWeight:'bold',
+        fontSize:17,
+        marginLeft:5
+    },
     totalCard:{
         flexDirection:'row',
         justifyContent:'space-between',
@@ -95,13 +75,13 @@ const styles = StyleSheet.create({
         margin:19,
         paddingVertical:15,
         paddingHorizontal:15,
-        backgroundColor: colors.darkbg,
+        backgroundColor:colors.darkbg,
         borderRadius:15,
     },
     totalCardText:{
         fontSize:17,
         fontWeight:'500',
-        color:colors.white
+        color:'white'
     },
     
 })
