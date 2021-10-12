@@ -1,21 +1,19 @@
 import { NavigationContainer } from "@react-navigation/native";
 import React ,{useState} from "react";
 import {View,Text,Image, TouchableOpacity,FlatList} from 'react-native'
-import Icon from 'react-native-vector-icons/FontAwesome'
-import SearchBar from "../../components/searchBar";
+import Icon from 'react-native-vector-icons/FontAwesome';
+import {SearchBar,FilterList,Header} from "components"
 import styles from "./styles";
-import FilterList from "../../components/filterList"
-import Header from "../../components/header"
-import {Woman} from "../../assets/arrays/data";
+import {Woman} from "constants/index";
 
 const Details = ({navigation}) =>{
     const [FilterIndex, setfilterIndex] = useState(0)
     return (
         <View style={styles.container}>
             
-            <Header icon1={"arrow-left"} icon2={"shopping-cart"} size={28}
-                onpress1 ={()=>{ navigation.navigate('Home') }}
-                onpress2 ={()=>{ navigation.navigate('cart') }}
+            <Header leftIcon ={"arrow-left"} rightIcon ={"shopping-cart"} size={28}
+                onLeftIconPress ={()=>{ navigation.navigate('Home') }}
+                onRightIconPress ={()=>{ navigation.navigate('cart') }}
                 image= {true} />
 
             <SearchBar/>

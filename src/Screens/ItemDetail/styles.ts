@@ -1,9 +1,10 @@
-import { StyleSheet , Dimensions} from "react-native";
-import { colors } from "../../assets/arrays/theme";
+import { StyleSheet } from "react-native";
+import { colors,screenHeight } from "theme";
 
 const styles = StyleSheet.create({
      container:{
-        width:'100%',height:Dimensions.get('screen').height
+        width:'100%',
+        height: screenHeight,
      },
      image:{
             width:'100%',
@@ -34,6 +35,10 @@ const styles = StyleSheet.create({
      detailInfo:{
          fontSize:16,
          marginBottom:10
+     },
+     detailPrice:{
+        fontSize:25,
+        fontWeight:'bold'
      },
      detailHeart:{
          position:'absolute',

@@ -1,5 +1,5 @@
 import React ,{useState} from "react";
-import {View,Text,Image, TouchableOpacity,FlatList} from 'react-native'
+import {View,Text,TouchableOpacity,FlatList} from 'react-native'
 import styles from "./styles"
 const Filters = ['POPULAR','CASUAL','ETHNIC','SPORTS']
 

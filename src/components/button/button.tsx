@@ -1,8 +1,8 @@
 import React from 'react'
 import { TouchableOpacity,Text,StyleSheet } from 'react-native'
-import { colors } from '../../assets/arrays/theme'
+import { colors } from 'theme'
 
-const Buttonn = ({name,theme,onPress}) =>{
+const Button = ({name,theme,onPress}) =>{
     return(
         <TouchableOpacity style={ theme === 'primary' ? style1.btn : style2.btn} 
           onPress={onPress}>
@@ -45,4 +45,4 @@ const style2 = StyleSheet.create({
     }
 })
 
-export default Buttonn
+export default Button

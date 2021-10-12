@@ -1,7 +1,7 @@
-import { StyleSheet , Dimensions} from "react-native";
-import { colors } from "../../assets/arrays/theme";
+import { StyleSheet } from "react-native";
+import { colors,screenWidth } from "theme";
 
-const width = Dimensions.get('window').width/2 - 30
+const width = screenWidth/2 - 30
 
 const styles = StyleSheet.create({
     container:{

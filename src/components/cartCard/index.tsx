@@ -1,22 +1,22 @@
 import React from "react";
-import {View,Text,Image,Button,TouchableOpacity} from 'react-native'
+import {View,Text,Image} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles";
 
-const CartCard = ({image,name,info,price}) =>{
+const CartCard = ({item}) =>{
     return(
         <View style={styles.cartCard}> 
     
-        <Image source={image} style={styles.cardImg}/>
+        <Image source={item.img} style={styles.cardImg}/>
 
         <View style={styles.cardText}>
 
-            <Text style={styles.cardTitle}>{name}</Text>
-            <Text style={styles.cardInfo}>{info}</Text>
+            <Text style={styles.cardTitle}>{item.name}</Text>
+            <Text style={styles.cardInfo}>{item.info}</Text>
             <Icon name="close" size={20} style={styles.cardIcon}/>
             <View style={styles.Price}>
                 <Icon name="rupee" size={20}/>
-                <Text style={styles.pricestyle}>{price}</Text>
+                <Text style={styles.pricestyle}>{item.price}</Text>
             </View>
 
             <View style={styles.quant}>

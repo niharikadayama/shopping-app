@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import { colors } from "../../assets/arrays/theme";
+import { colors } from "theme";
 
 const styles = StyleSheet.create({
     container:{
@@ -54,10 +54,12 @@ const styles = StyleSheet.create({
        paddingVertical:10
     },
     cardTitle:{
-        fontSize:25,fontWeight:'bold'
+        fontSize:25,
+        fontWeight:'bold'
     },
     cardInfo:{
-        fontSize:17,paddingVertical:5
+        fontSize:17,
+        paddingVertical:5
     },
     cardIcon:{
        position:'absolute',

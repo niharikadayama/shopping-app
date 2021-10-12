@@ -1,16 +1,14 @@
 import React from "react";
-import {View,Text,Image} from 'react-native'
-import Header from "../../components/header"
-import Category from "../../components/list";
-import SearchBar from "../../components/searchBar";
+import {View} from 'react-native';
+import {Header,Category,SearchBar} from "components"
 import styles from "./styles";
 
 const HomeScreen = ({navigation}) =>{
     return <View style={styles.container}>
 
-        <Header icon1={"bars"} icon2={"user-circle-o"} size={26} image = {true}
-        onpress1 ={()=>{ navigation.navigate()}}
-        onpress2 ={()=>{ navigation.navigate()}}/>
+        <Header leftIcon ={"bars"} rightIcon ={"user-circle-o"} size={26} image = {true}
+        onLeftIconPress ={()=>{ navigation.navigate()}}
+        onRightIconPress ={()=>{ navigation.navigate()}}/>
 
         <SearchBar/>
         

@@ -1,4 +1,4 @@
-import {images} from './theme'
+import {images} from 'theme'
 
 export const DATA = [
     {

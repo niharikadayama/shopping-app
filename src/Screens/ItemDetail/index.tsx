@@ -1,9 +1,10 @@
 import React from "react";
-import{View,Text,TouchableOpacity,ImageBackground,SafeAreaView,FlatList} from 'react-native'
+import{View,Text,ImageBackground,SafeAreaView,FlatList} from 'react-native'
 import styles from "./styles";
 import Icon from 'react-native-vector-icons/FontAwesome'
-import Buttonn from "../../components/button/button";
-import {colors, size} from '../../assets/arrays/theme'
+import {Button} from "components";
+import {colors, size} from "theme"
+
 const ItemDetail = ({navigation,route}) =>{
     const item = route.params
     //console.log(item)
@@ -39,10 +40,10 @@ const ItemDetail = ({navigation,route}) =>{
                  />
 
                  <View style={styles.detailBottom}> 
-                     <Text style={{fontSize:25,fontWeight:'bold'}}>Rs. {item.item.price}</Text>
+                     <Text style={styles.detailPrice}>Rs. {item.item.price}</Text>
 
-                     <Buttonn name = {'Add To Cart'} onPress={()=>{
-                         navigation.navigate('cart',{item})
+                     <Button name = {'Add To Cart'} onPress={()=>{
+                         navigation.navigate('cart',item)
                      }} theme = {'secondary'} />
 
                  </View>

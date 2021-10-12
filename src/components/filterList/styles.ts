@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors} from '../../assets/arrays/theme'
+import {colors} from 'theme'
 
 const styles = StyleSheet.create({
     filterlist:{
@@ -14,7 +14,7 @@ const styles = StyleSheet.create({
         marginRight:18
      },
      filterlistTextSelected:{
-        color:'#ce8f86',
+        color:colors.darkCoral,
         paddingBottom:5,
         fontSize:17,
         marginRight:18

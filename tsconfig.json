@@ -11,7 +11,17 @@
       "strict": true,
       "target": "esnext",
       "noImplicitAny": false,
+      "baseUrl": "src",
+      "paths": {
+        "components":["components"],
+        "theme":["theme"],
+        "assets":["assets"],
+        "constants":["constants"]
+      }
     },
+
+    "include": ["src"],
+
     "exclude": [
       "node_modules",
       "babel.config.js",
