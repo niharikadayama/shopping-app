@@ -1,9 +1,10 @@
 import { StyleSheet } from "react-native";
+import { colors } from "../../assets/arrays/theme";
 
 const styles = StyleSheet.create({
     cartCard:{
          height:160,
-         backgroundColor:'white',
+         backgroundColor:colors.white,
          marginVertical:15,
          marginHorizontal:15,
         flexDirection:'row',
@@ -51,7 +52,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:10
     },
     quantIcon:{
-       color:'#B0B0B0',
+       color: colors.mediumGrey,
        paddingHorizontal:7
     },
     Price:{
@@ -70,7 +71,7 @@ const styles = StyleSheet.create({
         margin:19,
         paddingVertical:15,
         paddingHorizontal:15,
-        backgroundColor:'rgba(0,0,0,0.3)',
+        backgroundColor:colors.darkbg,
         borderRadius:15,
     },
     totalCardText:{

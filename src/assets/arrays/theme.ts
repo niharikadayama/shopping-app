@@ -3,11 +3,18 @@ export const colors = {
     darkGrey: '#353d5e',
     lightGrey: '#F5F5F5',
     white: 'white',
-    transparentBg: 'rgba(0,0,0,0.5)',
+    transparentdarkBg: 'rgba(0,0,0,0.5)',
     buttonBglight: 'rgba(255, 99, 71, 0.5)',
     buttonBgdark: 'rgb(60, 60, 60)',
     yellow: '#FFDB58',
     coral: '#E77471',
+    darkbg: 'rgba(0,0,0,0.3)',
+    mediumGrey: '#B0B0B0',
+    coralbg: 'rgba(255, 99, 71, 0.1)',
+    pink: 'hsla(0, 100%, 30%, 0.3)',
+    offwhite : '#FDF7EE',
+    transparentlightBg: 'rgba(240,240,240,0.8)',
+    red: '#F67280',
 }
 
 export const images = {

@@ -1,4 +1,5 @@
 import { StyleSheet , Dimensions} from "react-native";
+import { colors } from "../../assets/arrays/theme";
 
 const styles = StyleSheet.create({
      container:{
@@ -20,7 +21,7 @@ const styles = StyleSheet.create({
          position:'absolute',
          bottom:2,
          width:'90%',
-         backgroundColor:'rgba(240,240,240,0.8)',
+         backgroundColor: colors.transparentlightBg,
          borderRadius:20,
          padding:10,
          paddingLeft:20
@@ -38,7 +39,7 @@ const styles = StyleSheet.create({
          position:'absolute',
          top:25,
          right:20,
-         color:'#F67280'
+         color: colors.red
      },
      detailNormal:{
          fontSize:16,

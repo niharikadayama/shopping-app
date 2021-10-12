@@ -1,4 +1,5 @@
 import { StyleSheet , Dimensions} from "react-native";
+import { colors } from "../../assets/arrays/theme";
 
 const width = Dimensions.get('window').width/2 - 30
 
@@ -7,12 +8,12 @@ const styles = StyleSheet.create({
        width:'100%',
        height:'100%',
        marginVertical:20,
-       backgroundColor:'#fff'
+       backgroundColor: colors.white
     },
     
     card:{
       height: 260,
-      backgroundColor: 'hsla(0, 100%, 30%, 0.3)',
+      backgroundColor: colors.pink,
       width,
       marginHorizontal: 5,
       borderRadius: 10,
@@ -27,16 +28,16 @@ const styles = StyleSheet.create({
        alignSelf:'center'
     },
     cardText:{
-      color:'#FDF7EE',
+      color:colors.offwhite,
       fontSize:17,
       fontWeight:'bold'
     },
     cardPrice:{
-       color:'#FDF7EE',
+       color:colors.offwhite,
        fontSize:18,
     },
     icon:{
-       color:'#FDF7EE',
+       color:colors.offwhite,
        position:'absolute',
        bottom:26,
        right:19,

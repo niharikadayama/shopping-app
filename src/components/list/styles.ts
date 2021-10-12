@@ -22,11 +22,11 @@ const styles = StyleSheet.create({
       lineHeight: 90,
       fontWeight: "bold",
       textAlign: "center",
-      backgroundColor: colors.transparentBg
+      backgroundColor: colors.transparentdarkBg
     },
     child: {
       flex: 1,
-      backgroundColor: colors.transparentBg
+      backgroundColor: colors.transparentdarkBg
     }
   })
 
