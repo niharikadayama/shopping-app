@@ -11,13 +11,13 @@
       "strict": true,
       "target": "esnext",
       "noImplicitAny": false,
-      "baseUrl": "src",
+      "baseUrl": "./src/",
       "paths": {
-        "components":["components"],
-        "theme":["theme"],
-        "assets":["assets"],
-        "constants":["constants"]
-      }
+        "assets/*":  [ "assets/*"],
+        "components/*":  [ "components/*"],
+        "constants/*":  ["constants/*"],
+        "theme/*":  ["theme/*"],
+      },
     },
 
     "include": ["src"],
