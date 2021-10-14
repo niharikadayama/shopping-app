@@ -23,10 +23,10 @@ export const colors = {
 }
 
 export const images = {
-    logo:  require('assets/images/nida.png'),
+    logo:  require('assets/images/Nida.png'),
     woman: require('assets/images/woman.jpg'),
     man:   require('assets/images/man.jpg'),
-    kid:   require('assets/images/kid.jpg'),
+    kid:   require('assets/images/Kid.jpg'),
     new:   require('assets/images/new.jpg'),
     w1:    require('assets/woman/w1.jpg'),
     w2:    require('assets/woman/w2.jpg'),

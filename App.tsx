@@ -12,20 +12,12 @@ import {
   View,
 } from 'react-native';
 
-import {
-  Colors,
-  DebugInstructions,
-  Header,
-  LearnMoreLinks,
-  ReloadInstructions,
-} from 'react-native/Libraries/NewAppScreen';
 
 
-
-import HomeScreen from './src/screens/homeScreen';
-import Details from './src/screens/details';
-import Cart from './src/screens/cart';
-import ItemDetail from './src/screens/itemDetail';
+import HomeScreen from './src/Screens/HomeScreen';
+import Details from './src/Screens/Details';
+import Cart from './src/Screens/Cart';
+import ItemDetail from './src/Screens/ItemDetail';
 
 const Stack = createNativeStackNavigator();
 
