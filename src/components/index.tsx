@@ -4,7 +4,8 @@ import Button from "./button/button";
 import CartCard from "./cartCard";
 import FilterList from "./filterList";
 import Header from "./header";
-import SearchBar from "./Searchbar";
+import SearchBar from "./searchBar";
 import Category from "./list";
+import Navigation from "./navBar";
 
-export {Button,CartCard,FilterList,Header,SearchBar,Category}
+export {Button,CartCard,FilterList,Header,SearchBar,Category,Navigation}

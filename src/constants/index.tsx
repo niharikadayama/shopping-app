@@ -50,7 +50,7 @@ export const Woman = [
       price: 700,
       like: false,
       img: images.w3,
-      info: 'White top with yellow and grey Strips',
+      info: 'top with yellow Strips',
       color:'white',
 
   },
@@ -60,7 +60,7 @@ export const Woman = [
       price: 1200,
       like: false,
       img: images.w4,
-      info: 'Slim fit orange top with checked woollen skirt',
+      info: 'Orange top with woollen skirt',
       color:'coral'
 
   },
