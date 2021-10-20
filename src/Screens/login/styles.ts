@@ -7,11 +7,22 @@ const styles = StyleSheet.create({
      height:screenHeight,
      backgroundColor: colors.white
    },
+   inputContainer:{
+    alignItems:'flex-start',
+    marginTop:30,
+    paddingHorizontal:15
+  },
+  inputTitle:{
+    fontSize:22,
+    fontWeight:'600',
+    marginBottom:10
+  }, 
    forgetpassword:{
-     textAlign:'center',
-     paddingVertical:20,
-     fontSize:16
-   }
+    textAlign:'center',
+    paddingVertical:20,
+    fontSize:16
+  },
+  
 })
 
 export default styles

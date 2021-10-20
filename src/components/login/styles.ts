@@ -7,19 +7,9 @@ const styles = StyleSheet.create({
         alignItems:'center',
         marginTop:20
     },
-    inputContainer:{
-        alignItems:'flex-start',
-        marginTop:30,
-        paddingHorizontal:15
-    },
-    inputTitle:{
-        fontSize:22,
-        fontWeight:'600',
-        marginBottom:10
-    },
     inputField:{
         borderRadius:10,
-        width:'100%',
+        width: 350,
         padding:15,
         marginVertical:10,
         backgroundColor:colors.transparentlightBg,

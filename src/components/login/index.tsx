@@ -12,46 +12,28 @@ const LoginHeader = () => {
     )
 }
 
-const LoginInputContainer = ({title,textInput1,textInput2,textInput3,textInput4,buttonName,onPress}) =>{
-    
-        if(buttonName === 'Login'){
-            return(
-            
-                <View style= {styles.inputContainer}>
-        
-                    <Text style= {styles.inputTitle}>{title}</Text>
-                    
-                   
-                    <TextInput style= {styles.inputField} placeholder={textInput1}></TextInput>
-                    <TextInput style= {styles.inputField} placeholder={textInput2}></TextInput>
-        
-                    <TouchableOpacity style={styles.loginButton} onPress={onPress}>
-                        <Text style={styles.loginButtonText}>{buttonName}</Text>
-                    </TouchableOpacity>   
-                        
-                </View>
-            )        
-        }else if(buttonName === 'Register'){
-            return(
-                    <View style= {styles.inputContainer}>
-            
-                        <Text style= {styles.inputTitle}>{title}</Text>
-                        
-                       
-                        <TextInput style= {styles.inputField} placeholder={textInput1}></TextInput>
-                        <TextInput style= {styles.inputField} placeholder={textInput2}></TextInput>
-                        <TextInput style= {styles.inputField} placeholder={textInput3}></TextInput>
-                        <TextInput style= {styles.inputField} placeholder={textInput4}></TextInput>
-            
-                        <TouchableOpacity style={styles.loginButton} onPress={onPress}>
-                            <Text style={styles.loginButtonText}>{buttonName}</Text>
-                        </TouchableOpacity>   
-                            
-                    </View>
-            )
-        }
-    
-    
+
+const LoginInputContainer = ({value,setValue,placeholder,secureTextEntry}) =>{
+    return(
+        <View>
+             
+            <TextInput 
+                value={value}
+                onChangeText={setValue} 
+                placeholder={placeholder}
+                style= {styles.inputField}
+                secureTextEntry={secureTextEntry}>
+            </TextInput>     
+        </View>
+    ) 
+}
+
+const LoginButton = ({onPress,buttonName})=>{
+    return(
+           <TouchableOpacity style={styles.loginButton} onPress={onPress}>
+                <Text style={styles.loginButtonText}>{buttonName}</Text>
+            </TouchableOpacity> 
+    )
 }
 
 const LoginBottomCard = ({question,location,onPress}) =>{
@@ -79,4 +61,4 @@ const LoginBottomCard = ({question,location,onPress}) =>{
     )
 }
 
-export {LoginBottomCard,LoginHeader,LoginInputContainer}
+export {LoginBottomCard,LoginHeader,LoginInputContainer,LoginButton}
