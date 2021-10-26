@@ -4,7 +4,7 @@ import  Icon  from "react-native-vector-icons/Ionicons";
 import {images} from 'theme'
 import styles from './styles'
 
-const LoginHeader = () => {
+const AuthHeader = () => {
     return(
         <View style = {styles.logoContainer}>
                <Image source={images.logo}/>
@@ -12,11 +12,21 @@ const LoginHeader = () => {
     )
 }
 
+interface Iauth{
+    onPress?: () => void;
+    buttonName?: string;
+    location?:string;
+    question?:string;
+    value?: string;
+    setValue?: any;
+    placeholder?: string;
+    secureTextEntry?: boolean;
+}
 
-const LoginInputContainer = ({value,setValue,placeholder,secureTextEntry}) =>{
+const AuthInputContainer = (props: Iauth) =>{
+    const {value,setValue,placeholder,secureTextEntry} = props
     return(
         <View>
-             
             <TextInput 
                 value={value}
                 onChangeText={setValue} 
@@ -28,7 +38,9 @@ const LoginInputContainer = ({value,setValue,placeholder,secureTextEntry}) =>{
     ) 
 }
 
-const LoginButton = ({onPress,buttonName})=>{
+
+const AuthButton = (props: Iauth)=>{
+    const {onPress,buttonName} = props
     return(
            <TouchableOpacity style={styles.loginButton} onPress={onPress}>
                 <Text style={styles.loginButtonText}>{buttonName}</Text>
@@ -36,7 +48,8 @@ const LoginButton = ({onPress,buttonName})=>{
     )
 }
 
-const LoginBottomCard = ({question,location,onPress}) =>{
+const AuthBottomCard = (props: Iauth) =>{
+    const {question,location,onPress} = props
     return(
         <View style={styles.BottomContainer}>
                 <View style={styles.Container1}>
@@ -61,4 +74,4 @@ const LoginBottomCard = ({question,location,onPress}) =>{
     )
 }
 
-export {LoginBottomCard,LoginHeader,LoginInputContainer,LoginButton}
+export {AuthBottomCard,AuthHeader,AuthInputContainer,AuthButton}

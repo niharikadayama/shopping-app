@@ -2,7 +2,13 @@ import React from 'react'
 import { TouchableOpacity,Text,StyleSheet } from 'react-native'
 import { colors } from 'theme'
 
-const Button = ({name,theme,onPress}) =>{
+interface Ibutton{
+    name: string;
+    theme: string;
+    onPress: () => void
+}
+const Button = (props: Ibutton) =>{
+    const {name,theme,onPress} = props
     return(
         <TouchableOpacity style={ theme === 'primary' ? style1.btn : style2.btn} 
           onPress={onPress}>

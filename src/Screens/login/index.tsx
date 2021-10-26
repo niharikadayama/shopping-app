@@ -3,7 +3,7 @@ import {View,Text,TouchableOpacity} from 'react-native'
 
 import styles from './styles'
 
-import {LoginBottomCard,LoginHeader, LoginInputContainer, LoginButton} from "components/login";
+import {AuthBottomCard,AuthHeader,AuthInputContainer,AuthButton} from "components/auth";
 
 
 const Login = ({navigation}) =>{
@@ -21,23 +21,23 @@ const Login = ({navigation}) =>{
     return(
        <View style = {styles.container}>
 
-           <LoginHeader />
+           <AuthHeader />
 
            <View style= {styles.inputContainer}>
 
               <Text style= {styles.inputTitle}>Welcome Back,</Text> 
 
-              <LoginInputContainer placeholder={'Enter Username'} value={username} setValue={setUsername} secureTextEntry={false}/>
-              <LoginInputContainer placeholder={'Enter Password'} value={password} setValue={setPassword} secureTextEntry={true}/>
+              <AuthInputContainer placeholder={'Enter Username'} value={username} setValue={setUsername} secureTextEntry={false}/>
+              <AuthInputContainer placeholder={'Enter Password'} value={password} setValue={setPassword} secureTextEntry={true}/>
 
-              <LoginButton onPress={onSignInPressed} buttonName={'Login'} />
+              <AuthButton onPress={onSignInPressed} buttonName={'Login'} />
            </View>
 
             <TouchableOpacity onPress={onForgetPasswordPressed}>
               <Text style={styles.forgetpassword}>Forget Password??</Text>
             </TouchableOpacity>
 
-            <LoginBottomCard onPress={()=>navigation.navigate('signup')}
+            <AuthBottomCard onPress={()=>navigation.navigate('signup')}
                 question={"Don't Have An Account?"}
                 location={'Sign Up'}
                 />

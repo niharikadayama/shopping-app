@@ -9,7 +9,7 @@ const HomeScreen = ({navigation}) =>{
 
         <Header leftIcon ={"bars"} rightIcon ={"user-circle-o"} size={26} image = {true}
         onLeftIconPress ={()=>{ navigation.navigate()}}
-        onRightIconPress ={()=>{ navigation.navigate('login')}}/>
+        onRightIconPress ={()=>{ navigation.navigate()}}/>
 
         <SearchBar/>
         
