@@ -1,6 +1,7 @@
 import React from "react";
 import {View} from 'react-native';
 import {Header,Category,SearchBar} from "components"
+
 import styles from "./styles";
 
 const HomeScreen = ({navigation}) =>{
@@ -13,6 +14,8 @@ const HomeScreen = ({navigation}) =>{
         <SearchBar/>
         
         <Category navigation = {navigation}/> 
+
+       
     </View>
 }
 

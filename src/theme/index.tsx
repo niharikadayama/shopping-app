@@ -28,6 +28,7 @@ export const images = {
     man:   require('assets/images/man.jpg'),
     kid:   require('assets/images/kid.jpg'),
     new:   require('assets/images/new.jpg'),
+    splashBg: require('assets/images/splashBg2.jpg'),
     w1:    require('assets/woman/w1.jpg'),
     w2:    require('assets/woman/w2.jpg'),
     w3:    require('assets/woman/w3.jpg'),

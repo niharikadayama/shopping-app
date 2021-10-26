@@ -4,7 +4,16 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles";
 import { images } from "theme";
 
-const Header = ({leftIcon,rightIcon,size,onLeftIconPress,onRightIconPress,image}) =>{
+interface Iheader{
+    leftIcon: string;
+    rightIcon: string;
+    size: number;
+    image: any;
+    onLeftIconPress: () => void;
+    onRightIconPress:() => void;
+}
+const Header = (props: Iheader) =>{
+    const {leftIcon,rightIcon,size,onLeftIconPress,onRightIconPress,image} = props
     return <View style = {styles.container}>
         <View style={styles.header}>
 
@@ -17,7 +26,6 @@ const Header = ({leftIcon,rightIcon,size,onLeftIconPress,onRightIconPress,image}
             onPress={onRightIconPress}/>
 
         </View>
-       
     </View>
 }
 export default Header
