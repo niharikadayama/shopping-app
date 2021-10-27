@@ -13,9 +13,6 @@ import BottomTabNavigator from "./tabNavigation";
 
 const Stack = createStackNavigator();
 
-function Hometab() {
-    return <BottomTabNavigator />
-}
 
 const MainStackNavigator = () => {
     return (
@@ -23,7 +20,7 @@ const MainStackNavigator = () => {
         <Stack.Screen name="splash" component={Splash}/>
         <Stack.Screen name="login" component={Login}/>
         <Stack.Screen name="signup" component={SignUp}/> 
-        <Stack.Screen name="root" component={Hometab}/>
+        <Stack.Screen name="root" component={BottomTabNavigator}/>
         <Stack.Screen name="details" component={Details}/>
         <Stack.Screen name="cart" component={Cart}/>
         <Stack.Screen name="ItemDetail" component={ItemDetail} />
