@@ -3,7 +3,7 @@ import {View,Text,Image} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles";
 import {Button} from 'components'
-import { NavigationContainer } from "@react-navigation/native";
+
 
 const WishlistCard = ({item}) =>{
    

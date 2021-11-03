@@ -12,7 +12,7 @@ const Wishlist = ({navigation,route}) =>{
         
            <Header leftIcon={"arrow-left"} rightIcon={"shopping-cart"} size={28}
                 onLeftIconPress ={()=>{ navigation.navigate('details') }}
-                onRightIconPress ={()=>{ navigation.navigate('') }}
+                onRightIconPress ={()=>{ navigation.navigate('cart') }}
                 image= {false} />
 
            <View style={styles.titleView}>
