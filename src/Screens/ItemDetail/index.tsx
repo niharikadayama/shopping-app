@@ -1,5 +1,6 @@
 import React from "react";
 import{View,Text,ImageBackground,SafeAreaView,FlatList} from 'react-native'
+import { ItemContext } from "context/itemContext";
 import styles from "./styles";
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Button} from "components";
@@ -7,7 +8,6 @@ import {colors, size} from "theme"
 
 const ItemDetail = ({navigation,route}) =>{
     const item = route.params
-    //console.log(item)
     return (
         <SafeAreaView style={styles.container}> 
 
@@ -21,7 +21,8 @@ const ItemDetail = ({navigation,route}) =>{
                 <Text style={styles.detailName}>{item.item.name}</Text>
                 <Text style={styles.detailInfo}>{item.item.info}</Text>
                 
-                <Icon name="heart" size={20} style={styles.detailHeart}/>
+                <Icon name="heart" size={20} style={styles.detailHeart}
+                onPress={()=>navigation.navigate('Wishlist',{item})}/>
 
                 <Text style={styles.detailNormal}>Color</Text>
                 <View style={styles.detailColor}>

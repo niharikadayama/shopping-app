@@ -11,7 +11,7 @@ const Login = ({navigation}) =>{
   const [password, setPassword] = useState('');
 
   const onSignInPressed = () =>{
-    console.warn('signin')
+    navigation.navigate('root')
   }
 
   const onForgetPasswordPressed = () =>{

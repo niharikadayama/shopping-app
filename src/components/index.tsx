@@ -6,5 +6,6 @@ import FilterList from "./filterList";
 import Header from "./header";
 import SearchBar from "./searchBar";
 import Category from "./list";
+import WishlistCard from "./wishlistCard";
 
-export {Button,CartCard,FilterList,Header,SearchBar,Category}
+export {Button,CartCard,FilterList,Header,SearchBar,Category,WishlistCard }

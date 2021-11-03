@@ -15,7 +15,7 @@
       "paths": {
         "assets/*":  [ "assets/*"],
         "components/*":  [ "components/*"],
-        "constants/*":  ["constants/*"],
+        "constant/*":  ["constant/*"],
         "theme/*":  ["theme/*"],
         "screens/*":  ["screens/*"],
       },

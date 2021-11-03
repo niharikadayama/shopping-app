@@ -1,12 +1,15 @@
 import { NavigationContainer } from "@react-navigation/native";
-import React ,{useState} from "react";
+import React ,{useState,useContext} from "react";
 import {View,Text,Image, TouchableOpacity,FlatList} from 'react-native'
+import { ItemContext } from "context/itemContext";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {SearchBar,FilterList,Header} from "components"
 import styles from "./styles";
-import {Woman} from "constants/index";
+
 
 const Details = ({navigation}) =>{
+    const [data,setdata] = useContext(ItemContext)
+
     const [FilterIndex, setfilterIndex] = useState(0)
     return (
         <View style={styles.container}>
@@ -22,7 +25,7 @@ const Details = ({navigation}) =>{
          
             <FlatList 
             numColumns={2}
-            data={Woman}
+            data={data}
             renderItem={({item})=>{
                 return (
                     <TouchableOpacity style={styles.card} 
@@ -35,7 +38,8 @@ const Details = ({navigation}) =>{
                            <Image source={item.img} style={styles.cardImg}/>
                         </View>
 
-                        <Icon name="gittip" size={30} style={styles.icon}/>
+                        <Icon name="gittip" size={30} style={styles.icon} 
+                         />
 
                         <View style={styles.cardBottom}>
                             <Text style={styles.cardText}>{item.name}</Text>

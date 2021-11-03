@@ -1,6 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 
+
 import Icon from 'react-native-vector-icons/Ionicons'
 import { colors } from "theme";
 
@@ -13,6 +14,7 @@ const Tab = createBottomTabNavigator();
 
 const BottomTabNavigator = () => {
     return (
+      
       <Tab.Navigator initialRouteName = {'Home'}
       screenOptions = {({route}) => ({
         header: () => null,
@@ -48,7 +50,7 @@ const BottomTabNavigator = () => {
         <Tab.Screen name= "Settings" component = {Cart} />
         <Tab.Screen name= "Support" component = {Cart} />
       </Tab.Navigator>
-     
+      
     );
   };
   

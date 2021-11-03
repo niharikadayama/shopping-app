@@ -1,5 +1,6 @@
 import React from "react";
-import { createStackNavigator } from "@react-navigation/stack";
+import { createStackNavigator} from "@react-navigation/stack";
+
 
 import HomeScreen from 'screens/homeScreen';
 import Details from 'screens/details';
@@ -12,8 +13,7 @@ import SignUp from 'screens/signup'
 import BottomTabNavigator from "./tabNavigation";
 
 const Stack = createStackNavigator();
-
-
+ 
 const MainStackNavigator = () => {
     return (
         <Stack.Navigator screenOptions={{header: () => null }}>

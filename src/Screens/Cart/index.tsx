@@ -4,9 +4,11 @@ import {View,Text} from 'react-native'
 import styles from "./styles";
 import {Header,CartCard,Button} from "components"
 
+
+
 const Cart = ({navigation,route}) =>{
     const item = route.params
-
+    
     return (
     <View style={styles.container}>
         
@@ -20,13 +22,12 @@ const Cart = ({navigation,route}) =>{
                 <Text style={styles.subTitle}>Check and Pay your Item</Text>
            </View>
 
+        
            <CartCard  {...item}/>
-
-           <CartCard {...item}/>
             
             <View style={styles.totalCard}>
-               <Text style={styles.totalCardText}>2 Items</Text>
-               <Text style={styles.totalCardText}>{`Rs. ${item.item.price + item.item.price}`}</Text>
+               <Text style={styles.totalCardText}>1 item</Text>
+               <Text style={styles.totalCardText}>{`Rs. ${item.item.price}`}</Text>
             </View>
 
             <Button name = {'Checkout'}  theme={'primary'} 
