@@ -1,9 +1,8 @@
-import ChangeTheNumber from "./upDown";
-
 import { combineReducers } from "redux";
+import shopReducer from './shopping/reducer'
 
 const rootReducer = combineReducers({
-    ChangeTheNumber
-})
+   shop: shopReducer,
+});
 
 export default rootReducer;

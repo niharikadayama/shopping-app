@@ -1,6 +1,27 @@
 import {images} from 'theme'
 
-
+export const categories = [
+    {
+      id: "1",
+      title: "Women",
+      image:images.woman,
+    },
+    {
+      id: "2",
+      title: "Men",
+      image:images.man
+    },
+    {
+      id: "3",
+      title: "Kids",
+      image: images.kid
+    },
+    {
+      id: "4",
+      title: "50% off",
+      image: images.new
+    },
+  ]
     
 export const woman = [
     {

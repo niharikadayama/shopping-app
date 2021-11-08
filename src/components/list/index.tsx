@@ -1,15 +1,13 @@
-import React, { useContext } from "react";
+import React from "react";
 import { FlatList, SafeAreaView, ImageBackground,View,Text, TouchableOpacity} from "react-native";
-import { CategoryContext } from "context/categoryContext";
+import { categories } from "constant";
 import styles from "./styles";
 
 const Category = ({navigation}) =>{
 
-  const [data,setdata] = useContext(CategoryContext)
-
   return <SafeAreaView style={styles.container}>
     <FlatList 
-      data= {data}
+      data= {categories}
       renderItem={(item)=>{
   
        return(

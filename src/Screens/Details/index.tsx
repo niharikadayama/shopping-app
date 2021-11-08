@@ -1,14 +1,13 @@
-import { NavigationContainer } from "@react-navigation/native";
-import React ,{useState,useContext} from "react";
+import React ,{useState} from "react";
 import {View,Text,Image, TouchableOpacity,FlatList} from 'react-native'
-import { ItemContext } from "context/itemContext";
+import { connect } from "react-redux";
+import { woman } from "constant";
 import Icon from 'react-native-vector-icons/FontAwesome';
 import {SearchBar,FilterList,Header} from "components"
 import styles from "./styles";
 
 
 const Details = ({navigation}) =>{
-    const [data,setdata] = useContext(ItemContext)
 
     const [FilterIndex, setfilterIndex] = useState(0)
     return (
@@ -25,7 +24,7 @@ const Details = ({navigation}) =>{
          
             <FlatList 
             numColumns={2}
-            data={data}
+            data={woman}
             renderItem={({item})=>{
                 return (
                     <TouchableOpacity style={styles.card} 
@@ -56,5 +55,10 @@ const Details = ({navigation}) =>{
     )
 }
 
+const mapStateToProps = state => {
+   return{
+       products: state.shop.products
+   }
+}
 
-export default Details
+export default connect(mapStateToProps)(Details);

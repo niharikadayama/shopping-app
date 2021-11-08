@@ -20,7 +20,7 @@ const Wishlist = ({navigation,route}) =>{
                 <Text style={styles.subTitle}>Buy it before its gone</Text>
            </View>
 
-           <WishlistCard {...item}/>
+           <WishlistCard {...item} navigation={navigation} />
            
             
     </View>

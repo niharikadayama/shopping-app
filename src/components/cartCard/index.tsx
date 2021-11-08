@@ -2,31 +2,30 @@ import React from "react";
 import {View,Text,Image} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles";
-import { useSelector, useDispatch } from "react-redux";
-import { incNumber,decNumber } from "action";
 
-const CartCard = ({item}) =>{
-    const myState = useSelector((state:any)=> state.ChangeTheNumber)
-    const dispatch = useDispatch()
+import { connect } from "react-redux";
+import { removeFromCart,incNumber,decNumber } from "redux/shopping/action";
+const CartCard = ({itemData,removeFromCart,incNumber,decNumber}) =>{
+    
     return(
         <View style={styles.cartCard}> 
     
-        <Image source={item.img} style={styles.cardImg}/>
+        <Image source={itemData.img} style={styles.cardImg}/>
 
         <View style={styles.cardText}>
 
-            <Text style={styles.cardTitle}>{item.name}</Text>
-            <Text style={styles.cardInfo}>{item.info}</Text>
-            <Icon name="close" size={20} style={styles.cardIcon}/>
+            <Text style={styles.cardTitle}>{itemData.name}</Text>
+            <Text style={styles.cardInfo}>{itemData.info}</Text>
+            <Icon name="trash" size={20} style={styles.cardIcon} onPress={()=>{removeFromCart(itemData.id)}}/>
             <View style={styles.Price}>
                 <Icon name="rupee" size={20}/>
-                <Text style={styles.pricestyle}>{item.price}</Text>
+                <Text style={styles.pricestyle}>{itemData.price}</Text>
             </View>
 
             <View style={styles.quant}>
-                <Icon name="minus" size={20} style={styles.quantIcon} onPress={()=> dispatch(decNumber())}/>
-                <Text style={styles.quantText}>{myState}</Text>
-                <Icon name="plus" size={20} style={styles.quantIcon} onPress={()=> dispatch(incNumber())}/>
+                <Icon name="minus" size={20} style={styles.quantIcon} onPress={()=> {incNumber()}}/>
+                <Text style={styles.quantText}>{itemData.qty}</Text>
+                <Icon name="plus" size={20} style={styles.quantIcon} onPress={()=> {decNumber()}}/>
                 <Text style={styles.quantText}>|</Text>
                 <Text style={styles.quantText}>43</Text>
                 <Icon name="chevron-down" size={20} style={styles.quantIcon}/>
@@ -38,4 +37,12 @@ const CartCard = ({item}) =>{
     )
 }
 
-export default CartCard;
+const mapDispatchToProps = dispatch => {
+   return{
+       removeFromCart: (id:any) => dispatch(removeFromCart(id)),
+       incNumber: () => dispatch(incNumber()),
+       decNumber: () => dispatch(decNumber()),
+   }
+}
+
+export default connect(null,mapDispatchToProps)(CartCard);

@@ -5,7 +5,7 @@ import styles from "./styles";
 import {Button} from 'components'
 
 
-const WishlistCard = ({item}) =>{
+const WishlistCard = ({item,navigation}) =>{
    
     return(
         <View style={styles.cartCard}> 
@@ -22,7 +22,7 @@ const WishlistCard = ({item}) =>{
         </View>
         <View style={styles.cardBottom}>
             <Icon name='trash' size={30}/>
-            <Button name='Cart' theme='secondary'/>
+            <Button name='Cart' theme='secondary' onPress={()=>navigation.navigate('cart')}/>
         </View>
         
 </View>

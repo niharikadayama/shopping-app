@@ -1,12 +1,13 @@
 import React from "react";
 import{View,Text,ImageBackground,SafeAreaView,FlatList} from 'react-native'
-import { ItemContext } from "context/itemContext";
+import { connect } from "react-redux";
+import { addToCart } from "redux/shopping/action"; 
 import styles from "./styles";
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Button} from "components";
 import {colors, size} from "theme"
 
-const ItemDetail = ({navigation,route}) =>{
+const ItemDetail = ({navigation,route, addToCart}) =>{
     const item = route.params
     return (
         <SafeAreaView style={styles.container}> 
@@ -44,7 +45,8 @@ const ItemDetail = ({navigation,route}) =>{
                      <Text style={styles.detailPrice}>Rs. {item.item.price}</Text>
 
                      <Button name = {'Add To Cart'} onPress={()=>{
-                         navigation.navigate('cart',item)
+                         navigation.navigate('cart',item),
+                         addToCart(item.item.id)
                      }} theme = {'secondary'} />
 
                  </View>
@@ -54,4 +56,10 @@ const ItemDetail = ({navigation,route}) =>{
     )
 }
 
-export default ItemDetail
+const mapDisptachToProp = (dispatch) =>{
+    return{
+        addToCart: (id) => dispatch(addToCart(id))
+    }
+}
+
+export default connect(null,mapDisptachToProp)(ItemDetail)
