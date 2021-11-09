@@ -1,5 +1,5 @@
 import React from "react";
-import {View,Text,Image} from 'react-native'
+import {View,Text,Image,TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles";
 
@@ -16,21 +16,27 @@ const CartCard = ({itemData,removeFromCart,incNumber,decNumber}) =>{
 
             <Text style={styles.cardTitle}>{itemData.name}</Text>
             <Text style={styles.cardInfo}>{itemData.info}</Text>
-            <Icon name="trash" size={20} style={styles.cardIcon} onPress={()=>{removeFromCart(itemData.id)}}/>
-            <View style={styles.Price}>
-                <Icon name="rupee" size={20}/>
-                <Text style={styles.pricestyle}>{itemData.price}</Text>
-            </View>
 
             <View style={styles.quant}>
-                <Icon name="minus" size={20} style={styles.quantIcon} onPress={()=> {incNumber()}}/>
+                <View style={styles.quantUpDownCounter}>
+                <Icon name="minus" size={18} style={styles.quantIcon} onPress={()=> {incNumber()}}/>
                 <Text style={styles.quantText}>{itemData.qty}</Text>
-                <Icon name="plus" size={20} style={styles.quantIcon} onPress={()=> {decNumber()}}/>
+                <Icon name="plus" size={18} style={styles.quantIcon} onPress={()=> {decNumber()}}/>
+                </View>
                 <Text style={styles.quantText}>|</Text>
-                <Text style={styles.quantText}>43</Text>
-                <Icon name="chevron-down" size={20} style={styles.quantIcon}/>
+                <View style={styles.Price}>
+                <Icon name="rupee" size={18} style={styles.quantRupeeIcon}/>
+                <Text style={styles.pricestyle}>{itemData.price}</Text>
+                </View>
+               
             </View>
-
+            <TouchableOpacity style={{flexDirection:'row',alignItems:'center'}}
+            onPress={()=>{removeFromCart(itemData.id)}}>
+            <Icon name="trash" size={23} style={styles.cardIcon} />
+            <Text style={styles.quantText}>Remove</Text>
+            
+            </TouchableOpacity>
+            
             
         </View>
 </View>
@@ -39,9 +45,9 @@ const CartCard = ({itemData,removeFromCart,incNumber,decNumber}) =>{
 
 const mapDispatchToProps = dispatch => {
    return{
-       removeFromCart: (id:any) => dispatch(removeFromCart(id)),
-       incNumber: () => dispatch(incNumber()),
-       decNumber: () => dispatch(decNumber()),
+       removeFromCart: (id) => dispatch(removeFromCart(id)),
+       incNumber: (id,value) => dispatch(incNumber(id,value)),
+       decNumber: (id,value) => dispatch(decNumber(id,value)),
    }
 }
 

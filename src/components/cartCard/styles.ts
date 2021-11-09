@@ -26,7 +26,8 @@ const styles = StyleSheet.create({
     },
     cardText:{
        paddingLeft: 20,
-       paddingVertical:10
+       paddingVertical:10,
+       flexShrink:1
     },
     cardTitle:{
         fontSize:25,
@@ -37,36 +38,41 @@ const styles = StyleSheet.create({
         paddingVertical:5
     },
     cardIcon:{
-       position:'absolute',
-       right:10,
-       top:10
+       marginLeft:5
     },
     quant:{
         flexDirection:'row',
         paddingVertical:15,
-        justifyContent:'space-between',
+        justifyContent:'space-around',
         alignItems:'center',
         
+    },
+    quantUpDownCounter:{
+        flexDirection:'row',
+        alignItems:'center',
     },
     quantText:{
         fontSize:18,
         fontWeight:'600',
-        paddingHorizontal:10
+        paddingHorizontal:5
     },
     quantIcon:{
        color: colors.mediumGrey,
-       paddingHorizontal:7
+       paddingHorizontal:10,
+    },
+    quantRupeeIcon:{
+       color: colors.darkGrey,
+       
     },
     Price:{
         flexDirection:'row',
-        paddingTop:10,
+        alignItems:'center',
         justifyContent:'flex-start',
-        alignItems:'center' 
+        paddingHorizontal:5,
     },
     pricestyle:{
         fontWeight:'bold',
-        fontSize:17,
-        marginLeft:5
+        fontSize:17
     },
     totalCard:{
         flexDirection:'row',

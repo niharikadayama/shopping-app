@@ -1,6 +1,6 @@
 import * as actionTypes from './types'
 
-export const addToCart = (itemID) => {
+export const addToCart = (itemID:number) => {
    return{
        type: actionTypes.ADD_TO_CART,
        payload:{
@@ -9,7 +9,7 @@ export const addToCart = (itemID) => {
    }
 }
 
-export const removeFromCart = (itemID) =>{
+export const removeFromCart = (itemID:number) =>{
     return{
         type: actionTypes.REMOVE_FROM_CART,
         payload:{
@@ -18,14 +18,22 @@ export const removeFromCart = (itemID) =>{
     }
 }
 
-export const incNumber = () =>{
+export const incNumber = (itemID:number,value:number) =>{
     return{
         type:actionTypes.INCREMENT,
+        payload:{
+            id: itemID,
+            value: value
+        }
     }
 }
 
-export const decNumber = () =>{
+export const decNumber = (itemID:number,value:number) =>{
     return{
         type:actionTypes.DECREMENT,
+        payload:{
+            id: itemID,
+            value: value
+        }
     }
 }

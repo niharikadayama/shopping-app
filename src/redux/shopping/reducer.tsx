@@ -42,7 +42,7 @@ const INITIAL_STATE = {
             price: 1200,
             like: false,
             img: images.w4,
-            info: 'Orange top with woollen skirt',
+            info: 'Orange top with skirt',
             qty: 1,
             color:'coral'
       
@@ -72,6 +72,7 @@ const INITIAL_STATE = {
       ],
     cart: [],
     currentItem: null,
+    count:0
 }
 const shopReducer = (state = INITIAL_STATE,action) =>{
     switch(action.type){
@@ -82,6 +83,7 @@ const shopReducer = (state = INITIAL_STATE,action) =>{
             const inCart = state.cart.find((item:any)=> 
             item.id === action.payload.id ? true : false
             );
+            
             return {
                ...state,
                cart: inCart 
@@ -101,10 +103,11 @@ const shopReducer = (state = INITIAL_STATE,action) =>{
             return {
                 ...state,
                 
-            }
+            };
         case actionTypes.DECREMENT:
             return {
                 ...state,
+                
             };
         default:
             return state;
