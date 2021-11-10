@@ -1,10 +1,17 @@
 import React from "react";
+import {createStackNavigator} from '@react-navigation/stack';
 import {View,Text,TouchableOpacity,ImageBackground} from 'react-native'
+
 import  Icon  from "react-native-vector-icons/Ionicons";
-import {colors,images,screenWidth,screenHeight} from 'theme'
+import {images} from 'theme'
 import styles from './styles'
 
+const Stack = createStackNavigator();
+
 const Splash = ({navigation}) =>{
+
+  
+
     return(
        <View>
           <ImageBackground source={images.splashBg} 

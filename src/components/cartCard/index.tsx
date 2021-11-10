@@ -30,6 +30,7 @@ const CartCard = ({itemData,removeFromCart,incNumber,decNumber}) =>{
                 </View>
                
             </View>
+            
             <Pressable style={{flexDirection:'row',alignItems:'center'}}
             onPress={()=>{removeFromCart(itemData.id)}}>
             <Icon name="trash" size={23} style={styles.cardIcon} />

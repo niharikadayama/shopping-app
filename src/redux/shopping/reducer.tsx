@@ -1,5 +1,8 @@
+import React,{useEffect} from 'react';
 import * as actionTypes from './types'
 import { images } from 'theme';
+
+
 
 const INITIAL_STATE = {
     products: [
@@ -70,10 +73,16 @@ const INITIAL_STATE = {
       
         }
       ],
+      numberCart: 0,
     cart: [],
     currentItem: null,
+   
 }
+
+
+
 const shopReducer = (state = INITIAL_STATE,action) =>{
+    
     switch(action.type){
         case actionTypes.ADD_TO_CART:
             //get the item data from products array
@@ -99,10 +108,10 @@ const shopReducer = (state = INITIAL_STATE,action) =>{
                 cart: state.cart.filter((item:any) => item.id !== action.payload.id)
             };
         case actionTypes.INCREMENT:
-            return {
+            return{
                 ...state,
                 
-            };
+            }
         case actionTypes.DECREMENT:
             return {
                 ...state,
