@@ -1,5 +1,5 @@
 import React from "react";
-import {View,Text,Image,TouchableOpacity} from 'react-native'
+import {View,Text,Image,Pressable} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles";
 
@@ -30,12 +30,12 @@ const CartCard = ({itemData,removeFromCart,incNumber,decNumber}) =>{
                 </View>
                
             </View>
-            <TouchableOpacity style={{flexDirection:'row',alignItems:'center'}}
+            <Pressable style={{flexDirection:'row',alignItems:'center'}}
             onPress={()=>{removeFromCart(itemData.id)}}>
             <Icon name="trash" size={23} style={styles.cardIcon} />
             <Text style={styles.quantText}>Remove</Text>
             
-            </TouchableOpacity>
+            </Pressable>
             
             
         </View>

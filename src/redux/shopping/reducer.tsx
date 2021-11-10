@@ -72,7 +72,6 @@ const INITIAL_STATE = {
       ],
     cart: [],
     currentItem: null,
-    count:0
 }
 const shopReducer = (state = INITIAL_STATE,action) =>{
     switch(action.type){
