@@ -5,9 +5,9 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from 'react-native-vector-icons/Ionicons'
 import { colors } from "theme";
 
-import HomeScreen from "screens/homeScreen";
-import Wishlist from "screens/wishlist";
-import Cart from "screens/cart";
+import HomeScreen from "screen/homeScreen";
+import Wishlist from "screen/wishlist";
+import Cart from "screen/cart";
 
 const Tab = createBottomTabNavigator();
 
