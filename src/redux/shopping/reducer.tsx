@@ -2,8 +2,6 @@ import React,{useEffect} from 'react';
 import * as actionTypes from './types'
 import { images } from 'theme';
 
-
-
 const INITIAL_STATE = {
     products: [
         {
@@ -74,12 +72,12 @@ const INITIAL_STATE = {
         }
       ],
       numberCart: 0,
+      numberWishlist: 0,
     cart: [],
+    wishlist:[],
     currentItem: null,
    
 }
-
-
 
 const shopReducer = (state = INITIAL_STATE,action) =>{
     
@@ -87,14 +85,14 @@ const shopReducer = (state = INITIAL_STATE,action) =>{
         case actionTypes.ADD_TO_CART:
             //get the item data from products array
             const item = state.products.find(prod => prod.id === action.payload.id) 
-            // check if item is in chart already
+            // check if item is in cart already
             const inCart = state.cart.find((item:any)=> 
             item.id === action.payload.id ? true : false
             );
             
             return {
                ...state,
-               cart: inCart 
+               cart: inCart
                 ? state.cart.map((item:any) => 
                    item.id === action.payload.id 
                     ? {...item, qty: item.qty + 1} 
@@ -107,15 +105,33 @@ const shopReducer = (state = INITIAL_STATE,action) =>{
                 ...state,
                 cart: state.cart.filter((item:any) => item.id !== action.payload.id)
             };
-        case actionTypes.INCREMENT:
+        case actionTypes.AdjustQty:
             return{
                 ...state,
-                
-            }
-        case actionTypes.DECREMENT:
+                cart: state.cart.map((item:any) => item.id === action.payload.id ? {...item, qty: action.payload.qty}: item)
+            };
+        case actionTypes.ADD_TO_WISHLIST:
+            //get the item data from products array
+            const items = state.products.find(prod => prod.id === action.payload.id) 
+            // check if item is in wishlist already
+            const inWishlist = state.wishlist.find((item:any)=> 
+            item.id === action.payload.id ? true : false
+            );
+            
+            return {
+               ...state,
+               wishlist: inWishlist
+                ? state.wishlist.map((item:any) => 
+                   item.id === action.payload.id 
+                    ? {...item} 
+                    : item
+                )
+                : [...state.wishlist]
+            };
+        case actionTypes.REMOVE_FROM_WISHLIST:
             return {
                 ...state,
-                
+                wishlist: state.wishlist.filter((item:any) => item.id !== action.payload.id)
             };
         default:
             return state;

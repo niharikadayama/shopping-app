@@ -4,7 +4,7 @@ import { colors } from "theme";
 const styles = StyleSheet.create({
     cartCard:{
          width: '50%',
-         height: 320,
+         height: 300,
          backgroundColor:colors.white,
          marginVertical:15,
          marginHorizontal:15,
@@ -26,7 +26,7 @@ const styles = StyleSheet.create({
     },
     cardText:{
         position:'absolute',
-        bottom:47,
+        bottom:4,
         left:5
     },
     cardTitle:{
@@ -50,11 +50,17 @@ const styles = StyleSheet.create({
     cardBottom:{
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'space-between',
-        paddingLeft: 20
+        justifyContent:'space-around',
+        paddingTop:5,
+    },
+    cardBottomButtons:{
+        flexDirection:'row',
+        alignItems:'center',
+    },
+    cardBottomText:{
+        fontSize:17,
+        paddingLeft:2
     }
-    
-    
 })
 
 export default styles

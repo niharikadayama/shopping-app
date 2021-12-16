@@ -29,7 +29,7 @@ const Details = ({navigation}) =>{
                 return (
                     <TouchableOpacity style={styles.card} 
                           onPress={()=>{
-                              navigation.navigate('ItemDetail',{item})
+                              navigation.navigate('ItemDetail',item)
                           }}
                     >
 

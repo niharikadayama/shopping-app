@@ -1,8 +1,7 @@
 import React, {useState,useEffect} from "react";
-import {View,Text} from 'react-native'
+import {View,Text,FlatList} from 'react-native'
 import styles from "./styles";
 import {Header,CartCard,Button} from "components"
-
 import { connect } from "react-redux";
 
 const Cart = ({navigation,route,cart}) =>{
@@ -23,8 +22,7 @@ const Cart = ({navigation,route,cart}) =>{
        setTotalPrice(price);
     },[cart,totalPrice,totalItem,setTotalPrice,setTotalItem])
     return (
-    <View style={styles.container}>
-        
+     <View style={styles.container}>
            <Header leftIcon={"arrow-left"} rightIcon={"user-circle-o"} size={28}
                 onLeftIconPress ={()=>{ navigation.navigate('details') }}
                 onRightIconPress ={()=>{ navigation.navigate('details') }}
@@ -35,21 +33,26 @@ const Cart = ({navigation,route,cart}) =>{
                 <Text style={styles.subTitle}>Check and Pay your Item</Text>
            </View>
                
-           {cart.map((item) => (
+           {/* {cart.map((item) => (
               <CartCard key={item.id} itemData={item}/>
-            ))}
-
+            ))} */}
+            <FlatList 
+               data={cart}
+               renderItem = { ( {item}) =>{
+                   return(
+                    <CartCard key={item.id} itemData={item}/>  
+                   )
+               }}
+            />
             
-               
             <View style={styles.totalCard}>
                <Text style={styles.totalCardText}>{totalItem} items</Text>
                <Text style={styles.totalCardText}>{`Rs. ${totalPrice}`}</Text>
             </View>
 
             <Button name = {'Checkout'}  theme={'primary'} 
-            onPress={()=>{
-            navigation.navigate('Home')}}/>
-    </View>
+               onPress={()=>{navigation.navigate('Home')}}/>
+     </View>
     )
 }
 

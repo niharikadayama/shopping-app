@@ -45,24 +45,14 @@ const styles = StyleSheet.create({
         paddingVertical:15,
         justifyContent:'space-around',
         alignItems:'center',
-        
-    },
-    quantUpDownCounter:{
-        flexDirection:'row',
-        alignItems:'center',
     },
     quantText:{
         fontSize:18,
         fontWeight:'600',
         paddingHorizontal:5
     },
-    quantIcon:{
-       color: colors.mediumGrey,
-       paddingHorizontal:10,
-    },
     quantRupeeIcon:{
        color: colors.darkGrey,
-       
     },
     Price:{
         flexDirection:'row',

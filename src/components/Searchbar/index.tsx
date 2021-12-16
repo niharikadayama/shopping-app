@@ -4,12 +4,17 @@ import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles"
 
 const SearchBar = () =>{
-    return <View style={styles.container}>
-            <View style={styles.searchContainer}>
-                <Icon name="search" size={20} style={styles.iconStyle}/>
-                <TextInput placeholder="Search" style={styles.input}/>
+    return  <View style={styles.container}>
+                <View style={styles.searchContainer}>
+                    <Icon name="search" size={20} style={styles.iconStyle}/>
+                    <TextInput 
+                        placeholder="Search" 
+                        // value={term} 
+                        // onChangeText={onTermChange}
+                        style={styles.input}
+                    />
+                </View>
             </View>
-        </View>
 }
 
 

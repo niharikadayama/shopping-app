@@ -7,7 +7,9 @@ import { colors } from "theme";
 
 import HomeScreen from "screen/homeScreen";
 import Wishlist from "screen/wishlist";
-import Cart from "screen/cart";
+import Settings from "screen/settings";
+import Support from 'screen/support';
+
 
 const Tab = createBottomTabNavigator();
 
@@ -16,14 +18,21 @@ const BottomTabNavigator = () => {
     return (
       
       <Tab.Navigator initialRouteName = {'Home'}
-      screenOptions = {({route}) => ({
+        screenOptions = {({route}) => ({
         header: () => null,
+        tabBarStyle:{
+           position:'absolute',
+           left:0,
+           right:0,
+           bottom:5,
+           backgroundColor:'transparent'
+        },
         tabBarIcon: ({focused, color, size}) => {
             let iconName;
             if(route.name === 'Home'){
                 iconName = focused ? 'home' : 'home-outline'
                 size = focused ? 29 : 27
-            } else if(route.name === 'Wishlist'){
+            } else if(route.name === 'wishlist'){
                 iconName = focused ? 'heart-sharp' : 'heart-outline'
                 size = focused ? 32 : 30
             }else if(route.name === 'Settings'){
@@ -41,14 +50,14 @@ const BottomTabNavigator = () => {
             )
         },
         tabBarActiveTintColor: colors.darkCoral,
-        tabBarInactiveTintColor: colors.darkGrey,
+        tabBarInactiveTintColor: colors.white,
         showLabel: false,
       })}
      >
         <Tab.Screen name="Home" component={HomeScreen} />
-        <Tab.Screen name= "Wishlist" component = {Wishlist} />
-        <Tab.Screen name= "Settings" component = {Cart} />
-        <Tab.Screen name= "Support" component = {Cart} />
+        <Tab.Screen name= "wishlist" component = {Wishlist} />
+        <Tab.Screen name= "Settings" component = {Settings} />
+        <Tab.Screen name= "Support" component = {Support} />
       </Tab.Navigator>
       
     );

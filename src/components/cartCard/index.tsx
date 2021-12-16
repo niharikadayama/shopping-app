@@ -2,10 +2,11 @@ import React from "react";
 import {View,Text,Image,Pressable} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles";
-
+import InputSpinner from "react-native-input-spinner";
 import { connect } from "react-redux";
-import { removeFromCart,incNumber,decNumber } from "redux/shopping/action";
-const CartCard = ({itemData,removeFromCart,incNumber,decNumber}) =>{
+import { removeFromCart, adjustQty } from "redux/shopping/action";
+
+const CartCard = ({itemData,removeFromCart,adjustQty}) =>{
     
     return(
         <View style={styles.cartCard}> 
@@ -18,10 +19,16 @@ const CartCard = ({itemData,removeFromCart,incNumber,decNumber}) =>{
             <Text style={styles.cardInfo}>{itemData.info}</Text>
 
             <View style={styles.quant}>
-                <View style={styles.quantUpDownCounter}>
-                <Icon name="minus" size={18} style={styles.quantIcon} onPress={()=> {incNumber()}}/>
-                <Text style={styles.quantText}>{itemData.qty}</Text>
-                <Icon name="plus" size={18} style={styles.quantIcon} onPress={()=> {decNumber()}}/>
+                <View>
+                    <InputSpinner
+                        max={9}
+                        min={1}
+                        step={1}
+                        fontSize={16}
+                        width={100}
+                        height={30}
+                        value={itemData.qty}
+                        onChange={(num)=>{adjustQty(itemData.id,num)}}/>
                 </View>
                 <Text style={styles.quantText}>|</Text>
                 <View style={styles.Price}>
@@ -47,8 +54,7 @@ const CartCard = ({itemData,removeFromCart,incNumber,decNumber}) =>{
 const mapDispatchToProps = dispatch => {
    return{
        removeFromCart: (id) => dispatch(removeFromCart(id)),
-       incNumber: (id,value) => dispatch(incNumber(id,value)),
-       decNumber: (id,value) => dispatch(decNumber(id,value)),
+       adjustQty: (id,value) => dispatch(adjustQty(id,value))
    }
 }
 
