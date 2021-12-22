@@ -3,6 +3,7 @@ export const colors = {
     lightGrey: '#F5F5F5',
     white: 'white',
     transparentdarkBg: 'rgba(0,0,0,0.5)',
+    overlay: "rgba(0,0,0,0.3)",
     buttonBglight: 'rgba(255, 99, 71, 0.5)',
     buttonBgdark: 'rgb(60, 60, 60)',
     yellow: '#FFDB58',
@@ -20,4 +21,6 @@ export const colors = {
     orange:'#CC9C00',
     darkRed:'#C70039',
     dullGreen:'#89B04C',
+    inactiveIcon:"#4e4e4e",
+    activeIcon: "#272727"
 }

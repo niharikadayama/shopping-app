@@ -1,66 +1,70 @@
-import React, { useRef, useState } from "react";
-import { View,Text,FlatList,TouchableOpacity} from "react-native";
-import  Icon  from "react-native-vector-icons/MaterialCommunityIcons";
-import { supportMaterial } from "constant";
-import { Transition,Transitioning } from "react-native-reanimated";
-import style from "./styles";
+import React, {useRef, useState} from 'react';
+import {View, Text, FlatList, TouchableOpacity} from 'react-native';
+import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import {supportMaterial} from 'constant';
+import {Transition, Transitioning} from 'react-native-reanimated';
+import style from './styles';
 
 const transition = (
-    <Transition.Together>
-        <Transition.In type="fade" durationMs={200}/>
-        <Transition.Change/>
-        <Transition.Out type="fade" durationMs={200}/>
-    </Transition.Together>
-)
+  <Transition.Together>
+    <Transition.In type="fade" durationMs={200} />
+    <Transition.Change />
+    <Transition.Out type="fade" durationMs={200} />
+  </Transition.Together>
+);
 
-const Support = () =>{
-    const [currentIndex,setCurrentIndex] = useState(0);
-    const ref = useRef();
-    return(
-        <Transitioning.View 
-          ref={ref}
-          transition={transition} 
-          style={style.container}>
+const Support = () => {
+  const [currentIndex, setCurrentIndex] = useState(0);
+  const ref = useRef();
+  return (
+    <Transitioning.View
+      ref={ref}
+      transition={transition}
+      style={style.container}>
+      <View style={style.header}>
+        <Icon name="chevron-left" size={25} />
+        <Text style={style.headerHeading}>Support</Text>
+      </View>
 
-            <View style={style.header}>
-                <Icon name="chevron-left" size={25} />
-                <Text style={style.headerHeading}>Support</Text>
-            </View>    
-            
-               <FlatList 
-                 data={supportMaterial}
-                 renderItem = {({item,index}) =>{
-                    return(
-                     <TouchableOpacity
-                        key={item.heading}
-                        onPress={()=>{
-                            ref.current.animateNextTransition();
-                            setCurrentIndex(index === currentIndex ? 0 : index)
-                        }}
-                        style={style.cardContainer}
-                      >
-                        <View style={[style.card,{backgroundColor:item.bg}]}>
-                            <View style={style.cardHeadinglist}>
-                                <Icon name={item.iconName} size={29} color={item.color}/>
-                                <Text style={style.cardHeading}>{item.heading}</Text>
-                            </View>
-                           {index === currentIndex && (
-                                <View style={style.subHeadinglist}>
-                                {item.subHeading.map((subHeading) =>(
-                                   <Text key={subHeading}
-                                    style={[style.subHeadingListbody,{color:item.color}]}>{subHeading}</Text>     
-                                ))}
-                            </View>
-                           )}
-                        </View>
-                     </TouchableOpacity>
-                    )
-                }}
-                 />
-            
-        </Transitioning.View>
-    )
+      <FlatList
+        data={supportMaterial}
+        renderItem={({item, index}) => {
+          return (
+            <TouchableOpacity
+              key={item.heading}
+              onPress={() => {
+                ref.current.animateNextTransition();
+                setCurrentIndex(index === currentIndex ? 0 : index);
+              }}
+              style={style.cardContainer}>
+              <View style={[style.card, {backgroundColor: item.bg}]}>
+                <View style={style.cardHeadinglist}>
+                  <Icon name={item.iconName} size={29} color={item.color} />
+                  <Text style={style.cardHeading}>{item.heading}</Text>
+                </View>
+                <Icon
+                  name="chevron-right"
+                  size={25}
+                  style={{position: 'absolute', right: 10, top: 25}}
+                />
+                {index === currentIndex && (
+                  <View style={style.subHeadinglist}>
+                    {item.subHeading.map(subHeading => (
+                      <Text
+                        key={subHeading}
+                        style={[style.subHeadingListbody, {color: item.color}]}>
+                        {subHeading}
+                      </Text>
+                    ))}
+                  </View>
+                )}
+              </View>
+            </TouchableOpacity>
+          );
+        }}
+      />
+    </Transitioning.View>
+  );
 };
 
 export default Support;
-

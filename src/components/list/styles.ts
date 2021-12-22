@@ -8,6 +8,9 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'center',
   },
+  overlayStyle:{
+    backgroundColor: colors.overlay
+  },
   subContainer:{
     width:screenWidth,
     height:screenHeight,
@@ -22,13 +25,23 @@ const styles = StyleSheet.create({
     width:screenWidth
   },
   tabs:{
-    color: colors.white
+    color: colors.white,
+    fontSize: 18,
+    fontWeight:'bold',
+    textTransform:'uppercase'
   },
   headerBody:{
     justifyContent:'space-evenly',
     flex:1,
     flexDirection:'row',
-    backgroundColor:colors.white
+  },
+  indicatorStyle:{
+    position:'absolute',
+    height: 4,
+    width: 70,
+    left:30,
+    backgroundColor: colors.white,
+    bottom: -10,
   },
   });
   export default styles;

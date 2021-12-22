@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: screenHeight,
-    // backgroundColor: colors.white,
   },
   header: {
     marginTop: 60,

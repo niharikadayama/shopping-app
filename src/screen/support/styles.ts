@@ -26,14 +26,14 @@ const style = StyleSheet.create({
   },
   card:{
     flexGrow:1,
-    alignItems:'center',
+    alignItems:'flex-start',
     justifyContent:'center',
     paddingHorizontal:20,
     paddingVertical:20,
   },
   cardHeadinglist:{
     flexDirection:'row',
-    alignItems:'center',
+    alignItems:'flex-start',
     justifyContent:'center'
   },
   cardHeading:{
@@ -43,11 +43,11 @@ const style = StyleSheet.create({
   },
   subHeadinglist:{
     marginTop:10,
+    paddingHorizontal:30
   },
   subHeadingListbody:{
       fontSize:18,
       lineHeight: 20 * 1.5,
-      textAlign:'center'
   }
 });
 

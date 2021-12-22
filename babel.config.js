@@ -14,9 +14,9 @@ module.exports = {
              "assets":"./src/assets",
              "constants":"./src/constants"
            }
-        },
-        'react-native-reanimated/plugin',
-      ]
+        }
+      ],
+      'react-native-reanimated/plugin'
     ]
   
 };

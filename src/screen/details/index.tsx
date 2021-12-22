@@ -3,13 +3,19 @@ import {View,Text,Image, TouchableOpacity,FlatList} from 'react-native'
 import { connect } from "react-redux";
 import { woman } from "constant";
 import Icon from 'react-native-vector-icons/FontAwesome';
-import {SearchBar,FilterList,Header} from "components"
+import {SearchBar,Header} from "components"
 import styles from "./styles";
 
+const Details = ({navigation,route}) =>{
+    const item = route.params
+    console.log(item.key)
+    let dataa = ()=>{
+        let data
+        if(item.key === "woman"){
+            return data = woman
+        }
+    }
 
-const Details = ({navigation}) =>{
-
-    const [FilterIndex, setfilterIndex] = useState(0)
     return (
         <View style={styles.container}>
             
@@ -20,11 +26,11 @@ const Details = ({navigation}) =>{
 
             <SearchBar/>
 
-            <FilterList onPress={()=>setfilterIndex(0)}/>
-         
+             
+            
             <FlatList 
             numColumns={2}
-            data={woman}
+            data={dataa}
             renderItem={({item})=>{
                 return (
                     <TouchableOpacity style={styles.card} 
