@@ -1,7 +1,8 @@
 import React from "react";
 import {View,Text,TouchableOpacity,Image,TextInput} from 'react-native'
+import { Controller } from "react-hook-form";
 import  Icon  from "react-native-vector-icons/Ionicons";
-import {images} from 'theme'
+import {images,colors} from 'theme'
 import styles from './styles'
 
 const AuthHeader = () => {
@@ -17,24 +18,37 @@ interface Iauth{
     buttonName?: string;
     location?:string;
     question?:string;
-    value?: string;
-    setValue?: any;
     placeholder?: string;
-    secureTextEntry?: boolean;
+    control?:any;
+    rules?:any;
+    name?:any;
+    secureTextEntry?:boolean;
 }
 
 const AuthInputContainer = (props: Iauth) =>{
-    const {value,setValue,placeholder,secureTextEntry} = props
+    const {control,name,placeholder,secureTextEntry,rules={}} = props
     return(
-        <View>
-            <TextInput 
-                value={value}
-                onChangeText={setValue} 
-                placeholder={placeholder}
-                style= {styles.inputField}
-                secureTextEntry={secureTextEntry}>
-            </TextInput>     
-        </View>
+            <Controller 
+                control={control}
+                name={name}
+                rules={rules}
+                render={({field:{value,onChange,onBlur},fieldState:{error}})=> (
+                    <>
+                        <View style={[styles.inputField,{borderColor: error ? colors.red : colors.transparentlightBg }]}>
+                            <TextInput 
+                            value={value} 
+                            onChangeText={onChange} 
+                            onBlur={onBlur} 
+                            placeholder={placeholder} 
+                            secureTextEntry={secureTextEntry}
+                            />
+                        </View>
+                        {error && 
+                          (<Text style={styles.errorStyle}>{error.message || "Error"}</Text>
+                        )}
+                    </>
+                )}
+              />    
     ) 
 }
 

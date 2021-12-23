@@ -9,10 +9,16 @@ const styles = StyleSheet.create({
     },
     inputField:{
         borderRadius:10,
+        borderWidth:1,
+        borderColor:colors.transparentlightBg,
         width: 350,
         padding:15,
         marginVertical:10,
         backgroundColor:colors.transparentlightBg,
+    },
+    errorStyle:{
+        color:colors.red,
+        alignSelf:'stretch'
     },
     loginButton:{
         borderRadius:14,
