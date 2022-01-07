@@ -6,6 +6,7 @@ import ToggleSwitch from 'toggle-switch-react-native';
 import {colors} from 'theme/colors';
 
 const Settings = () => {
+
   return (
     <View style={styles.container}>
       <View style={styles.header}>

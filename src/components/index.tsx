@@ -7,4 +7,5 @@ import SearchBar from "./searchBar";
 import Category from "./list";
 import WishlistCard from "./wishlistCard";
 
-export {Button,CartCard,Header,SearchBar,Category,WishlistCard }
+
+export {Button,CartCard,Header,SearchBar,Category,WishlistCard}

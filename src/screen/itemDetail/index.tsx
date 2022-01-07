@@ -9,20 +9,21 @@ import {colors, size} from "theme"
 
 const ItemDetail = ({navigation,route, addToCart, addToWishlist}) =>{
     const item = route.params
+    const sizeCheck = item.size
     return (
         <SafeAreaView style={styles.container}> 
 
             <ImageBackground source={item.img} resizeMode={'cover'} style={styles.image}>
 
             <Icon name="arrow-left" size={26} color={colors.white} style={styles.iconn}
-                onPress={()=>navigation.navigate('details')}/>
+                onPress={()=>navigation.navigate('root')}/>
 
             <View style={styles.detailsContainer}>
                 
                 <Text style={styles.detailName}>{item.name}</Text>
                 <Text style={styles.detailInfo}>{item.info}</Text>
                 
-                <Icon name="heart" size={20} style={styles.detailHeart}
+                <Icon name="heart" size={22} style={styles.detailHeart}
                 onPress={()=>{
                     navigation.navigate('wishlist',item),
                     addToWishlist(item.id)
@@ -38,11 +39,17 @@ const ItemDetail = ({navigation,route, addToCart, addToWishlist}) =>{
                 <Text style={styles.detailNormal}>Size</Text>
                  <FlatList numColumns={4}
                      data={size} renderItem = {({item,index})=>{
-                     return <View style={styles.detailColor}>
-                             <Text style={styles.detailSize}>{item}</Text>
-                            </View>
+                         if(sizeCheck === item){
+                            return <View style={styles.detailColor}>    
+                            <Text style={[styles.detailSize,styles.selectedDetailSize]}>{item}</Text>
+                           </View>
+                         }
+                         return <View style={styles.detailColor}>
+                            <Text style={styles.detailSize}>{item}</Text>
+                           </View>
                      }}
                  />
+                
 
                  <View style={styles.detailBottom}> 
                      <Text style={styles.detailPrice}>Rs. {item.price}</Text>
@@ -62,7 +69,7 @@ const ItemDetail = ({navigation,route, addToCart, addToWishlist}) =>{
 const mapDisptachToProp = (dispatch) =>{
     return{
         addToCart: (id) => dispatch(addToCart(id)),
-        addToWishlist: (id) => dispatch(addToWishlist(id))
+        addToWishlist: (id: number) => dispatch(addToWishlist(id))
     }
 }
 

@@ -56,16 +56,20 @@ const styles = StyleSheet.create({
          justifyContent:'space-evenly',
      },
      detailSize:{
-         fontSize:17,
-         fontWeight:'600',
-         marginTop:5,
-         borderWidth:1,
-         borderColor:'black',
-         borderRadius:15,
-         paddingHorizontal:5,
-         paddingVertical:4,
-         marginHorizontal:19
-     },
+        fontSize:17,
+        fontWeight:'600',
+        marginTop:5,
+        borderWidth:1,
+        borderColor:colors.overlay,
+        borderRadius:5,
+        paddingHorizontal:6,
+        paddingVertical:4,
+        marginLeft: "13%",
+        
+    },
+    selectedDetailSize:{
+        borderColor:colors.darkGrey
+    },
      detailBottom:{
          flexDirection:'row',
          justifyContent:'flex-start',

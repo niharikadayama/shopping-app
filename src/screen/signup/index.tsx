@@ -27,6 +27,7 @@ const SignUp = ({navigation}) =>{
                   name='username'
                   control={control}
                   placeholder='Enter Username'
+                  icon="ios-person"
                   secureTextEntry={false}
                   rules={{required:'Username is required'}}
               />
@@ -34,6 +35,7 @@ const SignUp = ({navigation}) =>{
                   name='email'
                   control={control}
                   placeholder='Enter Email'
+                  icon="ios-mail"
                   secureTextEntry={false}
                   rules={{
                      pattern: {value: EmailRegex,message:'Email is invalid'}
@@ -43,6 +45,7 @@ const SignUp = ({navigation}) =>{
                   name='password'
                   control={control}
                   placeholder='Enter Password'
+                  icon="ios-key-sharp"
                   secureTextEntry={true}
                   rules={{
                      required:'Password is required',
@@ -56,6 +59,7 @@ const SignUp = ({navigation}) =>{
                   name='confirmPassword'
                   control={control}
                   placeholder='Confirm Password'
+                  icon="ios-key-sharp"
                   secureTextEntry={true}
                   rules={{
                      validate: value => value === pswd || 'password does not match'

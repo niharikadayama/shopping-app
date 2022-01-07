@@ -18,7 +18,8 @@ const styles = StyleSheet.create({
     marginBottom:10
   }, 
    forgetpassword:{
-    textAlign:'center',
+    textAlign:'right',
+    paddingHorizontal:15,
     paddingVertical:20,
     fontSize:16
   },

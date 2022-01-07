@@ -1,9 +1,5 @@
 export const images = {
     logo:  require('assets/images/nida.png'),
-    woman: require('assets/images/woman.jpg'),
-    man:   require('assets/images/man.jpg'),
-    kid:   require('assets/images/kid.jpg'),
-    new:   require('assets/images/new.jpg'),
     splashBg: require('assets/images/splashBg2.jpg'),
     w1:    require('assets/woman/w1.jpg'),
     w2:    require('assets/woman/w2.jpg'),
@@ -11,4 +7,14 @@ export const images = {
     w4:    require('assets/woman/w4.jpg'),
     w5:    require('assets/woman/w5.jpg'),
     w6:    require('assets/woman/w6.jpg'),
+    w7:    require('assets/woman/w7.jpg'),
+    w8:    require('assets/woman/w8.jpg'),
+    m1:    require('assets/man/m1.jpg'),
+    m2:    require('assets/man/m2.jpg'),
+    m3:    require('assets/man/m3.jpg'),
+    m4:    require('assets/man/m4.jpg'),
+    m5:    require('assets/man/m5.jpg'),
+    m6:    require('assets/man/m6.jpg'),
+    m7:    require('assets/man/m7.jpg'),
+    m8:    require('assets/man/m8.jpg')
 }

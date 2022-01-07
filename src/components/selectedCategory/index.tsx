@@ -1,5 +1,7 @@
 import React from "react";
 import { View,Text,TouchableOpacity } from "react-native";
+import Icon from 'react-native-vector-icons/Ionicons';
+import { Button } from "..";
 import styles from "./styles";
 
 const SelectedCategory = ({item,navigation}) =>{
@@ -8,9 +10,14 @@ const SelectedCategory = ({item,navigation}) =>{
            <TouchableOpacity 
              style={styles.buttons}
              onPress={()=>navigation.navigate('details',item)}>
-               <Text style={styles.buttonText}>shopppp
-               hgfhfhfdgf
-               hghhgfghf</Text>
+             <View style={styles.button}>
+             <Text style={styles.buttonText}>Explore</Text>
+                <Icon
+            name="ios-chevron-forward"
+            size={25}
+            style={styles.sectionIcon}
+          />
+             </View>
            </TouchableOpacity>
         
     )

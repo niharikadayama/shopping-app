@@ -24,7 +24,7 @@ const Cart = ({navigation,route,cart}) =>{
     return (
      <View style={styles.container}>
            <Header leftIcon={"arrow-left"} rightIcon={"user-circle-o"} size={28}
-                onLeftIconPress ={()=>{ navigation.navigate('details') }}
+                onLeftIconPress ={()=>{ navigation.navigate('root') }}
                 onRightIconPress ={()=>{ navigation.navigate('details') }}
                 image= {false} />
 
@@ -36,6 +36,7 @@ const Cart = ({navigation,route,cart}) =>{
            {/* {cart.map((item) => (
               <CartCard key={item.id} itemData={item}/>
             ))} */}
+            
             <FlatList 
                data={cart}
                renderItem = { ( {item}) =>{

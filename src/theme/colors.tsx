@@ -22,5 +22,10 @@ export const colors = {
     darkRed:'#C70039',
     dullGreen:'#89B04C',
     inactiveIcon:"#4e4e4e",
-    activeIcon: "#272727"
+    activeIcon: "#272727",
+    facebookColor: "#3b5998",
+    googleColor: "#3cba54",
+    twitterColor: "#00acee",
+    playstoreColor: "",
+    appleStore: "#A2AAAD",
 }

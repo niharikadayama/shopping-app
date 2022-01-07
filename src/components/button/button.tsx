@@ -25,7 +25,7 @@ const style1 = StyleSheet.create({
         marginVertical:50,
         marginHorizontal:70,
         paddingVertical:14,
-        borderRadius:25
+        borderRadius:10
     },
     btnText:{
        color:colors.white,
@@ -41,7 +41,7 @@ const style2 = StyleSheet.create({
         marginHorizontal:35,
         paddingVertical:10,
         paddingHorizontal:30,
-        borderRadius:20
+        borderRadius:10
     },
     btnText:{
         color:colors.white,
