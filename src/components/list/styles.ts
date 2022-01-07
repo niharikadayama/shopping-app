@@ -1,33 +1,47 @@
 import { StyleSheet } from "react-native"
-import {colors} from 'theme'
+import {colors,screenHeight,screenWidth} from 'theme'
 
 const styles = StyleSheet.create({
-    container:{
-        marginVertical:10,
-        marginHorizontal:10,
-        height:'100%'
-    },
-    image:{
-      width:'100%',
-      height: 300,
-      justifyContent:'center',
-      marginVertical:10
-    },
-    text: {
-      position:'absolute',
-      top:'50%',
-      width:'100%',
-      color: colors.white,
-      fontSize: 42,
-      lineHeight: 90,
-      fontWeight: "bold",
-      textAlign: "center",
-      backgroundColor: colors.transparentdarkBg
-    },
-    child: {
-      flex: 1,
-      backgroundColor: colors.transparentdarkBg
-    }
-  })
-
-  export default styles
+  container: {
+    flex: 1,
+    backgroundColor: '#fff',
+    alignItems: 'center',
+    justifyContent: 'center',
+  },
+  overlayStyle:{
+    backgroundColor: colors.overlay
+  },
+  subContainer:{
+    width:screenWidth,
+    height:screenHeight,
+  },
+  imageStyle:{
+    flex:1,
+    resizeMode:'cover',
+  },
+  headers:{
+    position:'absolute',
+    top:100,
+    width:screenWidth
+  },
+  tabs:{
+    color: colors.white,
+    fontSize: 18,
+    fontWeight:'bold',
+    textTransform:'uppercase'
+  },
+  headerBody:{
+    justifyContent:'space-evenly',
+    flex:1,
+    flexDirection:'row',
+  },
+  indicatorStyle:{
+    position:'absolute',
+    height: 4,
+    width: 70,
+    left:30,
+    backgroundColor: colors.white,
+    bottom: -10,
+  },
+  });
+  export default styles;

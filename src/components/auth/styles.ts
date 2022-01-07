@@ -8,11 +8,22 @@ const styles = StyleSheet.create({
         marginTop:20
     },
     inputField:{
+        flexDirection:'row',
         borderRadius:10,
+        borderWidth:1,
+        borderColor:colors.transparentlightBg,
         width: 350,
         padding:15,
         marginVertical:10,
         backgroundColor:colors.transparentlightBg,
+    },
+    inputFieldIcon:{
+      color:colors.mediumGrey,
+      paddingRight:10
+    },
+    errorStyle:{
+        color:colors.red,
+        alignSelf:'stretch'
     },
     loginButton:{
         borderRadius:14,
@@ -36,8 +47,7 @@ const styles = StyleSheet.create({
     Container1:{
       flexDirection:'row',
       alignItems:'center',
-      justifyContent:'space-around',
-      
+      justifyContent:'center'
     },
     OtherLoginButton:{
       flexDirection:'row',
@@ -46,10 +56,24 @@ const styles = StyleSheet.create({
       paddingHorizontal:19,
       paddingVertical:10
     },
-    OtherIcon:{
-      fontSize:24,
-      paddingHorizontal:5,
-      color:colors.coral
+    iconn:{
+      fontSize:26,
+      paddingHorizontal:10,
+    },
+    googleIcon:{
+      color:colors.googleColor
+    },
+    facebookIcon:{
+      color:colors.facebookColor
+    },
+    twitterIcon:{
+      color:colors.twitterColor
+    },
+    playStoreIcon:{
+      color: colors.darkGrey
+    },
+    appleIcon:{
+      color:colors.appleStore,
     },
     IconText:{
       fontSize: 18

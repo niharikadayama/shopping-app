@@ -3,7 +3,7 @@ import { colors } from "theme";
 
 const styles = StyleSheet.create({
     cartCard:{
-         height:160,
+         height:150,
          backgroundColor:colors.white,
          marginVertical:15,
          marginHorizontal:15,
@@ -22,7 +22,9 @@ const styles = StyleSheet.create({
     cardImg:{
         width:140,
         height: '100%',
-        borderRadius:15,
+        //borderRadius:15,
+        borderTopLeftRadius:15,
+        borderBottomLeftRadius:15,
     },
     cardText:{
        paddingLeft: 20,
@@ -30,25 +32,26 @@ const styles = StyleSheet.create({
        flexShrink:1
     },
     cardTitle:{
+        marginTop:10,
         fontSize:25,
         fontWeight:'bold'
     },
     cardInfo:{
         fontSize:17,
-        paddingVertical:5
+        paddingVertical:7
+    },
+    removeButton:{
+       position:'absolute',
+       right:-15,
+       top:8
     },
     cardIcon:{
-       marginLeft:5
+       color: colors.transparentdarkBg,
     },
     quant:{
         flexDirection:'row',
         paddingVertical:15,
         justifyContent:'space-around',
-        alignItems:'center',
-        
-    },
-    quantUpDownCounter:{
-        flexDirection:'row',
         alignItems:'center',
     },
     quantText:{
@@ -56,13 +59,8 @@ const styles = StyleSheet.create({
         fontWeight:'600',
         paddingHorizontal:5
     },
-    quantIcon:{
-       color: colors.mediumGrey,
-       paddingHorizontal:10,
-    },
     quantRupeeIcon:{
        color: colors.darkGrey,
-       
     },
     Price:{
         flexDirection:'row',

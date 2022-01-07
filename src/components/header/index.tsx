@@ -8,20 +8,27 @@ interface Iheader{
     leftIcon: string;
     rightIcon: string;
     size: number;
-    image: any;
+    image: boolean;
     onLeftIconPress: () => void;
     onRightIconPress:() => void;
 }
 const Header = (props: Iheader) =>{
     const {leftIcon,rightIcon,size,onLeftIconPress,onRightIconPress,image} = props
+
+    const logoPresent= ()=>{
+        if(image)
+           return <Image source={ images.logo } style={styles.logo}/>;
+        return null;
+     }
+
     return <View style = {styles.container}>
         <View style={styles.header}>
 
            <Icon name={leftIcon} size={size} style= {styles.iconLeft}
             onPress={onLeftIconPress}/>
-
-            <Image source={image ? images.logo : null } style={styles.logo}/>
             
+            {logoPresent()}
+
             <Icon name={rightIcon}  size={size} style = {styles.iconRight}
             onPress={onRightIconPress}/>
 

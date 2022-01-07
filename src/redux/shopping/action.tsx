@@ -15,25 +15,33 @@ export const removeFromCart = (itemID:number) =>{
         payload:{
             id: itemID
         }
-    }
-}
+    };
+};
 
-export const incNumber = (itemID:number,value:number) =>{
+export const adjustQty = (itemID:number,value:number) =>{
     return{
-        type:actionTypes.INCREMENT,
+        type: actionTypes.AdjustQty,
         payload:{
             id: itemID,
-            value: value
+            qty: value,
         }
-    }
-}
+    };
+};
 
-export const decNumber = (itemID:number,value:number) =>{
+export const addToWishlist = (itemID:number) => {
     return{
-        type:actionTypes.DECREMENT,
+        type: actionTypes.ADD_TO_WISHLIST,
         payload:{
-            id: itemID,
-            value: value
+            id: itemID
+        }
+    };
+};
+
+export const removeFromWishlist = (itemID:number) => {
+    return{
+        type: actionTypes.REMOVE_FROM_WISHLIST,
+        payload:{
+            id: itemID
         }
     }
-}
+ }
