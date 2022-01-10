@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import {colors} from 'theme';
+import {Colors} from 'theme';
 
 const styles = StyleSheet.create({
     container:{
@@ -22,10 +22,10 @@ const styles = StyleSheet.create({
         height:100
     },
     iconLeft:{
-        color: colors.darkGrey
+        color: Colors.darkGrey
     },
     iconRight:{
-        color: colors.darkGrey
+        color: Colors.darkGrey
     }
 })
 

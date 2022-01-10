@@ -1,7 +1,7 @@
 import React from "react";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Icon from 'react-native-vector-icons/Ionicons'
-import { colors } from "theme";
+import { Colors } from "theme";
 import HomeScreen from "screen/homeScreen";
 import Wishlist from "screen/wishlist";
 import Settings from "screen/settings";
@@ -43,8 +43,8 @@ const BottomTabNavigator = () => {
              />
             )
         },
-        tabBarActiveTintColor: colors.activeIcon,
-        tabBarInactiveTintColor: colors.inactiveIcon,
+        tabBarActiveTintColor: Colors.activeIcon,
+        tabBarInactiveTintColor: Colors.inactiveIcon,
         tabBarShowLabel: false
       })}
      >

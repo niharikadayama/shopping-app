@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native"
-import {colors,screenHeight,screenWidth} from 'theme'
+import {Colors,screenHeight,screenWidth} from 'theme'
 
 const styles = StyleSheet.create({
   container: {
@@ -9,7 +9,7 @@ const styles = StyleSheet.create({
     justifyContent: 'center',
   },
   overlayStyle:{
-    backgroundColor: colors.overlay
+    backgroundColor: Colors.overlay
   },
   subContainer:{
     width:screenWidth,
@@ -25,7 +25,7 @@ const styles = StyleSheet.create({
     width:screenWidth
   },
   tabs:{
-    color: colors.white,
+    color: Colors.white,
     fontSize: 18,
     fontWeight:'bold',
     textTransform:'uppercase'
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
     height: 4,
     width: 70,
     left:30,
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
     bottom: -10,
   },
   });

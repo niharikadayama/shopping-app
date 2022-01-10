@@ -2,9 +2,9 @@ import React from "react";
 import {View,Text,Image} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles";
-import { images } from "theme";
+import { Images } from "theme";
 
-interface Iheader{
+interface header{
     leftIcon: string;
     rightIcon: string;
     size: number;
@@ -12,12 +12,12 @@ interface Iheader{
     onLeftIconPress: () => void;
     onRightIconPress:() => void;
 }
-const Header = (props: Iheader) =>{
+const Header = (props: header) =>{
     const {leftIcon,rightIcon,size,onLeftIconPress,onRightIconPress,image} = props
 
     const logoPresent= ()=>{
         if(image)
-           return <Image source={ images.logo } style={styles.logo}/>;
+           return <Image source={ Images.logo } style={styles.logo}/>;
         return null;
      }
 

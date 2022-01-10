@@ -14,7 +14,7 @@ const CartCard = ({itemData, removeFromCart, adjustQty}) => {
       <View style={styles.cardText}>
         <Text style={styles.cardTitle}>{itemData.name}</Text>
         <Text style={styles.cardInfo}>{itemData.info}</Text>
-        
+
         <View style={styles.quant}>
           <View>
             <InputSpinner
@@ -32,17 +32,17 @@ const CartCard = ({itemData, removeFromCart, adjustQty}) => {
           </View>
           <Text style={styles.quantText}>|</Text>
           <View style={styles.Price}>
-          <Icon name="rupee" size={18} style={styles.quantRupeeIcon} />
-          <Text style={styles.pricestyle}>{itemData.price}</Text>
-        </View>
+            <Icon name="rupee" size={18} style={styles.quantRupeeIcon} />
+            <Text style={styles.priceStyle}>{itemData.price}</Text>
+          </View>
         </View>
         <Pressable
-            style={styles.removeButton}
-            onPress={() => {
-              removeFromCart(itemData.id);
-            }}>
-            <Icon name="close" size={20} style={styles.cardIcon} />
-          </Pressable>
+          style={styles.removeButton}
+          onPress={() => {
+            removeFromCart(itemData.id);
+          }}>
+          <Icon name="close" size={20} style={styles.cardIcon} />
+        </Pressable>
       </View>
     </View>
   );

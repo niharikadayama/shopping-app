@@ -50,12 +50,9 @@ const Category = ({navigation}) => {
             <View style={styles.subContainer}>
               <Image source={{uri: item.image}} style={styles.imageStyle} />
               <View
-                style={[
-                  StyleSheet.absoluteFillObject,
-                  styles.overlayStyle,
-                ]}
+                style={[StyleSheet.absoluteFillObject, styles.overlayStyle]}
               />
-              <SelectedCategory item={item} navigation={navigation}/>
+              <SelectedCategory item={item} navigation={navigation} />
             </View>
           );
         }}
@@ -63,7 +60,7 @@ const Category = ({navigation}) => {
         viewabilityConfig={viewConfig}
         ref={slidesRef}
       />
-      <Paginator data={data} scrollX={scrollX}/>
+      <Paginator data={data} scrollX={scrollX} />
     </Animated.View>
   );
 };

@@ -2,20 +2,19 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image, TextInput} from 'react-native';
 import {Controller} from 'react-hook-form';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {images, colors} from 'theme';
+import {Images, Colors} from 'theme';
 import styles from './styles';
 
 const AuthHeader = () => {
   return (
-    <View style={styles.logoContainer}>
-      <Image source={images.logo} />
+    <View style={styles.HeaderContainer}>
+      <Image source={Images.logo} />
     </View>
   );
 };
 
-interface Iauth {
+interface Authentication {
   onPress?: () => void;
-  buttonName?: string;
   location?: string;
   question?: string;
   placeholder?: string;
@@ -26,7 +25,7 @@ interface Iauth {
   secureTextEntry?: boolean;
 }
 
-const AuthInputContainer = (props: Iauth) => {
+const AuthInputContainer = (props: Authentication) => {
   const {control, name, placeholder, icon,secureTextEntry, rules = {}} = props;
   return (
     <Controller
@@ -38,7 +37,7 @@ const AuthInputContainer = (props: Iauth) => {
           <View
             style={[
               styles.inputField,
-              {borderColor: error ? colors.red : colors.transparentlightBg},
+              {borderColor: error ? Colors.red : Colors.transparentlightBg},
             ]}>
             <Icon name={icon} size={20} style={styles.inputFieldIcon}/>
             <TextInput
@@ -58,35 +57,25 @@ const AuthInputContainer = (props: Iauth) => {
   );
 };
 
-const AuthButton = (props: Iauth) => {
-  const {onPress, buttonName} = props;
-  return (
-    <TouchableOpacity style={styles.loginButton} onPress={onPress}>
-      <Text style={styles.loginButtonText}>{buttonName}</Text>
-    </TouchableOpacity>
-  );
-};
-
-const AuthBottomCard = (props: Iauth) => {
+const AuthBottomCard = (props: Authentication) => {
   const {question, location, onPress} = props;
   return (
     <View style={styles.BottomContainer}>
-      <View style={styles.Container1}>
-        <Icon name="logo-google" style={[styles.iconn,styles.googleIcon]} />
-        <Icon name="logo-facebook" style={[styles.iconn,styles.facebookIcon]} />
-        <Icon name="logo-twitter" style={[styles.iconn,styles.twitterIcon]}/>
-        <Icon name="ios-logo-google-playstore" style={[styles.iconn,styles.playStoreIcon]}/>
-        <Icon name="ios-logo-apple" style={[styles.iconn,styles.appleIcon]}/>
+      <View style={styles.BottomContainerIcon}>
+        <Icon name="logo-google" style={[styles.icon,styles.googleIcon]} />
+        <Icon name="logo-facebook" style={[styles.icon,styles.facebookIcon]} />
+        <Icon name="logo-twitter" style={[styles.icon,styles.twitterIcon]}/>
+        <Icon name="ios-logo-apple" style={[styles.icon,styles.appleIcon]}/>
       </View>
 
-      <View style={styles.Container2}>
-        <Text style={styles.Container2Text1}>{question}</Text>
+      <View style={styles.BottomContainerQuestion}>
+        <Text style={styles.BottomContainerQuestionText}>{question}</Text>
         <TouchableOpacity onPress={onPress}>
-          <Text style={styles.Container2Text2}>{location}</Text>
+          <Text style={styles.BottomContainerQuestionLocation}>{location}</Text>
         </TouchableOpacity>
       </View>
     </View>
   );
 };
 
-export {AuthBottomCard, AuthHeader, AuthInputContainer, AuthButton};
+export {AuthBottomCard, AuthHeader, AuthInputContainer};

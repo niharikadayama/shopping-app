@@ -1,4 +1,4 @@
-import {images,colors} from 'theme';
+import {Images,Colors} from 'theme';
     
 export const categories = {
   man:
@@ -17,7 +17,7 @@ export const materials = [
         name: 'Indya Kurti',
         price: 1599,
         size: 32, 
-        img: images.w1,
+        img: Images.w1,
         info: 'Blue mirror Work kurti',
         color:'blue'
        
@@ -28,7 +28,7 @@ export const materials = [
         name: 'Crop Top',
         price: 650,
         size: 32,
-        img: images.w2,
+        img: Images.w2,
         info: 'Black knotted crop top',
         color:'black'
   
@@ -39,7 +39,7 @@ export const materials = [
         name: 'Stripped top',
         price: 699,
         size: 32,
-        img: images.w3,
+        img: Images.w3,
         info: 'top with yellow Strips',
         color:'white',
   
@@ -50,7 +50,7 @@ export const materials = [
         name: 'Roadstar ',
         price: 1200,
         size: 32,
-        img: images.w4,
+        img: Images.w4,
         info: 'Orange top with woollen skirt',
         color:'coral'
   
@@ -61,7 +61,7 @@ export const materials = [
         name: 'Asthetic shirt',
         price: 799,
         size: 32,
-        img: images.w5,
+        img: Images.w5,
         info: 'Abstract shirt with half-sleeves',
         color:'pink'
   
@@ -72,7 +72,7 @@ export const materials = [
         name: 'White Frock',
         price: 899,
         size: 32,
-        img: images.w6,
+        img: Images.w6,
         info: 'Simple umbrella frock',
         color:'white'
   
@@ -83,7 +83,7 @@ export const materials = [
       name: 'Beige Tshirt',
       price: 499,
       size: 32,
-      img: images.w7,
+      img: Images.w7,
       info: 'No print plain Tshirt',
       color:'chocolate'
 
@@ -94,7 +94,7 @@ export const materials = [
       name: 'Leather Jacket',
       price: 2899,
       size: 34,
-      img: images.m1,
+      img: Images.m1,
       info: 'Black leather jacket',
       color:'black'
     },
@@ -104,7 +104,7 @@ export const materials = [
       name: 'Black Tshirt',
       price: 499,
       size: 32,
-      img: images.m2,
+      img: Images.m2,
       info: 'No print plain Tshirt',
       color:'black'
     },
@@ -114,7 +114,7 @@ export const materials = [
       name: 'Mustard Hoodie',
       price: 1199,
       size: 32,
-      img: images.m3,
+      img: Images.m3,
       info: 'Plain Hoodie',
       color:'yellow'
     },
@@ -124,7 +124,7 @@ export const materials = [
       name: 'White Tshirt',
       price: 399,
       size: 32,
-      img: images.m4,
+      img: Images.m4,
       info: 'No print plain Tshirt',
       color:'white'
     },
@@ -134,7 +134,7 @@ export const materials = [
       name: 'Black Hoodie',
       price: 1299,
       size: 32,
-      img: images.m5,
+      img: Images.m5,
       info: 'Plain Hoodie',
       color:'white'
     },
@@ -144,7 +144,7 @@ export const materials = [
       name: 'White Shirt',
       price: 999,
       size: 32,
-      img: images.m6,
+      img: Images.m6,
       info: 'Formal SlimFit Shirt',
       color:'white'
     },
@@ -154,7 +154,7 @@ export const materials = [
       name: 'Red Sweatshirt',
       price: 1299,
       size: 32,
-      img: images.m7,
+      img: Images.m7,
       info: 'SlimFit woolen sweatshirt',
       color:'red'
     },
@@ -164,7 +164,7 @@ export const materials = [
       name: 'Fusion Sweatshirt',
       price: 1299,
       size: 32,
-      img: images.m8,
+      img: Images.m8,
       info: 'Multicolor woolen sweatshirt',
       color:'orange'
     },
@@ -174,7 +174,7 @@ export const materials = [
       name: 'Orange Shirt',
       price: 599,
       size: 32,
-      img: images.w8,
+      img: Images.w8,
       info: 'Formal Orange Shirt',
       color:'orange'
     },
@@ -183,38 +183,38 @@ export const materials = [
 export const supportMaterial = [
   {
     iconName: "wallet-giftcard",
-    bg:colors.coralbg,
-    color:colors.pink,
+    backgroundColor:Colors.coralbg,
+    textColor:Colors.pink,
     heading:"Your Orders",
     subHeading:['Track','Return','View an order'],
   },
   {
     iconName: "comment-question-outline",
-    bg:"#FFECAC",
-    color:colors.orange,
+    backgroundColor:Colors.lightYellow,
+    textColor:Colors.orange,
     heading:"FAQs",
     subHeading:['What is No-Contact Deliver'
     ,'How can I return the product'],
   },
   {
     iconName: "arrow-left-right",
-    bg:"#EBDEF0",
-    color:colors.purple,
+    backgroundColor:Colors.lightPurple,
+    textColor:Colors.purple,
     heading:"Returns & Refunds",
     subHeading:['Return Policies','Refund Policies'],
   },
   {
     iconName: "cash-usd",
-    bg:"#D4EFDF",
-    color:colors.dullGreen,
+    backgroundColor:Colors.lightGreen,
+    textColor:Colors.dullGreen,
     heading:"Payment",
     subHeading:['View Cashback details','Other Transactions'],
   },
   {
     iconName: "account",
-    bg:colors.coralbg,
-    color:colors.coral,
+    backgroundColor:Colors.coralbg,
+    textColor:Colors.coral,
     heading:"Account Setting",
-    subHeading:['Edit Password','Adress details','Payment details'],
+    subHeading:['Edit Password','Address details','Payment details'],
   }
 ] 

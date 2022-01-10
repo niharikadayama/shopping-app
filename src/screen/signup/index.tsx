@@ -1,9 +1,10 @@
 import React, {useState} from "react";
 import {View,Text} from 'react-native'
 import { useForm,Controller } from "react-hook-form";
+import { Button } from "components";
 import styles from './styles'
 
-import {AuthBottomCard,AuthHeader,AuthInputContainer,AuthButton} from "components/auth";
+import {AuthBottomCard,AuthHeader,AuthInputContainer} from "components/auth";
 
 const EmailRegex = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/
 
@@ -66,7 +67,12 @@ const SignUp = ({navigation}) =>{
                   }}
               />
 
-              <AuthButton onPress={handleSubmit(onSignUpPressed)} buttonName={'Register'} />
+              <Button 
+                name = {'Register'} 
+                onPress={handleSubmit(onSignUpPressed)} 
+                theme = {'primary'} 
+              />
+
            </View>
             
 

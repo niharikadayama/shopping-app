@@ -1,9 +1,10 @@
 import React, {useState} from "react";
-import {View,Text,TouchableOpacity} from 'react-native'
+import {View,Text,TouchableOpacity} from 'react-native';
+import { Button } from "components";
 import { useForm,Controller } from "react-hook-form";
 import styles from './styles'
 
-import {AuthBottomCard,AuthHeader,AuthInputContainer,AuthButton} from "components/auth";
+import {AuthBottomCard,AuthHeader,AuthInputContainer} from "components/auth";
 
 
 const Login = ({navigation}) =>{
@@ -46,7 +47,12 @@ const Login = ({navigation}) =>{
                   }}
               />
 
-              <AuthButton onPress={handleSubmit(onSignInPressed)} buttonName={'Login'} />
+              <Button 
+                name = {'Login'} 
+                onPress={handleSubmit(onSignInPressed)} 
+                theme = {'primary'} 
+              />
+
            </View>
 
             <TouchableOpacity onPress={onForgetPasswordPressed}>

@@ -9,8 +9,6 @@ const SearchBar = () =>{
                     <Icon name="search" size={20} style={styles.iconStyle}/>
                     <TextInput 
                         placeholder="Search" 
-                        // value={term} 
-                        // onChangeText={onTermChange}
                         style={styles.input}
                     />
                 </View>

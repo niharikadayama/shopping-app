@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
-import { colors } from "theme";
+import { Colors } from "theme";
 
 const styles = StyleSheet.create({
     cartCard:{
          width: '50%',
          height: 300,
-         backgroundColor:colors.white,
+         backgroundColor:Colors.white,
          marginVertical:15,
          marginHorizontal:15,
         justifyContent:'space-between',
