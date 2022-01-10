@@ -37,9 +37,9 @@ const Support = () => {
                 setCurrentIndex(index === currentIndex ? 0 : index);
               }}
               style={style.cardContainer}>
-              <View style={[style.card, {backgroundColor: item.bg}]}>
+              <View style={[style.card, {backgroundColor: item.backgroundColor}]}>
                 <View style={style.cardHeadinglist}>
-                  <Icon name={item.iconName} size={29} color={item.color} />
+                  <Icon name={item.iconName} size={29} color={item.textColor} />
                   <Text style={style.cardHeading}>{item.heading}</Text>
                 </View>
                 <Icon
@@ -52,7 +52,7 @@ const Support = () => {
                     {item.subHeading.map(subHeading => (
                       <Text
                         key={subHeading}
-                        style={[style.subHeadingListbody, {color: item.color}]}>
+                        style={[style.subHeadingListbody, {color: item.textColor}]}>
                         {subHeading}
                       </Text>
                     ))}

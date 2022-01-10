@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors, screenHeight} from 'theme';
+import {Colors, screenHeight} from 'theme';
 
 const styles = StyleSheet.create({
   container: {
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
      marginVertical:15,
   },
   sectionIcon:{
-    color:colors.mediumGrey
+    color:Colors.mediumGrey
   },
   body:{
     flexDirection:'row',

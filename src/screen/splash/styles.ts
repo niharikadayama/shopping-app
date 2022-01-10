@@ -1,5 +1,5 @@
 import { StyleSheet } from "react-native";
-import {colors,images,screenWidth,screenHeight} from 'theme'
+import {Colors,screenWidth,screenHeight} from 'theme'
 
 const styles = StyleSheet.create({
     bgStyle:{
@@ -30,13 +30,13 @@ const styles = StyleSheet.create({
      cardButton:{
         flexDirection:'row',
         alignItems:'center',
-        backgroundColor: colors.darkCoral,
+        backgroundColor: Colors.darkCoral,
         marginVertical:15,
         paddingVertical:10,
         paddingHorizontal:15,
      },
      cardButtonTitle:{
-        color:colors.white,
+        color:Colors.white,
         fontSize: 19,
         fontWeight:'600',
         paddingHorizontal:5,
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
      },
      cardButtonIcon:{
         fontSize: 35,
-        color:colors.white,
+        color:Colors.white,
         paddingHorizontal:5,
        
      }

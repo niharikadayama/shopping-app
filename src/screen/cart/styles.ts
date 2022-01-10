@@ -1,11 +1,11 @@
 import { StyleSheet } from "react-native";
-import { colors } from "theme";
+import { Colors } from "theme";
 
 const styles = StyleSheet.create({
     container:{
         width:'100%',
         height:'100%',
-        backgroundColor:colors.coralbg,
+        backgroundColor:Colors.coralbg,
     },
     header:{
         flexDirection:'row',
@@ -79,7 +79,7 @@ const styles = StyleSheet.create({
         paddingHorizontal:10
     },
     quantIcon:{
-       color:colors.mediumGrey,
+       color:Colors.mediumGrey,
        paddingHorizontal:7
     },
     Price:{
@@ -95,13 +95,13 @@ const styles = StyleSheet.create({
         margin:19,
         paddingVertical:15,
         paddingHorizontal:15,
-        backgroundColor: colors.darkbg,
+        backgroundColor: Colors.darkbg,
         borderRadius:15,
     },
     totalCardText:{
         fontSize:17,
         fontWeight:'500',
-        color:colors.white
+        color:Colors.white
     },
     
 })

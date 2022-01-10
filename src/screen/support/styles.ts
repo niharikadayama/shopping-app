@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors,screenHeight} from 'theme';
+import {Colors,screenHeight} from 'theme';
 
 const style = StyleSheet.create({
   container: {

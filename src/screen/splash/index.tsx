@@ -3,7 +3,7 @@ import {createStackNavigator} from '@react-navigation/stack';
 import {View,Text,TouchableOpacity,ImageBackground} from 'react-native'
 
 import  Icon  from "react-native-vector-icons/Ionicons";
-import {images} from 'theme'
+import {Images} from 'theme'
 import styles from './styles'
 
 const Stack = createStackNavigator();
@@ -14,7 +14,7 @@ const Splash = ({navigation}) =>{
 
     return(
        <View>
-          <ImageBackground source={images.splashBg} 
+          <ImageBackground source={Images.splashBg} 
            style={styles.bgStyle}>
             
           <View style = {styles.cardContainer}>

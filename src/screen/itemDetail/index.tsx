@@ -5,7 +5,7 @@ import { addToCart,addToWishlist } from "redux/shopping/action";
 import styles from "./styles";
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Button} from "components";
-import {colors, size} from "theme"
+import {Colors, size} from "theme"
 
 const ItemDetail = ({navigation,route, addToCart, addToWishlist}) =>{
     const item = route.params
@@ -15,7 +15,7 @@ const ItemDetail = ({navigation,route, addToCart, addToWishlist}) =>{
 
             <ImageBackground source={item.img} resizeMode={'cover'} style={styles.image}>
 
-            <Icon name="arrow-left" size={26} color={colors.white} style={styles.iconn}
+            <Icon name="arrow-left" size={26} color={Colors.white} style={styles.icon}
                 onPress={()=>navigation.navigate('root')}/>
 
             <View style={styles.detailsContainer}>
@@ -32,8 +32,8 @@ const ItemDetail = ({navigation,route, addToCart, addToWishlist}) =>{
                 <Text style={styles.detailNormal}>Color</Text>
                 <View style={styles.detailColor}>
                     <Icon name="check-circle" size={40} color={item.color}/>
-                    <Icon name="circle" size={40} color={colors.yellow}/>
-                    <Icon name="circle" size={40} color={colors.coral}/>
+                    <Icon name="circle" size={40} color={Colors.yellow}/>
+                    <Icon name="circle" size={40} color={Colors.coral}/>
                 </View>
 
                 <Text style={styles.detailNormal}>Size</Text>

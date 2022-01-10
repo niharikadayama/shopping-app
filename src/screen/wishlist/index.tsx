@@ -33,7 +33,7 @@ const Wishlist = ({navigation, route, wishlist}) => {
       <FlatList
         data={wishlist}
         renderItem={({item}) => {
-          return <WishlistCard key={item.id} items={item} navigation route />;
+          return <WishlistCard key={item.id} items={item} navigation={navigation} route={route} />;
         }}
       />
     </View>

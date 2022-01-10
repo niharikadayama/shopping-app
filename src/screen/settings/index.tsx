@@ -3,7 +3,7 @@ import {View, Text, TouchableOpacity} from 'react-native';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import ToggleSwitch from 'toggle-switch-react-native';
-import {colors} from 'theme/colors';
+import {Colors} from 'theme';
 
 const Settings = () => {
 
@@ -17,7 +17,7 @@ const Settings = () => {
         <Text style={styles.sectionHeading}>Account</Text>
         <TouchableOpacity style={styles.sectionBody}>
           <View style={styles.body}>
-            <Icon name="person-circle" size={35} color={colors.darkCoral} />
+            <Icon name="person-circle" size={35} color={Colors.darkCoral} />
             <Text style={styles.sectionText}>Niharika Dayama</Text>
           </View>
           <Icon
@@ -31,7 +31,7 @@ const Settings = () => {
         <Text style={styles.sectionHeading}>Settings</Text>
         <View style={styles.sectionBody}>
           <View style={styles.body}>
-            <Icon name="globe" size={35} color={colors.dullGreen} />
+            <Icon name="globe" size={35} color={Colors.dullGreen} />
             <Text style={styles.sectionText}>Language</Text>
           </View>
           <Icon
@@ -42,7 +42,7 @@ const Settings = () => {
         </View>
         <View style={styles.sectionBody}>
           <View style={styles.body}>
-            <Icon name="notifications" size={29} color={colors.blue} />
+            <Icon name="notifications" size={29} color={Colors.blue} />
             <Text style={styles.sectionText}>Notifications</Text>
           </View>
           <Icon
@@ -53,20 +53,20 @@ const Settings = () => {
         </View>
         <View style={styles.sectionBody}>
           <View style={styles.body}>
-            <Icon name="ios-moon" size={30} color={colors.purple} />
+            <Icon name="ios-moon" size={30} color={Colors.purple} />
             <Text style={styles.sectionText}>Dark Mode</Text>
           </View>
           <ToggleSwitch
             isOn={false}
-            onColor={colors.darkGrey}
-            offColor={colors.mediumGrey}
+            onColor={Colors.darkGrey}
+            offColor={Colors.mediumGrey}
             label="OFF"
             size="medium"
           />
         </View>
         <View style={styles.sectionBody}>
           <View style={styles.body}>
-            <Icon name="bug" size={29} color={colors.red} />
+            <Icon name="bug" size={29} color={Colors.red} />
             <Text style={styles.sectionText}>Report Issue</Text>
           </View>
           <Icon
@@ -77,7 +77,7 @@ const Settings = () => {
         </View>
         <View style={styles.sectionBody}>
           <View style={styles.body}>
-            <Icon name="paper-plane-sharp" size={29} color={colors.orange} />
+            <Icon name="paper-plane-sharp" size={29} color={Colors.orange} />
             <Text style={styles.sectionText}>Send Feeback</Text>
           </View>
           <Icon
@@ -88,7 +88,7 @@ const Settings = () => {
         </View>
       </View>
       <View style={styles.footer}>
-        <Text>{'\u00A9'} 2021 NIDA. All rights reserved</Text>
+        <Text>{'\u00A9'} 2022 NIDA. All rights reserved</Text>
       </View>
     </View>
   );
