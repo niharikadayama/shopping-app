@@ -1,15 +1,12 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
-import {connect} from 'react-redux';
 import {materials} from 'constant';
-import Icon from 'react-native-vector-icons/FontAwesome';
 import {SearchBar, Header} from 'components';
 import styles from './styles';
 
 const Details = ({navigation, route}) => {
   const item = route.params;
   const DataType = item.key;
-  console.log(DataType);
   return (
     <View style={styles.container}>
       <Header
@@ -55,10 +52,4 @@ const Details = ({navigation, route}) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    products: state.shop.products,
-  };
-};
-
-export default connect(mapStateToProps)(Details);
+export default Details;

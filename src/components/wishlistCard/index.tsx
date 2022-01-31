@@ -2,10 +2,11 @@ import React from "react";
 import {View,Text,Image,TouchableOpacity} from 'react-native'
 import Icon from 'react-native-vector-icons/FontAwesome'
 import styles from "./styles";
-import { connect } from "react-redux";
+import { useDispatch } from "react-redux";
 import { removeFromWishlist, addToCart } from "redux/shopping/action";
 
-const WishlistCard = ({items,navigation,route,removeFromWishlist,addToCart}) =>{
+const WishlistCard = ({items,navigation,route}) =>{
+    const dispatch = useDispatch();
     const item = route.params
     return(
     <View style={styles.cartCard}> 
@@ -23,7 +24,7 @@ const WishlistCard = ({items,navigation,route,removeFromWishlist,addToCart}) =>{
 
             <View style={styles.cardBottom}>
                 <TouchableOpacity 
-                    onPress={()=>{removeFromWishlist(items.id)}}
+                    onPress={()=>{dispatch(removeFromWishlist(items.id))}}
                     style={styles.cardBottomButtons}>
                     <Icon name='trash' size={22}/>
                     <Text style={styles.cardBottomText}>Remove</Text>
@@ -32,7 +33,7 @@ const WishlistCard = ({items,navigation,route,removeFromWishlist,addToCart}) =>{
                 <TouchableOpacity 
                     onPress={() =>{
                         navigation.navigate('cart',item),
-                        addToCart(items.id)
+                        dispatch(addToCart(items.id))
                     }}
                     style={styles.cardBottomButtons}>
                     <Icon name='shopping-cart' size={22}/>
@@ -45,10 +46,4 @@ const WishlistCard = ({items,navigation,route,removeFromWishlist,addToCart}) =>{
     )
 }
 
-const mapDispatchToProps = dispatch =>{
-    return{
-        removeFromWishlist: (id) => dispatch(removeFromWishlist(id)),
-        addToCart: (id) => dispatch(addToCart(id))
-    }
-}
-export default connect(null,mapDispatchToProps)(WishlistCard);
+export default WishlistCard;

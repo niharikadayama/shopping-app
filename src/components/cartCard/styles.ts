@@ -3,7 +3,7 @@ import {Colors} from 'theme';
 
 const styles = StyleSheet.create({
   cartCard: {
-    height: 150,
+    height: 175,
     backgroundColor: Colors.white,
     marginVertical: 15,
     marginHorizontal: 15,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
     flexShrink: 1,
   },
   cardTitle: {
-    marginTop: 10,
+    marginTop: 5,
     fontSize: 25,
     fontWeight: 'bold',
   },
@@ -41,12 +41,17 @@ const styles = StyleSheet.create({
     paddingVertical: 7,
   },
   removeButton: {
-    position: 'absolute',
-    right: -15,
-    top: 8,
+    flexDirection:'row',
+    alignItems:'center',
+    justifyContent:'center'
   },
-  cardIcon: {
-    color: Colors.transparentdarkBg,
+  RemoveButtonIcon: {
+    color: Colors.darkRed,
+  },
+  RemoveButtonText:{
+    paddingLeft: 5,
+    fontSize: 17,
+    color:Colors.darkGrey,
   },
   quant: {
     flexDirection: 'row',
@@ -71,22 +76,7 @@ const styles = StyleSheet.create({
   priceStyle: {
     fontWeight: 'bold',
     fontSize: 17,
-  },
-  totalCard: {
-    flexDirection: 'row',
-    justifyContent: 'space-between',
-    alignItems: 'center',
-    margin: 19,
-    paddingVertical: 15,
-    paddingHorizontal: 15,
-    backgroundColor: Colors.darkbg,
-    borderRadius: 15,
-  },
-  totalCardText: {
-    fontSize: 17,
-    fontWeight: '500',
-    color: 'white',
-  },
+  }
 });
 
 export default styles;

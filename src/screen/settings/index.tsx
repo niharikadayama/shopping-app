@@ -6,7 +6,7 @@ import ToggleSwitch from 'toggle-switch-react-native';
 import {Colors} from 'theme';
 
 const Settings = () => {
-
+  let year = new Date().getFullYear();
   return (
     <View style={styles.container}>
       <View style={styles.header}>
@@ -88,7 +88,7 @@ const Settings = () => {
         </View>
       </View>
       <View style={styles.footer}>
-        <Text>{'\u00A9'} 2022 NIDA. All rights reserved</Text>
+        <Text>{'\u00A9'} {year} NIDA. All rights reserved</Text>
       </View>
     </View>
   );

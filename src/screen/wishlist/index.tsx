@@ -2,11 +2,13 @@ import React from 'react';
 import {View, Text, FlatList} from 'react-native';
 import styles from './styles';
 import {Header, WishlistCard} from 'components';
-import {connect} from 'react-redux';
+import {useSelector} from 'react-redux';
 
-const Wishlist = ({navigation, route, wishlist}) => {
+const Wishlist = ({navigation, route}) => {
   const item = route.params;
-
+  const wishlist = useSelector((state)=>{
+    return state.shop.wishlist
+  })
   return (
     <View style={styles.container}>
       <Header
@@ -14,7 +16,7 @@ const Wishlist = ({navigation, route, wishlist}) => {
         rightIcon={'shopping-cart'}
         size={28}
         onLeftIconPress={() => {
-          navigation.navigate('details');
+          navigation.navigate('root');
         }}
         onRightIconPress={() => {
           navigation.navigate('cart');
@@ -27,9 +29,6 @@ const Wishlist = ({navigation, route, wishlist}) => {
         <Text style={styles.subTitle}>Buy it before its gone</Text>
       </View>
 
-      {/* {wishlist.map((item) => (
-               <WishlistCard key={item.id} items={item} navigation route/>
-          ))}   */}
       <FlatList
         data={wishlist}
         renderItem={({item}) => {
@@ -40,9 +39,4 @@ const Wishlist = ({navigation, route, wishlist}) => {
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    wishlist: state.shop.wishlist,
-  };
-};
-export default connect(mapStateToProps)(Wishlist);
+export default Wishlist;

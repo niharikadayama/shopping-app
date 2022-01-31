@@ -76,7 +76,7 @@ const SignUp = ({navigation}) =>{
            </View>
             
 
-            <AuthBottomCard onPress={()=>navigation.navigate('login')}
+            <AuthBottomCard onPress={()=>navigation.navigate('Login')}
                 question={"Already Have An Account?"}
                 location={'Login'}
                 />

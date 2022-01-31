@@ -5,7 +5,7 @@ import { Colors } from 'theme'
 interface button{
     name: string;
     theme: string;
-    onPress: () => void
+    onPress: any;   
 }
 const Button = (props: button) =>{
     const {name,theme,onPress} = props
@@ -22,9 +22,10 @@ const Button = (props: button) =>{
 const styles = StyleSheet.create({
     PrimaryButton:{
         backgroundColor:Colors.buttonBglight,
-        marginVertical:50,
-        marginHorizontal:70,
-        paddingVertical:14,
+        marginVertical:15,
+        alignSelf:'center',
+        paddingVertical:13,
+        paddingHorizontal:130,
         borderRadius:10
     },
     PrimaryButtonText:{

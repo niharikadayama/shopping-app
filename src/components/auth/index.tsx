@@ -15,6 +15,7 @@ const AuthHeader = () => {
 
 interface Authentication {
   onPress?: () => void;
+  onChangeText?: any;
   location?: string;
   question?: string;
   placeholder?: string;
@@ -26,13 +27,13 @@ interface Authentication {
 }
 
 const AuthInputContainer = (props: Authentication) => {
-  const {control, name, placeholder, icon,secureTextEntry, rules = {}} = props;
+  const {control, name,onChangeText ,placeholder, icon,secureTextEntry, rules = {}} = props;
   return (
     <Controller
       control={control}
       name={name}
       rules={rules}
-      render={({field: {value, onChange, onBlur}, fieldState: {error}}) => (
+      render={({field: {value, onBlur}, fieldState: {error}}) => (
         <>
           <View
             style={[
@@ -42,7 +43,7 @@ const AuthInputContainer = (props: Authentication) => {
             <Icon name={icon} size={20} style={styles.inputFieldIcon}/>
             <TextInput
               value={value}
-              onChangeText={onChange}
+              onChangeText={onChangeText}
               onBlur={onBlur}
               placeholder={placeholder}
               secureTextEntry={secureTextEntry}

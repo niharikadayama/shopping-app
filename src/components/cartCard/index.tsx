@@ -3,10 +3,11 @@ import {View, Text, Image, Pressable} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 import InputSpinner from 'react-native-input-spinner';
-import {connect} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {removeFromCart, adjustQty} from 'redux/shopping/action';
 
-const CartCard = ({itemData, removeFromCart, adjustQty}) => {
+const CartCard = ({itemData}) => {
+  const dispatch = useDispatch()
   return (
     <View style={styles.cartCard}>
       <Image source={itemData.img} style={styles.cardImg} />
@@ -25,8 +26,8 @@ const CartCard = ({itemData, removeFromCart, adjustQty}) => {
               width={100}
               height={30}
               value={itemData.qty}
-              onChange={num => {
-                adjustQty(itemData.id, num);
+              onChange={(num:number) => {
+                dispatch(adjustQty(itemData.id, num));
               }}
             />
           </View>
@@ -39,20 +40,14 @@ const CartCard = ({itemData, removeFromCart, adjustQty}) => {
         <Pressable
           style={styles.removeButton}
           onPress={() => {
-            removeFromCart(itemData.id);
+            dispatch(removeFromCart(itemData.id));
           }}>
-          <Icon name="close" size={20} style={styles.cardIcon} />
+          <Icon name="trash" size={22} style={styles.RemoveButtonIcon} />
+          <Text style={styles.RemoveButtonText}>Remove </Text>
         </Pressable>
       </View>
     </View>
   );
 };
 
-const mapDispatchToProps = dispatch => {
-  return {
-    removeFromCart: id => dispatch(removeFromCart(id)),
-    adjustQty: (id, value) => dispatch(adjustQty(id, value)),
-  };
-};
-
-export default connect(null, mapDispatchToProps)(CartCard);
+export default CartCard;

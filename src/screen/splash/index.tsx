@@ -24,7 +24,7 @@ const Splash = ({navigation}) =>{
               <Text style = {styles.cardSubTitle}>
                  Its Not about The Brand, Let Your Style Define You
               </Text>
-              <TouchableOpacity onPress={()=>{navigation.navigate('login')}}
+              <TouchableOpacity onPress={()=>{navigation.navigate('Login')}}
               style={styles.cardButton}>
                   <Text style={styles.cardButtonTitle}>Get Started</Text>
                   <Icon name={'ios-arrow-forward-circle'} style={styles.cardButtonIcon}/>

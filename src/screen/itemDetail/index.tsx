@@ -1,15 +1,16 @@
 import React from "react";
 import{View,Text,ImageBackground,SafeAreaView,FlatList} from 'react-native'
-import { connect } from "react-redux";
+import {useDispatch} from "react-redux";
 import { addToCart,addToWishlist } from "redux/shopping/action"; 
 import styles from "./styles";
 import Icon from 'react-native-vector-icons/FontAwesome'
 import {Button} from "components";
 import {Colors, size} from "theme"
 
-const ItemDetail = ({navigation,route, addToCart, addToWishlist}) =>{
+const ItemDetail = ({navigation,route}) =>{
     const item = route.params
     const sizeCheck = item.size
+    const dispatch = useDispatch()
     return (
         <SafeAreaView style={styles.container}> 
 
@@ -26,7 +27,7 @@ const ItemDetail = ({navigation,route, addToCart, addToWishlist}) =>{
                 <Icon name="heart" size={22} style={styles.detailHeart}
                 onPress={()=>{
                     navigation.navigate('wishlist',item),
-                    addToWishlist(item.id)
+                    dispatch(addToWishlist(item.id))
                 }}/>
 
                 <Text style={styles.detailNormal}>Color</Text>
@@ -56,7 +57,7 @@ const ItemDetail = ({navigation,route, addToCart, addToWishlist}) =>{
 
                      <Button name = {'Add To Cart'} onPress={()=>{
                          navigation.navigate('cart',item),
-                         addToCart(item.id)
+                         dispatch(addToCart(item.id))
                      }} theme = {'secondary'} />
 
                  </View>
@@ -66,11 +67,4 @@ const ItemDetail = ({navigation,route, addToCart, addToWishlist}) =>{
     )
 }
 
-const mapDisptachToProp = (dispatch) =>{
-    return{
-        addToCart: (id) => dispatch(addToCart(id)),
-        addToWishlist: (id: number) => dispatch(addToWishlist(id))
-    }
-}
-
-export default connect(null,mapDisptachToProp)(ItemDetail)
+export default ItemDetail;

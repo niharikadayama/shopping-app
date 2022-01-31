@@ -2,30 +2,34 @@ import React, {useState,useEffect} from "react";
 import {View,Text,FlatList} from 'react-native'
 import styles from "./styles";
 import {Header,CartCard,Button} from "components"
-import { connect } from "react-redux";
+import {useSelector} from "react-redux";
 
-const Cart = ({navigation,route,cart}) =>{
+const Cart = ({navigation,route}) =>{
     const item = route.params
     const [totalPrice,setTotalPrice] = useState(0);
     const [totalItem,setTotalItem] = useState(0);
+    const myCart = useSelector((state)=>{
+      return state.shop.cart
+   })
 
     useEffect(()=>{
        let items = 0;
        let price = 0;
 
-       cart.forEach((item: { qty: number; price: number; }) =>{
+       myCart.forEach((item: { qty: number; price: number; }) =>{
             items += item.qty,
             price += item.qty * item.price
        })
 
        setTotalItem(items);
        setTotalPrice(price);
-    },[cart,totalPrice,totalItem,setTotalPrice,setTotalItem])
+    },[myCart,totalPrice,totalItem,setTotalPrice,setTotalItem])
+
     return (
      <View style={styles.container}>
            <Header leftIcon={"arrow-left"} rightIcon={"user-circle-o"} size={28}
                 onLeftIconPress ={()=>{ navigation.navigate('root') }}
-                onRightIconPress ={()=>{ navigation.navigate('details') }}
+                onRightIconPress ={()=>{ navigation.navigate('profile') }}
                 image= {false} />
 
            <View style={styles.titleView}>
@@ -33,12 +37,8 @@ const Cart = ({navigation,route,cart}) =>{
                 <Text style={styles.subTitle}>Check and Pay your Item</Text>
            </View>
                
-           {/* {cart.map((item) => (
-              <CartCard key={item.id} itemData={item}/>
-            ))} */}
-            
             <FlatList 
-               data={cart}
+               data={myCart}
                renderItem = { ( {item}) =>{
                    return(
                     <CartCard key={item.id} itemData={item}/>  
@@ -57,10 +57,10 @@ const Cart = ({navigation,route,cart}) =>{
     )
 }
 
-const mapStateToProps = state =>{
-     return{
-         cart: state.shop.cart
-     }
-}
+// const mapStateToProps = state =>{
+//      return{
+//          cart: state.shop.cart
+//      }
+// }
 
-export default connect(mapStateToProps)(Cart);
+export default Cart;
