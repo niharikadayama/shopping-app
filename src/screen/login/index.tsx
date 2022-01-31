@@ -10,19 +10,8 @@ const Login = ({navigation}) =>{
 
   const {control,handleSubmit} = useForm();
   
-  const [state, setState] = useState({
-     isLoading: false,
-     email: '',
-     password: '',
-     isSecure: true,
-  })
-
-  const {isLoading,email,password,isSecure} = state;
-
-  const updateState = (data) => setState(()=> ({ ...state, ...data}))
-
-  const onSignInPressed = (data) =>{
-    navigation.navigate('root',data)
+  const onSignInPressed = () =>{
+    navigation.navigate('root')
   }
 
   const onForgetPasswordPressed = () =>{
@@ -44,7 +33,6 @@ const Login = ({navigation}) =>{
                   placeholder="Enter Username"
                   icon="ios-mail"
                   secureTextEntry={false}
-                  onChangeText={(email:any) => updateState({email})}
                   rules={{required:'Username is required'}}
               />
               <AuthInputContainer 
@@ -53,7 +41,6 @@ const Login = ({navigation}) =>{
                   placeholder='Enter Password'
                   icon="ios-key-sharp"
                   secureTextEntry={true} 
-                  onChangeText={(password:any) => updateState({password})}
                   rules={{required:'Password is required',
                         minLength: {value:6,message:'Password should be minimum 6 characters long'}
                   }}
@@ -68,7 +55,7 @@ const Login = ({navigation}) =>{
            </View>
 
             <TouchableOpacity onPress={onForgetPasswordPressed}>
-              <Text style={styles.forgetpassword}>Forget Password??</Text>
+              <Text style={styles.forgetpassword}>Forget Password?</Text>
             </TouchableOpacity>
 
             <AuthBottomCard onPress={()=>navigation.navigate('SignUp')}

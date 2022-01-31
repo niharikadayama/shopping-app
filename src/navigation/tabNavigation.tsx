@@ -4,6 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons'
 import { Colors } from "theme";
 import HomeScreen from "screen/homeScreen";
 import Wishlist from "screen/wishlist";
+import Profile from 'screen/profile';
 import Settings from "screen/settings";
 import Support from 'screen/support';
 
@@ -29,6 +30,9 @@ const BottomTabNavigator = () => {
             } else if(route.name === 'wishlist'){
                 iconName = focused ? 'heart-sharp' : 'heart-outline'
                 size = focused ? 35 : 30
+            }else if(route.name === 'profile'){
+              iconName = focused ? 'ios-person' : 'person-outline'
+              size = focused ? 32 : 31
             }else if(route.name === 'Settings'){
               iconName = focused ? 'ios-cog-sharp' : 'ios-cog-outline'
               size = focused ? 35 : 34
@@ -50,6 +54,7 @@ const BottomTabNavigator = () => {
      >
         <Tab.Screen name="Home" component={HomeScreen} />
         <Tab.Screen name= "wishlist" component = {Wishlist} />
+        <Tab.Screen name="profile" component={Profile} />
         <Tab.Screen name= "Settings" component = {Settings} />
         <Tab.Screen name= "Support" component = {Support} />
       </Tab.Navigator>

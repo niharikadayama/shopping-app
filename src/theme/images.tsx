@@ -1,6 +1,7 @@
 export const Images = {
     logo:  require('assets/images/nida.png'),
     splashBg: require('assets/images/splashBg2.jpg'),
+    profile: require('assets/images/profile.jpg'),
     w1:    require('assets/images/woman/w1.jpg'),
     w2:    require('assets/images/woman/w2.jpg'),
     w3:    require('assets/images/woman/w3.jpg'),

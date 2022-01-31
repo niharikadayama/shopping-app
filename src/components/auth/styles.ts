@@ -2,7 +2,7 @@ import {StyleSheet} from 'react-native';
 import {Colors} from 'theme';
 
 const styles = StyleSheet.create({
-  HeaderContainer: {
+  headerContainer: {
     justifyContent: 'center',
     alignItems: 'center',
     marginTop: 20,
@@ -31,12 +31,12 @@ const styles = StyleSheet.create({
     height: 150,
     justifyContent: 'space-around',
   },
-  BottomContainerIcon: {
+  bottomContainerIcon: {
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'center',
   },
-  OtherLoginButton: {
+  otherLoginButton: {
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: Colors.transparentlightBg,

@@ -12,7 +12,7 @@ const SignUp = ({navigation}) =>{
   const {control,handleSubmit,watch} = useForm();
   const pswd = watch('password')
   const onSignUpPressed = () =>{
-     
+
   }
 
     return(

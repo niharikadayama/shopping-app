@@ -7,7 +7,7 @@ import styles from './styles';
 
 const AuthHeader = () => {
   return (
-    <View style={styles.HeaderContainer}>
+    <View style={styles.headerContainer}>
       <Image source={Images.logo} />
     </View>
   );
@@ -15,15 +15,18 @@ const AuthHeader = () => {
 
 interface Authentication {
   onPress?: () => void;
-  onChangeText?: any;
-  location?: string;
-  question?: string;
+  onChangeText?: () => void;
   placeholder?: string;
   control?: any;
   rules?: any;
   name?: any;
   icon?: any;
   secureTextEntry?: boolean;
+}
+interface BottomCard {
+  onPress?: () => void;
+  location?: string;
+  question?: string;
 }
 
 const AuthInputContainer = (props: Authentication) => {
@@ -58,11 +61,11 @@ const AuthInputContainer = (props: Authentication) => {
   );
 };
 
-const AuthBottomCard = (props: Authentication) => {
+const AuthBottomCard = (props: BottomCard) => {
   const {question, location, onPress} = props;
   return (
     <View style={styles.BottomContainer}>
-      <View style={styles.BottomContainerIcon}>
+      <View style={styles.bottomContainerIcon}>
         <Icon name="logo-google" style={[styles.icon,styles.googleIcon]} />
         <Icon name="logo-facebook" style={[styles.icon,styles.facebookIcon]} />
         <Icon name="logo-twitter" style={[styles.icon,styles.twitterIcon]}/>

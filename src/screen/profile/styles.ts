@@ -7,8 +7,12 @@ const styles = StyleSheet.create({
     height: screenHeight,
     backgroundColor:Colors.white
   },
+  headerSection:{
+    backgroundColor: Colors.lightPurple
+  },
   header: {
     marginTop: 60,
+    marginBottom:20,
     marginHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
@@ -16,10 +20,22 @@ const styles = StyleSheet.create({
   headerHeading: {
     fontSize: 20,
     fontWeight: '600',
-    paddingHorizontal:120,
+    paddingHorizontal:120
+  },
+  profile:{
+    width: 150, 
+    height: 150, 
+    borderRadius: 150 / 2,
+    alignSelf:'center'
+  },
+  profileName:{
+   fontSize:19,
+   fontWeight: '600',
+   alignSelf:'center',
+   marginVertical:15,
   },
   section:{
-    marginTop:30,
+    marginTop:15,
     marginHorizontal:20
   },
   sectionHeading:{

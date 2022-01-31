@@ -1,25 +1,27 @@
-import React from "react";
-import {View, Text, TouchableOpacity,Image} from 'react-native';
+import React from 'react';
+import {View, Text, TouchableOpacity, Image} from 'react-native';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
-import {Colors} from 'theme';
+import {Colors, Images} from 'theme';
 
-const Profile = () =>{
-    return(
-        <View style={styles.container}>
-      <View style={styles.header}>
+const Profile = ({navigation}) => {
+  return (
+    <View style={styles.container}>
+     <View style={styles.headerSection}>
+     <View style={styles.header}>
         <Icon name="ios-chevron-back" size={22} />
         <Text style={styles.headerHeading}>Profile</Text>
       </View>
-      <Image 
-  source={{
-    uri: 'https://raw.githubusercontent.com/AboutReact/sampleresource/master/old_logo.png'
-  }} 
-  style={{width: 150, height: 150, borderRadius: 150/ 2}} 
-/>
+      <Image
+        source={Images.profile}
+        style={styles.profile}
+      />
+      <Text style={styles.profileName}>Anshuman Singh</Text>
+     </View>
       <View style={styles.section}>
-        
-        <View style={styles.sectionBody}>
+        <TouchableOpacity style={styles.sectionBody}
+             onPress={navigation.navigate('EditProfile')}
+        >
           <View style={styles.body}>
             <Icon name="person" size={26} color={Colors.mediumGrey} />
             <Text style={styles.sectionText}>Edit Profile</Text>
@@ -29,8 +31,10 @@ const Profile = () =>{
             size={25}
             style={styles.sectionIcon}
           />
-        </View>
-        <View style={styles.sectionBody}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.sectionBody}
+             onPress={navigation.navigate('EditProfile')}
+        >
           <View style={styles.body}>
             <Icon name="location-sharp" size={29} color={Colors.mediumGrey} />
             <Text style={styles.sectionText}>Shopping Address</Text>
@@ -40,8 +44,10 @@ const Profile = () =>{
             size={25}
             style={styles.sectionIcon}
           />
-        </View>
-        <View style={styles.sectionBody}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.sectionBody}
+             onPress={navigation.navigate('EditProfile')}
+        >
           <View style={styles.body}>
             <Icon name="heart-sharp" size={29} color={Colors.mediumGrey} />
             <Text style={styles.sectionText}>Wishlist</Text>
@@ -51,10 +57,16 @@ const Profile = () =>{
             size={25}
             style={styles.sectionIcon}
           />
-        </View>
-        <View style={styles.sectionBody}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.sectionBody}
+             onPress={navigation.navigate('EditProfile')}
+        >
           <View style={styles.body}>
-            <Icon name="ios-receipt-sharp" size={29} color={Colors.mediumGrey} />
+            <Icon
+              name="ios-receipt-sharp"
+              size={29}
+              color={Colors.mediumGrey}
+            />
             <Text style={styles.sectionText}>Order History</Text>
           </View>
           <Icon
@@ -62,8 +74,10 @@ const Profile = () =>{
             size={25}
             style={styles.sectionIcon}
           />
-        </View>
-        <View style={styles.sectionBody}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.sectionBody}
+             onPress={navigation.navigate('EditProfile')}
+        >
           <View style={styles.body}>
             <Icon name="notifications" size={29} color={Colors.mediumGrey} />
             <Text style={styles.sectionText}>Notification</Text>
@@ -73,8 +87,10 @@ const Profile = () =>{
             size={25}
             style={styles.sectionIcon}
           />
-        </View>
-        <View style={styles.sectionBody}>
+        </TouchableOpacity>
+        <TouchableOpacity style={styles.sectionBody}
+             onPress={navigation.navigate('EditProfile')}
+        >
           <View style={styles.body}>
             <Icon name="ios-card" size={29} color={Colors.mediumGrey} />
             <Text style={styles.sectionText}>Cards</Text>
@@ -84,11 +100,10 @@ const Profile = () =>{
             size={25}
             style={styles.sectionIcon}
           />
-        </View>
+        </TouchableOpacity>
       </View>
-      
     </View>
-    )
+  );
 };
 
 export default Profile;

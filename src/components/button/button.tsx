@@ -5,7 +5,7 @@ import { Colors } from 'theme'
 interface button{
     name: string;
     theme: string;
-    onPress: any;   
+    onPress?: () => void;   
 }
 const Button = (props: button) =>{
     const {name,theme,onPress} = props
