@@ -15,7 +15,6 @@ const AuthHeader = () => {
 
 interface Authentication {
   onPress?: () => void;
-  onChangeText?: () => void;
   placeholder?: string;
   control?: any;
   rules?: any;
@@ -30,13 +29,13 @@ interface BottomCard {
 }
 
 const AuthInputContainer = (props: Authentication) => {
-  const {control, name,onChangeText ,placeholder, icon,secureTextEntry, rules = {}} = props;
+  const {control, name,placeholder, icon,secureTextEntry, rules = {}} = props;
   return (
     <Controller
       control={control}
       name={name}
       rules={rules}
-      render={({field: {value, onBlur}, fieldState: {error}}) => (
+      render={({field: {value,onChange ,onBlur}, fieldState: {error}}) => (
         <>
           <View
             style={[
@@ -46,7 +45,7 @@ const AuthInputContainer = (props: Authentication) => {
             <Icon name={icon} size={20} style={styles.inputFieldIcon}/>
             <TextInput
               value={value}
-              onChangeText={onChangeText}
+              onChangeText={onChange}
               onBlur={onBlur}
               placeholder={placeholder}
               secureTextEntry={secureTextEntry}

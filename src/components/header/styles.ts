@@ -2,20 +2,21 @@ import { StyleSheet } from "react-native";
 import {Colors} from 'theme';
 
 const styles = StyleSheet.create({
-    container:{
-        width:'100%',
-        height:70,
-        flexDirection:'row',
-        justifyContent:'space-between',
-        paddingHorizontal:10,
-        marginTop:50,
+    container: {
+        marginTop: 50,
+        paddingHorizontal: 8,
+        paddingVertical:12,
+        width:'100%'
     },
-    header:{
-        flex:1,
-        flexDirection:'row',
-        justifyContent:'space-between',
-        alignItems:'center',
-        paddingHorizontal:15
+    headerSection:{
+        flexDirection: 'row',
+        alignItems: 'center',
+        justifyContent: 'space-between',
+    },
+    heading:{
+       fontSize:19,
+       fontWeight:'500',
+       
     },
     logo:{
         width:100,

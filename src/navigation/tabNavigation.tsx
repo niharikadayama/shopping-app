@@ -32,7 +32,7 @@ const BottomTabNavigator = () => {
                 size = focused ? 35 : 30
             }else if(route.name === 'profile'){
               iconName = focused ? 'ios-person' : 'person-outline'
-              size = focused ? 32 : 31
+              size = focused ? 30 : 31
             }else if(route.name === 'Settings'){
               iconName = focused ? 'ios-cog-sharp' : 'ios-cog-outline'
               size = focused ? 35 : 34

@@ -1,5 +1,4 @@
 import React from 'react';
-import { createSwitchNavigator } from 'react-navigation';
 import {createStackNavigator} from '@react-navigation/stack';
 
 //Screens
@@ -8,7 +7,8 @@ import Login from 'screen/login';
 import SignUp from 'screen/signup';
 import Details from 'screen/details';
 import Cart from 'screen/cart';
-import EditProfile from 'screen/profile/Edit-profile/editProfile';
+import EditProfile from 'screen/edit-profile/editProfile';
+import AddressScreen from 'screen/addressScreen';
 import ItemDetail from 'screen/itemDetail';
 
 //Tab
@@ -33,6 +33,7 @@ const MainStackNavigator = () => {
           <Stack.Screen name="details" component={Details} />
           <Stack.Screen name="cart" component={Cart} />
           <Stack.Screen name="EditProfile" component={EditProfile} />
+          <Stack.Screen name='address' component={AddressScreen}/>
           <Stack.Screen name="ItemDetail" component={ItemDetail} />
         </>
   

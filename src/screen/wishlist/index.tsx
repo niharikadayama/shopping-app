@@ -12,8 +12,8 @@ const Wishlist = ({navigation, route}) => {
   return (
     <View style={styles.container}>
       <Header
-        leftIcon={'arrow-left'}
-        rightIcon={'shopping-cart'}
+        leftIcon={'ios-chevron-back'}
+        rightIcon={'cart'}
         size={28}
         onLeftIconPress={() => {
           navigation.navigate('root');

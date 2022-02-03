@@ -27,10 +27,10 @@ const Cart = ({navigation,route}) =>{
 
     return (
      <View style={styles.container}>
-           <Header leftIcon={"arrow-left"} rightIcon={"user-circle-o"} size={28}
+           <Header leftIcon={"chevron-back"} rightIcon={"person-circle-sharp"} size={30}
                 onLeftIconPress ={()=>{ navigation.navigate('root') }}
                 onRightIconPress ={()=>{ navigation.navigate('profile') }}
-                image= {false} />
+                image= {false} heading={''}/>
 
            <View style={styles.titleView}>
                 <Text style={styles.title}>My Bag</Text>

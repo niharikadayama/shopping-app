@@ -6,22 +6,10 @@ const style = StyleSheet.create({
      width: '100%',
      height: screenHeight,
   },
-  header: {
-    marginTop: 60,
-    marginBottom:20,
-    marginHorizontal: 20,
-    flexDirection: 'row',
-    alignItems: 'center',
-  },
-  headerHeading: {
-    fontSize: 20,
-    fontWeight: '600',
-    paddingHorizontal: 120,
-  },
   cardContainer:{
     flexGrow:1,
     paddingHorizontal:20,
-    paddingVertical:5,
+    paddingVertical:12,
     flexDirection:'row',
   },
   card:{

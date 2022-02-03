@@ -1,24 +1,28 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
+import {View, Text, TouchableOpacity,Switch} from 'react-native';
 import styles from './styles';
+import Header from 'components/header';
 import Icon from 'react-native-vector-icons/Ionicons';
-import ToggleSwitch from 'toggle-switch-react-native';
 import {Colors} from 'theme';
 
-const Settings = () => {
+const Settings = ({navigation}) => {
   let year = new Date().getFullYear();
   return (
     <View style={styles.container}>
-      <View style={styles.header}>
-        <Icon name="ios-chevron-back" size={22} />
-        <Text style={styles.headerHeading}>Settings</Text>
-      </View>
+
+      <Header leftIcon={"ios-chevron-back"} rightIcon={""} size={25}
+            onLeftIconPress ={()=>{ navigation.navigate('profile') }}
+            onRightIconPress ={()=>{ navigation.navigate('profile') }}
+            image= {false} heading={'Settings'}
+      />
       <View style={styles.section}>
         <Text style={styles.sectionHeading}>Account</Text>
-        <TouchableOpacity style={styles.sectionBody}>
+        <TouchableOpacity style={styles.sectionBody}
+              onPress={()=>{navigation.navigate('profile')}}
+        >
           <View style={styles.body}>
             <Icon name="person-circle" size={35} color={Colors.darkCoral} />
-            <Text style={styles.sectionText}>Niharika Dayama</Text>
+            <Text style={styles.sectionText}>Anshuman Singh</Text>
           </View>
           <Icon
             name="ios-chevron-forward"
@@ -56,13 +60,7 @@ const Settings = () => {
             <Icon name="ios-moon" size={30} color={Colors.purple} />
             <Text style={styles.sectionText}>Dark Mode</Text>
           </View>
-          <ToggleSwitch
-            isOn={false}
-            onColor={Colors.darkGrey}
-            offColor={Colors.mediumGrey}
-            label="OFF"
-            size="medium"
-          />
+          <Switch />
         </View>
         <View style={styles.sectionBody}>
           <View style={styles.body}>

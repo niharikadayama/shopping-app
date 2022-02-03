@@ -1,6 +1,7 @@
 import React, {useRef, useState} from 'react';
 import {View, Text, FlatList, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/MaterialCommunityIcons';
+import Header from 'components/header';
 import {supportMaterial} from 'constant';
 import {Transition, Transitioning} from 'react-native-reanimated';
 import style from './styles';
@@ -21,10 +22,12 @@ const Support = () => {
       ref={ref}
       transition={transition}
       style={style.container}>
-      <View style={style.header}>
-        <Icon name="chevron-left" size={25} />
-        <Text style={style.headerHeading}>Support</Text>
-      </View>
+      
+      <Header leftIcon={"ios-chevron-back"} rightIcon={""} size={25}
+            onLeftIconPress ={()=>{ }}
+            onRightIconPress ={()=>{ }}
+            image= {false} heading={'Support'}
+      />
 
       <FlatList
         data={supportMaterial}

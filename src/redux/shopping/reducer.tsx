@@ -16,7 +16,7 @@ const shopReducer = (state = INITIAL_STATE,action) =>{
         const item = materials.find(prod => prod.id === action.payload.id) 
         // check if item is in cart already
         const inCart = state.cart.find((item:any)=> 
-        item.id === action.payload.id ? true : false
+        item.id === action.payload.id 
         );
         
         return {

@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
     backgroundColor:Colors.white
   },
   headerSection:{
-    backgroundColor: Colors.lightPurple
+    paddingTop:16
   },
   header: {
     marginTop: 60,
@@ -36,7 +36,8 @@ const styles = StyleSheet.create({
   },
   section:{
     marginTop:15,
-    marginHorizontal:20
+    marginHorizontal:20,
+    backgroundColor:Colors.lightGrey,
   },
   sectionHeading:{
     fontSize:18,
