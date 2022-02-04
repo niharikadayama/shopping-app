@@ -25,27 +25,27 @@ const styles = StyleSheet.create({
         fontSize:20,
         fontWeight:'600',
         textAlign:'center',
-        paddingBottom:5
+        paddingBottom:6
      },
      cardButton:{
         flexDirection:'row',
         alignItems:'center',
         backgroundColor: Colors.darkCoral,
-        marginVertical:15,
+        marginVertical:16,
         paddingVertical:10,
-        paddingHorizontal:15,
+        paddingHorizontal:16,
      },
      cardButtonTitle:{
         color:Colors.white,
-        fontSize: 19,
+        fontSize: 20,
         fontWeight:'600',
-        paddingHorizontal:5,
+        paddingHorizontal:6,
         
      },
      cardButtonIcon:{
-        fontSize: 35,
+        fontSize: 36,
         color:Colors.white,
-        paddingHorizontal:5,
+        paddingHorizontal:6,
        
      }
 })

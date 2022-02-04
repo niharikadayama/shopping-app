@@ -11,18 +11,18 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-        paddingHorizontal:15,
+        paddingHorizontal:16,
         marginTop:50,  
     },
     titleView:{
-        marginTop:25,
-        marginBottom:15,
+        marginTop:24,
+        marginBottom:16,
         paddingHorizontal:20
     },
     title:{
        fontSize:30,
        fontWeight:'bold',
-       marginBottom:5
+       marginBottom:6
     },
     subTitle:{
        color:'#333'
@@ -30,11 +30,11 @@ const styles = StyleSheet.create({
     cartCard:{
          height:160,
          backgroundColor:'white',
-         marginVertical:15,
-         marginHorizontal:15,
+         marginVertical:16,
+         marginHorizontal:16,
         flexDirection:'row',
         justifyContent:'flex-start',
-        borderRadius:15,
+        borderRadius:16,
         shadowColor: "#000",
         shadowOffset: {
             width: 0,
@@ -42,12 +42,12 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        elevation: 5,
+        elevation: 6,
     },
     cardImg:{
         width:140,
         height: '100%',
-        borderRadius:15,
+        borderRadius:16,
     },
     cardText:{
        paddingLeft: 20,
@@ -58,8 +58,8 @@ const styles = StyleSheet.create({
         fontWeight:'bold'
     },
     cardInfo:{
-        fontSize:17,
-        paddingVertical:5
+        fontSize:18,
+        paddingVertical:6
     },
     cardIcon:{
        position:'absolute',
@@ -68,7 +68,7 @@ const styles = StyleSheet.create({
     },
     quant:{
         flexDirection:'row',
-        paddingVertical:15,
+        paddingVertical:16,
         justifyContent:'space-between',
         alignItems:'center',
         
@@ -80,7 +80,7 @@ const styles = StyleSheet.create({
     },
     quantIcon:{
        color:Colors.mediumGrey,
-       paddingHorizontal:7
+       paddingHorizontal:8
     },
     Price:{
         flexDirection:'row',
@@ -92,14 +92,14 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         justifyContent:'space-between',
         alignItems:'center',
-        marginHorizontal:19,
-        paddingVertical:15,
-        paddingHorizontal:15,
+        marginHorizontal:20,
+        paddingVertical:16,
+        paddingHorizontal:16,
         backgroundColor: Colors.darkbg,
-        borderRadius:15,
+        borderRadius:16,
     },
     totalCardText:{
-        fontSize:17,
+        fontSize:18,
         fontWeight:'500',
         color:Colors.white
     },

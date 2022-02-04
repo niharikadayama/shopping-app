@@ -30,7 +30,7 @@ const styles = StyleSheet.create({
     alignSelf: 'center',
   },
   profileText: {
-    fontSize: 17,
+    fontSize: 18,
     alignSelf: 'center',
     marginVertical: 8,
     color:Colors.blue
@@ -44,7 +44,7 @@ const styles = StyleSheet.create({
     fontSize:16
   },
   informationInput: {
-    fontSize:17,
+    fontSize:18,
     paddingHorizontal:8
   },
   horizontalLine: {

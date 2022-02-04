@@ -6,8 +6,8 @@ const styles = StyleSheet.create({
          width: '50%',
          height: 300,
          backgroundColor:Colors.white,
-         marginVertical:15,
-         marginHorizontal:15,
+         marginVertical:16,
+         marginHorizontal:16,
         justifyContent:'space-between',
         borderRadius:2,
         shadowColor: "#000",
@@ -17,7 +17,7 @@ const styles = StyleSheet.create({
         },
         shadowOpacity: 0.25,
         shadowRadius: 3.84,
-        elevation: 5,
+        elevation: 4,
     },
     cardImg:{
         width: '100%',
@@ -27,15 +27,15 @@ const styles = StyleSheet.create({
     cardText:{
         position:'absolute',
         bottom:4,
-        left:5
+        left:4
     },
     cardTitle:{
         fontSize:20,
         fontWeight:'bold'
     },
     cardInfo:{
-        fontSize:17,
-        paddingVertical:5
+        fontSize:18,
+        paddingVertical:6
     },
     Price:{
         flexDirection:'row',
@@ -44,21 +44,21 @@ const styles = StyleSheet.create({
     },
     pricestyle:{
         fontWeight:'bold',
-        fontSize:17,
-        marginLeft:5
+        fontSize:18,
+        marginLeft:6
     },
     cardBottom:{
         flexDirection:'row',
         alignItems:'center',
         justifyContent:'space-around',
-        paddingTop:5,
+        paddingTop:6,
     },
     cardBottomButtons:{
         flexDirection:'row',
         alignItems:'center',
     },
     cardBottomText:{
-        fontSize:17,
+        fontSize:18,
         paddingLeft:2
     }
 })

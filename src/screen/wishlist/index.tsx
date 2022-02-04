@@ -6,9 +6,7 @@ import {useSelector} from 'react-redux';
 
 const Wishlist = ({navigation, route}) => {
   const item = route.params;
-  const wishlist = useSelector((state)=>{
-    return state.shop.wishlist
-  })
+  const wishlist = useSelector((state)=>state.shop.wishlist)
   return (
     <View style={styles.container}>
       <Header
@@ -31,8 +29,9 @@ const Wishlist = ({navigation, route}) => {
 
       <FlatList
         data={wishlist}
+        keyExtractor={(item,index)=>index.toString()}
         renderItem={({item}) => {
-          return <WishlistCard key={item.id} items={item} navigation={navigation} route={route} />;
+          return <WishlistCard items={item} navigation={navigation} route={route} />;
         }}
       />
     </View>

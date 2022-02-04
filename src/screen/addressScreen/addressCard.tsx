@@ -51,7 +51,7 @@ const styles = StyleSheet.create({
        alignSelf:'center',
        width: '89%',
        height: 200,
-       borderRadius: 15,
+       borderRadius: 16,
        shadowColor: '#000',
        shadowOffset: {
         width: 0,
@@ -76,16 +76,16 @@ const styles = StyleSheet.create({
        alignSelf:'center'
    },
    name:{
-       fontSize: 17,
+       fontSize: 18,
        fontWeight:'500',
        paddingVertical:8,
    },
    address:{
-       fontSize:17,
+       fontSize:16,
        color:Colors.darkGrey,
    },
    contact:{
-    fontSize:17,
+    fontSize:18,
     paddingVertical:8,
     color:Colors.darkGrey,
    },

@@ -39,12 +39,12 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         position:'absolute',
         left:150,
-        bottom:135,
+        bottom:136,
         backgroundColor:'transparent'
 },
     dot:{
-        height: 10,
-        borderRadius: 5,
+        height: 12,
+        borderRadius: 6,
         backgroundColor: Colors.white,
         marginHorizontal: 8,
     }

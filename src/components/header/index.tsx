@@ -4,7 +4,7 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import styles from "./styles";
 import { Images } from "theme";
 
-interface header{
+interface Iheader{
     leftIcon: string;
     rightIcon: string;
     heading?: string;
@@ -13,7 +13,7 @@ interface header{
     onLeftIconPress?: () => void;
     onRightIconPress?:() => void;
 }
-const Header = (props: header) =>{
+const Header = (props: Iheader) =>{
     const {leftIcon,rightIcon,heading,size,onLeftIconPress,onRightIconPress,image} = props
 
     const logoPresent= ()=>{

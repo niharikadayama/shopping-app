@@ -8,7 +8,7 @@ const styles = StyleSheet.create({
        backgroundColor:Colors.lightGrey
    },
    subContainerHeading:{
-       fontSize:19,
+       fontSize:18,
        fontWeight:'500',
        paddingVertical:16,
        paddingLeft:24,
@@ -23,7 +23,7 @@ const styles = StyleSheet.create({
        color:Colors.blue
    },
    addNewAddressText:{
-       fontSize:17,
+       fontSize:18,
        color:Colors.blue
    }
 });

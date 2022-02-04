@@ -29,8 +29,8 @@ const styles = StyleSheet.create({
      flexDirection:'row',
      alignItems:'center',
      justifyContent:'space-between',
-     marginHorizontal:15,
-     marginVertical:15,
+     marginHorizontal:16,
+     marginVertical:16,
   },
   sectionIcon:{
     color:Colors.mediumGrey

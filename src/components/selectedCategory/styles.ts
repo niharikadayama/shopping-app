@@ -7,8 +7,8 @@ const styles = StyleSheet.create({
       right:"30%",
       bottom:"30%",
       backgroundColor:Colors.transparentdarkBg,
-      paddingHorizontal:25,
-      paddingVertical:15
+      paddingHorizontal:24,
+      paddingVertical:16
     },
     button:{
       flexDirection:'row'

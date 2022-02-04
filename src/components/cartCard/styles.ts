@@ -3,13 +3,13 @@ import {Colors} from 'theme';
 
 const styles = StyleSheet.create({
   cartCard: {
-    height: 175,
+    height: 176,
     backgroundColor: Colors.white,
-    marginVertical: 15,
-    marginHorizontal: 15,
+    marginVertical: 16,
+    marginHorizontal: 16,
     flexDirection: 'row',
     justifyContent: 'flex-start',
-    borderRadius: 15,
+    borderRadius: 16,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
@@ -17,28 +17,28 @@ const styles = StyleSheet.create({
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
-    elevation: 5,
+    elevation: 4,
   },
   cardImg: {
     width: 140,
     height: '100%',
     //borderRadius:15,
-    borderTopLeftRadius: 15,
-    borderBottomLeftRadius: 15,
+    borderTopLeftRadius: 16,
+    borderBottomLeftRadius: 16,
   },
   cardText: {
     paddingLeft: 20,
-    paddingVertical: 10,
+    paddingVertical: 12,
     flexShrink: 1,
   },
   cardTitle: {
-    marginTop: 5,
-    fontSize: 25,
+    marginTop: 4,
+    fontSize: 24,
     fontWeight: 'bold',
   },
   cardInfo: {
-    fontSize: 17,
-    paddingVertical: 7,
+    fontSize: 16,
+    paddingVertical: 6,
   },
   removeButton: {
     flexDirection:'row',
@@ -49,20 +49,20 @@ const styles = StyleSheet.create({
     color: Colors.darkRed,
   },
   RemoveButtonText:{
-    paddingLeft: 5,
-    fontSize: 17,
+    paddingLeft: 6,
+    fontSize: 18,
     color:Colors.darkGrey,
   },
   quant: {
     flexDirection: 'row',
-    paddingVertical: 15,
+    paddingVertical: 16,
     justifyContent: 'space-around',
     alignItems: 'center',
   },
   quantText: {
     fontSize: 18,
     fontWeight: '600',
-    paddingHorizontal: 5,
+    paddingHorizontal: 4,
   },
   quantRupeeIcon: {
     color: Colors.darkGrey,
@@ -71,11 +71,11 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     justifyContent: 'flex-start',
-    paddingHorizontal: 5,
+    paddingHorizontal: 4,
   },
   priceStyle: {
     fontWeight: 'bold',
-    fontSize: 17,
+    fontSize: 18,
   }
 });
 

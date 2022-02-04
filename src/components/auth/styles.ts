@@ -5,16 +5,16 @@ const styles = StyleSheet.create({
   headerContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 20,
+    marginTop: 24,
   },
   inputField: {
     flexDirection: 'row',
-    borderRadius: 10,
+    borderRadius: 12,
     borderWidth: 1,
     borderColor: Colors.transparentlightBg,
     width: 350,
-    padding: 15,
-    marginVertical: 10,
+    padding: 16,
+    marginVertical: 12,
     backgroundColor: Colors.transparentlightBg,
   },
   inputFieldIcon: {
@@ -26,9 +26,9 @@ const styles = StyleSheet.create({
     alignSelf: 'stretch',
   },
   BottomContainer: {
-    paddingHorizontal: 15,
-    marginVertical: 10,
-    height: 150,
+    paddingHorizontal: 16,
+    marginVertical: 12,
+    height: 152,
     justifyContent: 'space-around',
   },
   bottomContainerIcon: {
@@ -40,12 +40,12 @@ const styles = StyleSheet.create({
     flexDirection: 'row',
     alignItems: 'center',
     backgroundColor: Colors.transparentlightBg,
-    paddingHorizontal: 19,
-    paddingVertical: 10,
+    paddingHorizontal: 20,
+    paddingVertical: 12,
   },
   icon: {
     fontSize: 26,
-    paddingHorizontal: 10,
+    paddingHorizontal: 12,
   },
   googleIcon: {
     color: Colors.googleColor,
@@ -69,7 +69,7 @@ const styles = StyleSheet.create({
   },
   BottomContainerQuestionText: {
     fontSize: 16,
-    paddingHorizontal: 5,
+    paddingHorizontal: 6,
   },
   BottomContainerQuestionLocation: {
     fontSize: 18,

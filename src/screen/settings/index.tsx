@@ -73,7 +73,7 @@ const Settings = ({navigation}) => {
             style={styles.sectionIcon}
           />
         </View>
-        <View style={styles.sectionBody}>
+        <TouchableOpacity style={styles.sectionBody} onPress={()=>{navigation.navigate('feedback')}}>
           <View style={styles.body}>
             <Icon name="paper-plane-sharp" size={29} color={Colors.orange} />
             <Text style={styles.sectionText}>Send Feeback</Text>
@@ -83,7 +83,7 @@ const Settings = ({navigation}) => {
             size={25}
             style={styles.sectionIcon}
           />
-        </View>
+        </TouchableOpacity>
       </View>
       <View style={styles.footer}>
         <Text>{'\u00A9'} {year} NIDA. All rights reserved</Text>

@@ -10,38 +10,38 @@ interface button{
 const Button = (props: button) =>{
     const {name,theme,onPress} = props
     return(
-        <TouchableOpacity style={ theme === 'primary' ? styles.PrimaryButton : styles.SecondaryButton} 
+        <TouchableOpacity style={ theme === 'primary' ? styles.primaryButton : styles.secondaryButton} 
           onPress={onPress}>
 
-          <Text style={theme === 'primary' ? styles.PrimaryButtonText : styles.SecondaryButtonText}>{name}</Text>
+          <Text style={theme === 'primary' ? styles.primaryButtonText : styles.secondaryButtonText}>{name}</Text>
 
         </TouchableOpacity>
     )
 }
 
 const styles = StyleSheet.create({
-    PrimaryButton:{
+    primaryButton:{
         backgroundColor:Colors.buttonBglight,
-        marginVertical:15,
+        marginVertical:16,
         alignSelf:'center',
-        paddingVertical:13,
+        paddingVertical:12,
         paddingHorizontal:130,
-        borderRadius:10
+        borderRadius:12
     },
-    PrimaryButtonText:{
+    primaryButtonText:{
        color:Colors.white,
        textAlign:'center',
        fontSize:20,
        fontWeight:'600'
     },
-    SecondaryButton:{
+    secondaryButton:{
         backgroundColor:Colors.buttonBgdark,
-        marginHorizontal:35,
-        paddingVertical:10,
-        paddingHorizontal:30,
-        borderRadius:10
+        marginHorizontal:36,
+        paddingVertical:12,
+        paddingHorizontal:32,
+        borderRadius:12
     },
-    SecondaryButtonText:{
+    secondaryButtonText:{
        color:Colors.white,
        textAlign:'center',
        fontSize:20,

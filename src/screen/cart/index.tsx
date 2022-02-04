@@ -8,15 +8,13 @@ const Cart = ({navigation,route}) =>{
     const item = route.params
     const [totalPrice,setTotalPrice] = useState(0);
     const [totalItem,setTotalItem] = useState(0);
-    const myCart = useSelector((state)=>{
-      return state.shop.cart
-   })
+    const myCart = useSelector((state)=>state.shop.cart)
 
     useEffect(()=>{
        let items = 0;
        let price = 0;
 
-       myCart.forEach((item: { qty: number; price: number; }) =>{
+       myCart.map((item: { qty: number; price: number; }) =>{
             items += item.qty,
             price += item.qty * item.price
        })
@@ -56,11 +54,5 @@ const Cart = ({navigation,route}) =>{
      </View>
     )
 }
-
-// const mapStateToProps = state =>{
-//      return{
-//          cart: state.shop.cart
-//      }
-// }
 
 export default Cart;

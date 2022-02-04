@@ -10,7 +10,7 @@ const styles = StyleSheet.create({
    inputContainer:{
     alignItems:'flex-start',
     marginTop:30,
-    paddingHorizontal:15
+    paddingHorizontal:16
   },
   inputTitle:{
     fontSize:22,
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   }, 
    forgetpassword:{
     textAlign:'right',
-    paddingHorizontal:15,
+    paddingHorizontal:16,
     paddingVertical:20,
     fontSize:16
   },

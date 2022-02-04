@@ -23,19 +23,19 @@ const styles = StyleSheet.create({
     paddingHorizontal:120
   },
   profile:{
-    width: 150, 
-    height: 150, 
-    borderRadius: 150 / 2,
+    width: 160, 
+    height: 160, 
+    borderRadius: 160 / 2,
     alignSelf:'center'
   },
   profileName:{
-   fontSize:19,
+   fontSize:20,
    fontWeight: '600',
    alignSelf:'center',
-   marginVertical:15,
+   marginVertical:16,
   },
   section:{
-    marginTop:15,
+    marginTop:16,
     marginHorizontal:20,
     backgroundColor:Colors.lightGrey,
   },
@@ -47,8 +47,8 @@ const styles = StyleSheet.create({
      flexDirection:'row',
      alignItems:'center',
      justifyContent:'space-between',
-     marginHorizontal:15,
-     marginVertical:15,
+     marginHorizontal:16,
+     marginVertical:16,
   },
   sectionIcon:{
     color:Colors.mediumGrey
