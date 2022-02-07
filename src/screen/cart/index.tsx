@@ -9,13 +9,13 @@ const Cart = ({navigation,route}) =>{
     const [totalPrice,setTotalPrice] = useState(0);
     const [totalItem,setTotalItem] = useState(0);
     const myCart = useSelector((state)=>state.shop.cart)
-
+   
     useEffect(()=>{
-       let items = myCart.reduce((items,item)=>items+item.qty,0);
-       let price = myCart.reduce((price,item)=>price += item.qty * item.price,0);
-       setTotalItem(items);
-       setTotalPrice(price);
-    },[myCart,totalPrice,totalItem,setTotalPrice,setTotalItem])
+      let items = myCart.reduce((items,item)=>items+item.qty,0);
+      let price = myCart.reduce((price,item)=>price += item.qty * item.price,0);
+      setTotalItem(items);
+      setTotalPrice(price);
+    },[myCart,totalItem,totalPrice,setTotalItem,setTotalPrice])
 
     return (
      <View style={styles.container}>
