@@ -25,10 +25,16 @@ const Cart = ({navigation,route}) =>{
 
     return (
      <View style={styles.container}>
-           <Header leftIcon={"chevron-back"} rightIcon={"person-circle-sharp"} size={30}
-                onLeftIconPress ={()=>{ navigation.navigate('root') }}
-                onRightIconPress ={()=>{ navigation.navigate('profile') }}
-                image= {false} heading={''}/>
+        
+           <Header 
+               leftIcon={"chevron-back"} 
+               rightIcon={"person-circle-sharp"} 
+               iconSize={30}
+               onLeftIconPress ={()=>{ navigation.navigate('root') }}
+               onRightIconPress ={()=>{ navigation.navigate('profile') }}
+               showLogo= {false} 
+               title={''}
+            />
 
            <View style={styles.titleView}>
                 <Text style={styles.title}>My Bag</Text>
@@ -37,9 +43,10 @@ const Cart = ({navigation,route}) =>{
                
             <FlatList 
                data={myCart}
+               keyExtractor={(item,index)=>index.toString()}
                renderItem = { ( {item}) =>{
                    return(
-                    <CartCard key={item.id} itemData={item}/>  
+                    <CartCard itemData={item}/>  
                    )
                }}
             />
@@ -49,8 +56,11 @@ const Cart = ({navigation,route}) =>{
                <Text style={styles.totalCardText}>{`Rs. ${totalPrice}`}</Text>
             </View>
 
-            <Button name = {'Checkout'}  theme={'primary'} 
-               onPress={()=>{navigation.navigate('Home')}}/>
+            <Button 
+               name = {'Checkout'}  
+               theme={'primary'} 
+               onPress={()=>{navigation.navigate('Home')}}
+            />
      </View>
     )
 }

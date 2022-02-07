@@ -9,31 +9,25 @@ const Wishlist = ({navigation, route}) => {
   const wishlist = useSelector((state)=>state.shop.wishlist)
   return (
     <View style={styles.container}>
-      <Header
-        leftIcon={'ios-chevron-back'}
-        rightIcon={'cart'}
-        size={28}
-        onLeftIconPress={() => {
-          navigation.navigate('root');
-        }}
-        onRightIconPress={() => {
-          navigation.navigate('cart');
-        }}
-        image={false}
-      />
-
-      <View style={styles.titleView}>
-        <Text style={styles.title}>Wishlist</Text>
-        <Text style={styles.subTitle}>Buy it before its gone</Text>
-      </View>
-
-      <FlatList
-        data={wishlist}
-        keyExtractor={(item,index)=>index.toString()}
-        renderItem={({item}) => {
-          return <WishlistCard items={item} navigation={navigation} route={route} />;
-        }}
-      />
+        <Header
+          leftIcon={'ios-chevron-back'}
+          rightIcon={'cart'}
+          iconSize={28}
+          onLeftIconPress={() => { navigation.navigate('root') }}
+          onRightIconPress={() => { navigation.navigate('cart') }}
+          showLogo={false}
+        />
+        <View style={styles.titleView}>
+            <Text style={styles.title}>Wishlist</Text>
+            <Text style={styles.subTitle}>Buy it before its gone</Text>
+        </View>
+        <FlatList
+            data={wishlist}
+            keyExtractor={(item,index)=>index.toString()}
+            renderItem={({item}) => {
+              return <WishlistCard items={item} navigation={navigation} route={route} />
+            }}
+        />
     </View>
   );
 };

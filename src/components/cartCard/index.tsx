@@ -38,12 +38,12 @@ const CartCard = ({itemData}) => {
           </View>
         </View>
         <Pressable
-          style={styles.removeButton}
-          onPress={() => {
-            dispatch(removeFromCart(itemData.id));
-          }}>
-          <Icon name="trash" size={22} style={styles.RemoveButtonIcon} />
-          <Text style={styles.RemoveButtonText}>Remove </Text>
+            style={styles.removeButton}
+            onPress={() => {
+              dispatch(removeFromCart(itemData.id));
+            }}>
+            <Icon name="trash" size={22} style={styles.RemoveButtonIcon} />
+            <Text style={styles.RemoveButtonText}>Remove </Text>
         </Pressable>
       </View>
     </View>

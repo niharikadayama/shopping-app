@@ -18,52 +18,47 @@ const Login = ({navigation}) =>{
      console.warn('Change password')
   }
   
-    return(
-       <View style = {styles.container}>
+  return(
+      <View style = {styles.container}>
+              <AuthHeader />
+              <View style= {styles.inputContainer}>
+                    <Text style= {styles.inputTitle}>Welcome Back,</Text> 
+                    <AuthInputContainer 
+                        name='username'
+                        control={control}
+                        placeholder="Enter Username"
+                        icon="ios-mail"
+                        secureTextEntry={false}
+                        rules={{required:'Username is required'}}
+                    />
+                    <AuthInputContainer 
+                        name='password'
+                        control={control}
+                        placeholder='Enter Password'
+                        icon="ios-key-sharp"
+                        secureTextEntry={true} 
+                        rules={{required:'Password is required',
+                              minLength: {value:6,message:'Password should be minimum 6 characters long'}
+                        }}
+                    />
+                    <Button 
+                      name = {'Login'} 
+                      onPress={handleSubmit(onSignInPressed)} 
+                      theme = {'primary'} 
+                    />
+              </View>
 
-           <AuthHeader />
+              <TouchableOpacity onPress={onForgetPasswordPressed}>
+                  <Text style={styles.forgetpassword}>Forget Password?</Text>
+              </TouchableOpacity>
 
-           <View style= {styles.inputContainer}>
-
-              <Text style= {styles.inputTitle}>Welcome Back,</Text> 
-             
-              <AuthInputContainer 
-                  name='username'
-                  control={control}
-                  placeholder="Enter Username"
-                  icon="ios-mail"
-                  secureTextEntry={false}
-                  rules={{required:'Username is required'}}
-              />
-              <AuthInputContainer 
-                  name='password'
-                  control={control}
-                  placeholder='Enter Password'
-                  icon="ios-key-sharp"
-                  secureTextEntry={true} 
-                  rules={{required:'Password is required',
-                        minLength: {value:6,message:'Password should be minimum 6 characters long'}
-                  }}
-              />
-
-              <Button 
-                name = {'Login'} 
-                onPress={handleSubmit(onSignInPressed)} 
-                theme = {'primary'} 
-              />
-
-           </View>
-
-            <TouchableOpacity onPress={onForgetPasswordPressed}>
-              <Text style={styles.forgetpassword}>Forget Password?</Text>
-            </TouchableOpacity>
-
-            <AuthBottomCard onPress={()=>navigation.navigate('SignUp')}
+              <AuthBottomCard 
+                onPress={()=>navigation.navigate('SignUp')}
                 question={"Don't Have An Account?"}
                 location={'Sign Up'}
-                />
-       </View>
-    )
+              />
+      </View>
+  )
 }
 
 export default Login

@@ -16,31 +16,27 @@ interface IAddress{
 const AddressCard = (props:IAddress) =>{
     const {name,flatNo,locality,city,state,pincode,phoneNumber,typeTag} = props
 
-    const TagCheck = () =>{
-        if(typeTag === 'default')
-            return <View style={styles.typeTag}><Text style={styles.typeTagText}>DEFAULT</Text></View>
-        return null
-    }
-
-    const MakeDefault = () =>{
-        if(typeTag != 'default')
-            return <TouchableOpacity><Text style={styles.makeDefault}>Make Default</Text></TouchableOpacity>
-        return null
-    }
-
     return(
         <View style={styles.container}>
-          {TagCheck()}
-          <Text style={styles.name}>{name}</Text>
-          <Text style={styles.address}>{flatNo}, {locality}, {city}</Text>
-          <Text style={styles.address}>{state} - {pincode}</Text>
-          <Text style={styles.contact}>Phone: <Text style={styles.contactNo}>{phoneNumber}</Text></Text>
-          <View style={styles.horizontalLine}/>
-          <View style={styles.bottomContainer}>
-            <TouchableOpacity><Text style={styles.edit}>Edit</Text></TouchableOpacity>
-            <TouchableOpacity><Text style={styles.delete}>Delete</Text></TouchableOpacity>
-          {MakeDefault()}
-          </View>
+            {() =>{
+                    if(typeTag === 'default')
+                        return <View style={styles.typeTag}><Text style={styles.typeTagText}>DEFAULT</Text></View>
+                    return null
+            }}
+            <Text style={styles.name}>{name}</Text>
+            <Text style={styles.address}>{flatNo}, {locality}, {city}</Text>
+            <Text style={styles.address}>{state} - {pincode}</Text>
+            <Text style={styles.contact}>Phone: <Text style={styles.contactNo}>{phoneNumber}</Text></Text>
+            <View style={styles.horizontalLine}/>
+            <View style={styles.bottomContainer}>
+                <TouchableOpacity><Text style={styles.edit}>Edit</Text></TouchableOpacity>
+                <TouchableOpacity><Text style={styles.delete}>Delete</Text></TouchableOpacity>
+                {() =>{
+                    if(typeTag != 'default')
+                        return <TouchableOpacity><Text style={styles.makeDefault}>Make Default</Text></TouchableOpacity>
+                    return null
+                }}
+            </View>
         </View>
     )
 }

@@ -35,65 +35,63 @@ const ItemDetail = ({navigation, route}) => {
   const dispatch = useDispatch();
   return (
     <SafeAreaView style={styles.container}>
-      <ImageBackground
-        source={item.img}
-        resizeMode={'cover'}
-        style={styles.image}>
-        <Icon
-          name="ios-chevron-back"
-          size={26}
-          color={Colors.white}
-          style={styles.icon}
-          onPress={() => navigation.navigate('root')}
-        />
-
-        <View style={styles.detailsContainer}>
-          <Text style={styles.detailName}>{item.name}</Text>
-          <Text style={styles.detailInfo}>{item.info}</Text>
-
-          <Icon
-            name="heart"
-            size={25}
-            style={styles.detailHeart}
-            onPress={() => {
-              navigation.navigate('wishlist', item),
-                dispatch(addToWishlist(item.id));
-            }}
-          />
-
-          <Text style={styles.detailNormal}>Color</Text>
-          <View style={styles.detailColor}>
-            <Icon name="checkmark-circle" size={40} color={item.color} />
+        <ImageBackground
+          source={item.img}
+          resizeMode={'cover'}
+          style={styles.image}
+        >
             <Icon
-              name="ios-help-circle-sharp"
-              size={40}
-              color={Colors.yellow}
+              name="ios-chevron-back"
+              size={26}
+              color={Colors.white}
+              style={styles.icon}
+              onPress={() => navigation.navigate('root')}
             />
-            <Icon name="ios-help-circle-sharp" size={40} color={Colors.coral} />
-          </View>
 
-          <Text style={styles.detailNormal}>Size</Text>
-          <FlatList
-            numColumns={4}
-            data={size}
-            renderItem={({item}) => {
-              return <FlatlistItem item={item} />;
-            }}
-          />
+            <View style={styles.detailsContainer}>
+                <Text style={styles.detailName}>{item.name}</Text>
+                <Text style={styles.detailInfo}>{item.info}</Text>
 
-          <View style={styles.detailBottom}>
-            <Text style={styles.detailPrice}>Rs. {item.price}</Text>
+                <Icon
+                  name="heart"
+                  size={25}
+                  style={styles.detailHeart}
+                  onPress={() => {
+                    navigation.navigate('wishlist', item),
+                      dispatch(addToWishlist(item.id));
+                  }}
+                />
 
-            <Button
-              name={'Add To Cart'}
-              onPress={() => {
-                navigation.navigate('cart', item), dispatch(addToCart(item.id));
-              }}
-              theme={'secondary'}
-            />
-          </View>
-        </View>
-      </ImageBackground>
+                <Text style={styles.detailNormal}>Color</Text>
+                <View style={styles.detailColor}>
+                    <Icon name="checkmark-circle" size={40} color={item.color} />
+                    <Icon
+                      name="ios-help-circle-sharp"
+                      size={40}
+                      color={Colors.yellow}
+                    />
+                    <Icon name="ios-help-circle-sharp" size={40} color={Colors.coral} />
+                </View>
+
+                <Text style={styles.detailNormal}>Size</Text>
+                <FlatList
+                  numColumns={4}
+                  data={size}
+                  renderItem={({item}) => {
+                    return <FlatlistItem item={item} />;
+                  }}
+                />
+
+                <View style={styles.detailBottom}>
+                    <Text style={styles.detailPrice}>Rs. {item.price}</Text>
+                    <Button
+                      name={'Add To Cart'}
+                      onPress={() => { navigation.navigate('cart', item), dispatch(addToCart(item.id)) }}
+                      theme={'secondary'}
+                    />
+                </View>
+            </View>
+        </ImageBackground>
     </SafeAreaView>
   );
 };

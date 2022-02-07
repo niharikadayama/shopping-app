@@ -13,7 +13,7 @@ const styles = StyleSheet.create({
         alignItems: 'center',
         justifyContent: 'space-between',
     },
-    heading:{
+    title:{
        fontSize:20,
        fontWeight:'500',
        

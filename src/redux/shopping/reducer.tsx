@@ -40,8 +40,6 @@ const shopReducer = (state = INITIAL_STATE,action) =>{
                 cart: state.cart.map((item:any) => item.id === action.payload.id ? {...item, qty: action.payload.qty}: item)
             };
         case actionTypes.ADD_TO_WISHLIST:
-            //get the item data from materials array
-            const items = materials.find(prod => prod.id === action.payload.id) 
             // check if item is in wishlist already
             const inWishlist = state.wishlist.find((item:any)=> 
             item.id === action.payload.id ? true : false
