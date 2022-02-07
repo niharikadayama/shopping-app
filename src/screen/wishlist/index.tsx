@@ -2,47 +2,34 @@ import React from 'react';
 import {View, Text, FlatList} from 'react-native';
 import styles from './styles';
 import {Header, WishlistCard} from 'components';
-import {connect} from 'react-redux';
+import {useSelector} from 'react-redux';
 
-const Wishlist = ({navigation, route, wishlist}) => {
+const Wishlist = ({navigation, route}) => {
   const item = route.params;
-
+  const wishlist = useSelector((state)=>state.shop.wishlist)
   return (
     <View style={styles.container}>
-      <Header
-        leftIcon={'arrow-left'}
-        rightIcon={'shopping-cart'}
-        size={28}
-        onLeftIconPress={() => {
-          navigation.navigate('details');
-        }}
-        onRightIconPress={() => {
-          navigation.navigate('cart');
-        }}
-        image={false}
-      />
-
-      <View style={styles.titleView}>
-        <Text style={styles.title}>Wishlist</Text>
-        <Text style={styles.subTitle}>Buy it before its gone</Text>
-      </View>
-
-      {/* {wishlist.map((item) => (
-               <WishlistCard key={item.id} items={item} navigation route/>
-          ))}   */}
-      <FlatList
-        data={wishlist}
-        renderItem={({item}) => {
-          return <WishlistCard key={item.id} items={item} navigation route />;
-        }}
-      />
+        <Header
+          leftIcon={'ios-chevron-back'}
+          rightIcon={'cart'}
+          iconSize={28}
+          onLeftIconPress={() => { navigation.navigate('root') }}
+          onRightIconPress={() => { navigation.navigate('cart') }}
+          showLogo={false}
+        />
+        <View style={styles.titleView}>
+            <Text style={styles.title}>Wishlist</Text>
+            <Text style={styles.subTitle}>Buy it before its gone</Text>
+        </View>
+        <FlatList
+            data={wishlist}
+            keyExtractor={(item,index)=>index.toString()}
+            renderItem={({item}) => {
+              return <WishlistCard items={item} navigation={navigation} route={route} />
+            }}
+        />
     </View>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    wishlist: state.shop.wishlist,
-  };
-};
-export default connect(mapStateToProps)(Wishlist);
+export default Wishlist;

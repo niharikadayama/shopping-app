@@ -1,25 +1,25 @@
 import { StyleSheet } from "react-native";
-import { colors } from "theme";
+import { Colors } from "theme";
 
 const styles = StyleSheet.create({
     buttons:{
       position:'absolute',
       right:"30%",
       bottom:"30%",
-      backgroundColor:colors.transparentdarkBg,
-      paddingHorizontal:25,
-      paddingVertical:15
+      backgroundColor:Colors.transparentdarkBg,
+      paddingHorizontal:24,
+      paddingVertical:16
     },
     button:{
       flexDirection:'row'
     },
     buttonText:{
-      color:colors.mediumGrey,
+      color:Colors.mediumGrey,
       fontWeight:'500',
       fontSize:20,
     },
     sectionIcon:{
-      color:colors.mediumGrey,
+      color:Colors.mediumGrey,
       paddingLeft:10
     },
 })

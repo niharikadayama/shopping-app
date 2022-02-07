@@ -5,9 +5,14 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: screenHeight,
+    backgroundColor:Colors.white
+  },
+  headerSection:{
+    paddingTop:16
   },
   header: {
     marginTop: 60,
+    marginBottom:20,
     marginHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
@@ -15,11 +20,24 @@ const styles = StyleSheet.create({
   headerHeading: {
     fontSize: 20,
     fontWeight: '600',
-    paddingHorizontal:120,
+    paddingHorizontal:120
+  },
+  profile:{
+    width: 160, 
+    height: 160, 
+    borderRadius: 160 / 2,
+    alignSelf:'center'
+  },
+  profileName:{
+   fontSize:20,
+   fontWeight: '600',
+   alignSelf:'center',
+   marginVertical:16,
   },
   section:{
-    marginTop:30,
-    marginHorizontal:20
+    marginTop:16,
+    marginHorizontal:20,
+    backgroundColor:Colors.lightGrey,
   },
   sectionHeading:{
     fontSize:18,
@@ -43,11 +61,7 @@ const styles = StyleSheet.create({
     marginLeft:12,
     fontSize:18
   },
-  footer:{
-   flexDirection:'column',
-   alignItems:'center',
-   marginTop: 150
-  }
+  
 });
 
 export default styles;

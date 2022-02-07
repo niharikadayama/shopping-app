@@ -1,64 +1,54 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
-import {connect} from 'react-redux';
 import {materials} from 'constant';
-import Icon from 'react-native-vector-icons/FontAwesome';
-import {SearchBar, Header} from 'components';
+import {Header} from 'components';
 import styles from './styles';
 
 const Details = ({navigation, route}) => {
   const item = route.params;
   const DataType = item.key;
-  console.log(DataType);
+  const FilteredArray = materials.filter(item => DataType === item.type);
+
   return (
     <View style={styles.container}>
       <Header
-        leftIcon={'arrow-left'}
-        rightIcon={'shopping-cart'}
-        size={28}
+        leftIcon={'ios-chevron-back'}
+        rightIcon={'cart'}
+        iconSize={28}
         onLeftIconPress={() => {
-          navigation.navigate('Home');
+          navigation.navigate('root');
         }}
         onRightIconPress={() => {
           navigation.navigate('cart');
         }}
-        image={true}
+        showLogo={true}
+        title={'Details'}
       />
 
       <FlatList
         numColumns={2}
-        data={materials}
-        renderItem={({item}) => {
-          if (DataType === item.type) {
-            return (
-              <TouchableOpacity
-                style={styles.card}
-                onPress={() => {
-                  navigation.navigate('ItemDetail', item);
-                }}>
-                <View>
-                  <Image source={item.img} style={styles.cardImg} />
-                </View>
+        data={FilteredArray}
+        renderItem={item => {
+          return (
+            <TouchableOpacity
+              style={styles.card}
+              onPress={() => {
+                navigation.navigate('ItemDetail', item.item);
+              }}>
+              <View>
+                <Image source={item.item.img} style={styles.cardImg} />
+              </View>
 
-                <View style={styles.cardBottom}>
-                  <Text style={styles.cardText}>{item.name}</Text>
-                  <Text style={styles.cardPrice}>Rs. {item.price}</Text>
-                </View>
-              </TouchableOpacity>
-            );
-          } else {
-            return <View />;
-          }
+              <View style={styles.cardBottom}>
+                <Text style={styles.cardText}>{item.item.name}</Text>
+                <Text style={styles.cardPrice}>Rs. {item.item.price}</Text>
+              </View>
+            </TouchableOpacity>
+          );
         }}
       />
     </View>
   );
 };
 
-const mapStateToProps = state => {
-  return {
-    products: state.shop.products,
-  };
-};
-
-export default connect(mapStateToProps)(Details);
+export default Details;

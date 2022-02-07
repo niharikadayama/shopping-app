@@ -1,38 +1,35 @@
 import React from "react";
 import {View,Text,Image} from 'react-native';
-import Icon from 'react-native-vector-icons/FontAwesome'
+import Icon from 'react-native-vector-icons/Ionicons';
 import styles from "./styles";
-import { images } from "theme";
+import { Images } from "theme";
 
 interface Iheader{
     leftIcon: string;
     rightIcon: string;
-    size: number;
-    image: boolean;
-    onLeftIconPress: () => void;
-    onRightIconPress:() => void;
+    title?: string;
+    iconSize?: number;
+    showLogo?: boolean;
+    onLeftIconPress?: () => void;
+    onRightIconPress?:() => void;
 }
 const Header = (props: Iheader) =>{
-    const {leftIcon,rightIcon,size,onLeftIconPress,onRightIconPress,image} = props
-
-    const logoPresent= ()=>{
-        if(image)
-           return <Image source={ images.logo } style={styles.logo}/>;
-        return null;
-     }
+    const {leftIcon,rightIcon,title,iconSize,onLeftIconPress,onRightIconPress,showLogo} = props
 
     return <View style = {styles.container}>
-        <View style={styles.header}>
-
-           <Icon name={leftIcon} size={size} style= {styles.iconLeft}
-            onPress={onLeftIconPress}/>
-            
-            {logoPresent()}
-
-            <Icon name={rightIcon}  size={size} style = {styles.iconRight}
-            onPress={onRightIconPress}/>
-
-        </View>
-    </View>
+                <View style={styles.headerSection}>
+                    <Icon name={leftIcon} size={iconSize} style= {styles.iconLeft}
+                        onPress={onLeftIconPress}/>
+                    
+                    {() => {
+                        if(showLogo)
+                            return <Image source={ Images.logo } style={styles.logo}/>
+                        return <Text style={styles.title}>{title}</Text>
+                    }}
+                    
+                    <Icon name={rightIcon}  size={iconSize} style = {styles.iconRight}
+                    onPress={onRightIconPress}/>
+                </View>
+           </View>
 }
 export default Header

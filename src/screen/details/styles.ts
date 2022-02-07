@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {colors, screenWidth} from 'theme';
+import {Colors, screenWidth} from 'theme';
 
 const width = screenWidth / 2 - 30;
 
@@ -7,17 +7,16 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: '100%',
-    marginVertical: 20,
-    backgroundColor: colors.white,
+    backgroundColor: Colors.white,
   },
 
   card: {
     height: '90%',
-    backgroundColor: colors.lightGrey,
+    backgroundColor: Colors.lightGrey,
     width,
-    marginHorizontal: 5,
-    marginVertical: 5,
-    paddingHorizontal: 5,
+    marginHorizontal: 6,
+    marginVertical: 6,
+    paddingHorizontal: 6,
     borderRadius: 10,
     shadowColor: '#171717',
     shadowOffset: {width: -2, height: 4},
@@ -30,25 +29,25 @@ const styles = StyleSheet.create({
   cardImg: {
     width: '100%',
     height: 190,
-    borderRadius: 5,
+    borderRadius: 6,
     alignSelf: 'center',
   },
   cardText: {
-    color: colors.darkGrey,
-    fontSize: 17,
+    color: Colors.darkGrey,
+    fontSize: 18,
     fontWeight: 'bold',
-    paddingVertical: 5,
+    paddingVertical: 6,
   },
   cardPrice: {
-    color: colors.darkbg,
+    color: Colors.darkbg,
     fontSize: 18,
-    paddingVertical: 5,
+    paddingVertical: 6,
   },
   icon: {
-    color: colors.offwhite,
+    color: Colors.offwhite,
     position: 'absolute',
     bottom: 26,
-    right: 19,
+    right: 18,
   },
   cardBottom: {
     justifyContent: 'space-between',

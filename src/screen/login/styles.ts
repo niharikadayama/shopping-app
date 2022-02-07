@@ -1,16 +1,16 @@
 import { StyleSheet } from "react-native";
-import {colors,images,screenWidth,screenHeight} from 'theme'
+import {Images,Colors,screenWidth,screenHeight} from 'theme'
 
 const styles = StyleSheet.create({
    container:{
      width:screenWidth,
      height:screenHeight,
-     backgroundColor: colors.white
+     backgroundColor: Colors.white
    },
    inputContainer:{
     alignItems:'flex-start',
     marginTop:30,
-    paddingHorizontal:15
+    paddingHorizontal:16
   },
   inputTitle:{
     fontSize:22,
@@ -19,7 +19,7 @@ const styles = StyleSheet.create({
   }, 
    forgetpassword:{
     textAlign:'right',
-    paddingHorizontal:15,
+    paddingHorizontal:16,
     paddingVertical:20,
     fontSize:16
   },
