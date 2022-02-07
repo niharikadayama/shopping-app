@@ -16,22 +16,6 @@ import {Colors, size} from 'theme';
 const ItemDetail = ({navigation, route}) => {
   const item = route.params;
   const sizeCheck = item.size;
-  const FlatlistItem = ({item}) => {
-    if (sizeCheck === item) {
-      return (
-        <View style={styles.detailColor}>
-          <Text style={[styles.detailSize, styles.selectedDetailSize]}>
-            {item}
-          </Text>
-        </View>
-      );
-    }
-    return (
-      <View style={styles.detailColor}>
-        <Text style={styles.detailSize}>{item}</Text>
-      </View>
-    );
-  };
   const dispatch = useDispatch();
   return (
     <SafeAreaView style={styles.container}>
@@ -78,7 +62,13 @@ const ItemDetail = ({navigation, route}) => {
                   numColumns={4}
                   data={size}
                   renderItem={({item}) => {
-                    return <FlatlistItem item={item} />;
+                        return (
+                          <View style={styles.detailColor}>
+                              <Text style={[(sizeCheck === item) ? [styles.detailSize,styles.selectedDetailSize] : styles.detailSize]}>
+                              {item}
+                              </Text>
+                          </View>
+                        );
                   }}
                 />
 

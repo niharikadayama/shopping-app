@@ -11,14 +11,8 @@ const Cart = ({navigation,route}) =>{
     const myCart = useSelector((state)=>state.shop.cart)
 
     useEffect(()=>{
-       let items = 0;
-       let price = 0;
-
-       myCart.map((item: { qty: number; price: number; }) =>{
-            items += item.qty,
-            price += item.qty * item.price
-       })
-
+       let items = myCart.reduce((items,item)=>items+item.qty,0);
+       let price = myCart.reduce((price,item)=>price += item.qty * item.price,0);
        setTotalItem(items);
        setTotalPrice(price);
     },[myCart,totalPrice,totalItem,setTotalPrice,setTotalItem])
