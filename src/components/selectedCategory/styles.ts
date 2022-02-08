@@ -4,8 +4,8 @@ import { Colors } from "theme";
 const styles = StyleSheet.create({
     buttons:{
       position:'absolute',
-      right:"30%",
-      bottom:"30%",
+      right:110,
+      bottom:200,
       backgroundColor:Colors.transparentdarkBg,
       paddingHorizontal:24,
       paddingVertical:16

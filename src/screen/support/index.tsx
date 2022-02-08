@@ -22,55 +22,57 @@ const Support = () => {
       ref={ref}
       transition={transition}
       style={style.container}>
-      
-        <Header 
-            leftIcon={"ios-chevron-back"} 
-            rightIcon={""} 
-            iconSize={25}
-            onLeftIconPress ={()=>{ }}
-            onRightIconPress ={()=>{ }}
-            showLogo = {false} 
-            title={'Support'}
-        />
+      <Header
+        leftIcon={'ios-chevron-back'}
+        rightIcon={''}
+        iconSize={25}
+        onLeftIconPress={() => {}}
+        onRightIconPress={() => {}}
+        showLogo={false}
+        title={'Support'}
+      />
 
-        <FlatList
-            data={supportMaterial}
-            renderItem={({item, index}) => {
-              return (
-                <TouchableOpacity
-                    key={item.heading}
-                    onPress={() => {
-                      ref.current.animateNextTransition();
-                      setCurrentIndex(index === currentIndex ? 0 : index);
-                    }}
-                    style={style.cardContainer}
-                >
-                      <View style={[style.card, {backgroundColor: item.backgroundColor}]}>
-                          <View style={style.cardHeadinglist}>
-                              <Icon name={item.iconName} size={29} color={item.textColor} />
-                              <Text style={style.cardHeading}>{item.heading}</Text>
-                          </View>
-                          <Icon
-                            name="chevron-right"
-                            size={25}
-                            style={{position: 'absolute', right: 10, top: 25}}
-                          />
-                          {index === currentIndex && (
-                              <View style={style.subHeadinglist}>
-                                  {item.subHeading.map(subHeading => (
-                                    <Text
-                                      key={subHeading}
-                                      style={[style.subHeadingListbody, {color: item.textColor}]}>
-                                      {subHeading}
-                                    </Text>
-                                  ))}
-                              </View>
-                          )}
-                      </View>
-                </TouchableOpacity>
-              );
-            }}
-        />
+      <FlatList
+        data={supportMaterial}
+        renderItem={({item, index}) => {
+          return (
+            <TouchableOpacity
+              key={item.heading}
+              onPress={() => {
+                ref.current.animateNextTransition();
+                setCurrentIndex(index === currentIndex ? 0 : index);
+              }}
+              style={style.cardContainer}>
+              <View
+                style={[style.card, {backgroundColor: item.backgroundColor}]}>
+                <View style={style.cardHeadinglist}>
+                  <Icon name={item.iconName} size={29} color={item.textColor} />
+                  <Text style={style.cardHeading}>{item.heading}</Text>
+                </View>
+                <Icon
+                  name="chevron-right"
+                  size={25}
+                  style={{position: 'absolute', right: 10, top: 25}}
+                />
+                {index === currentIndex && (
+                  <View style={style.subHeadinglist}>
+                    {item.subHeading.map(subHeading => (
+                      <Text
+                        key={subHeading}
+                        style={[
+                          style.subHeadingListbody,
+                          {color: item.textColor},
+                        ]}>
+                        {subHeading}
+                      </Text>
+                    ))}
+                  </View>
+                )}
+              </View>
+            </TouchableOpacity>
+          );
+        }}
+      />
     </Transitioning.View>
   );
 };
