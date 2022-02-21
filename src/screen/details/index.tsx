@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
+import {Products} from 'components';
 import {materials} from 'constant';
 import {Header} from 'components';
 import styles from './styles';
@@ -24,29 +25,7 @@ const Details = ({navigation, route}) => {
         showLogo={true}
         title={'Details'}
       />
-
-      <FlatList
-        numColumns={2}
-        data={FilteredArray}
-        renderItem={item => {
-          return (
-            <TouchableOpacity
-              style={styles.card}
-              onPress={() => {
-                navigation.navigate('ItemDetail', item.item);
-              }}>
-              <View>
-                <Image source={item.item.img} style={styles.cardImg} />
-              </View>
-
-              <View style={styles.cardBottom}>
-                <Text style={styles.cardText}>{item.item.name}</Text>
-                <Text style={styles.cardPrice}>Rs. {item.item.price}</Text>
-              </View>
-            </TouchableOpacity>
-          );
-        }}
-      />
+      <Products navigation={navigation} />
     </View>
   );
 };

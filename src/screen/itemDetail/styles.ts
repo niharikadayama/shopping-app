@@ -27,53 +27,54 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft: 20,
   },
+  detailCategory:{
+    textTransform:'uppercase',
+    color: Colors.darkGrey,
+    paddingVertical:12
+  },
   detailName: {
     fontSize: 24,
-    fontWeight: 'bold',
     marginBottom: 10,
   },
   detailInfo: {
-    fontSize: 16,
-    marginBottom: 10,
+    fontSize: 15,
+    marginBottom: 8,
+    textTransform:'capitalize'
+  },
+  rating:{
+    flexDirection:'row',
+    justifyContent:'flex-start',
+    alignItems:'center'
+  },
+  ratingText:{
+    fontWeight:'500',
+    paddingLeft:8
   },
   detailPrice: {
-    fontSize: 26,
+    fontSize: 24,
     fontWeight: 'bold',
-  },
-  detailHeart: {
-    position: 'absolute',
-    top: 26,
-    right: 20,
-    color: Colors.red,
-  },
-  detailNormal: {
-    fontSize: 16,
-    fontWeight: '600',
-    marginBottom: 6,
-  },
-  detailColor: {
-    flexDirection: 'row',
-    justifyContent: 'space-evenly',
-  },
-  detailSize: {
-    fontSize: 18,
-    fontWeight: '600',
-    marginTop: 6,
-    borderWidth: 1,
-    borderColor: Colors.overlay,
-    borderRadius: 6,
-    paddingHorizontal: 6,
-    paddingVertical: 4,
-    marginLeft: '13%',
-  },
-  selectedDetailSize: {
-    borderColor: Colors.darkGrey,
+    paddingVertical:12
   },
   detailBottom: {
     flexDirection: 'row',
-    justifyContent: 'flex-start',
+    justifyContent:'space-evenly',
     alignItems: 'center',
-    marginTop: 14,
+    marginTop:8,
+  },
+  button: {
+    backgroundColor: Colors.transparentlightBg,
+    borderWidth:1/4,
+    borderColor:Colors.buttonBgdark,
+    paddingVertical: 12,
+    paddingHorizontal: 16,
+    marginRight:12,
+    borderRadius: 12,
+  },
+  buttonText: {
+    color: Colors.buttonBgdark,
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: '500',
   },
 });
 

@@ -4,80 +4,58 @@ import {
   Text,
   ImageBackground,
   SafeAreaView,
-  FlatList,
+  TouchableOpacity,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
 import {addToCart, addToWishlist} from 'redux/shopping/action';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
+import StarRating from 'react-native-star-rating';
 import {Button} from 'components';
-import {Colors, size} from 'theme';
+import {Colors} from 'theme';
+import style from 'screen/support/styles';
 
 const ItemDetail = ({navigation, route}) => {
   const item = route.params;
-  const sizeCheck = item.size;
   const dispatch = useDispatch();
   return (
     <SafeAreaView style={styles.container}>
       <ImageBackground
-        source={item.img}
+        source={{uri: item.image}}
         resizeMode={'cover'}
         style={styles.image}>
         <Icon
           name="ios-chevron-back"
           size={26}
-          color={Colors.white}
+          color={Colors.mediumGrey}
           style={styles.icon}
           onPress={() => navigation.navigate('root')}
         />
 
         <View style={styles.detailsContainer}>
-          <Text style={styles.detailName}>{item.name}</Text>
-          <Text style={styles.detailInfo}>{item.info}</Text>
-
-          <Icon
-            name="heart"
-            size={25}
-            style={styles.detailHeart}
-            onPress={() => {
-              navigation.navigate('wishlist', item);
-              dispatch(addToWishlist(item.id));
-            }}
-          />
-
-          <Text style={styles.detailNormal}>Color</Text>
-          <View style={styles.detailColor}>
-            <Icon name="checkmark-circle" size={40} color={item.color} />
-            <Icon
-              name="ios-help-circle-sharp"
-              size={40}
-              color={Colors.yellow}
+          <Text style={styles.detailCategory}>{item.category}</Text>
+          <Text style={styles.detailName}>{item.title}</Text>
+          <View style={styles.rating}>
+            <StarRating
+              disabled={false}
+              maxStars={5}
+              rating={item.rating.rate}
+              fullStarColor={Colors.yellow}
+              emptyStarColor={Colors.mediumGrey}
+              starSize={20}
+              containerStyle={{width: 120}}
             />
-            <Icon name="ios-help-circle-sharp" size={40} color={Colors.coral} />
+            <Text style={styles.ratingText}>{item.rating.count}</Text>
           </View>
-
-          <Text style={styles.detailNormal}>Size</Text>
-          <FlatList
-            numColumns={4}
-            data={size}
-            renderItem={({item}) => {
-              return (
-                <View style={styles.detailColor}>
-                  <Text
-                    style={[
-                      sizeCheck === item
-                        ? [styles.detailSize, styles.selectedDetailSize]
-                        : styles.detailSize,
-                    ]}>
-                    {item}
-                  </Text>
-                </View>
-              );
-            }}
-          />
+          <Text style={styles.detailPrice}>Rs. {item.price}</Text>
+          <Text style={styles.detailInfo}>
+            {item.description.substring(0, 120)}
+          </Text>
 
           <View style={styles.detailBottom}>
-            <Text style={styles.detailPrice}>Rs. {item.price}</Text>
+            <TouchableOpacity style={styles.button}>
+              <Text style={styles.buttonText}>Add to Wishlist</Text>
+            </TouchableOpacity>
             <Button
               name={'Add To Cart'}
               onPress={() => {
