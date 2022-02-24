@@ -6,9 +6,10 @@ import {useSelector} from 'react-redux';
 
 const Cart = ({navigation, route}) => {
   const item = route.params;
+  console.log(item);
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItem, setTotalItem] = useState(0);
-  const myCart = useSelector(state => state.shop.cart);
+  const myCart = useSelector(state => state.shop.data);
 
   useEffect(() => {
     let items = myCart.reduce((items, item) => items + item.qty, 0);
@@ -42,7 +43,7 @@ const Cart = ({navigation, route}) => {
       </View>
 
       <FlatList
-        data={myCart}
+        data={item}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item}) => {
           return <CartCard itemData={item} />;

@@ -7,14 +7,15 @@ import {useDispatch} from 'react-redux';
 import {removeFromCart, adjustQty} from 'redux/shopping/action';
 
 const CartCard = ({itemData}) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
+  console.log(itemData);
   return (
     <View style={styles.cartCard}>
-      <Image source={itemData.img} style={styles.cardImg} />
+      <Image source={itemData.image} style={styles.cardImg} />
 
       <View style={styles.cardText}>
-        <Text style={styles.cardTitle}>{itemData.name}</Text>
-        <Text style={styles.cardInfo}>{itemData.info}</Text>
+        <Text style={styles.cardTitle}>{itemData.title}</Text>
+        <Text style={styles.cardInfo}>{itemData.description}</Text>
 
         <View style={styles.quant}>
           <View>
@@ -26,7 +27,7 @@ const CartCard = ({itemData}) => {
               width={100}
               height={30}
               value={itemData.qty}
-              onChange={(num:number) => {
+              onChange={(num: number) => {
                 dispatch(adjustQty(itemData.id, num));
               }}
             />
@@ -38,12 +39,12 @@ const CartCard = ({itemData}) => {
           </View>
         </View>
         <Pressable
-            style={styles.removeButton}
-            onPress={() => {
-              dispatch(removeFromCart(itemData.id));
-            }}>
-            <Icon name="trash" size={22} style={styles.RemoveButtonIcon} />
-            <Text style={styles.RemoveButtonText}>Remove </Text>
+          style={styles.removeButton}
+          onPress={() => {
+            dispatch(removeFromCart(itemData.id));
+          }}>
+          <Icon name="trash" size={22} style={styles.RemoveButtonIcon} />
+          <Text style={styles.RemoveButtonText}>Remove </Text>
         </Pressable>
       </View>
     </View>

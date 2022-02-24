@@ -1,36 +1,29 @@
 import React, {useState, useEffect} from 'react';
+import axios from 'axios';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
+import {useSelector} from 'react-redux';
 import styles from './styles';
 
 const Products = ({navigation}) => {
+  const URL = 'https://fakestoreapi.com/products';
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
   let componentMounted = true;
 
   useEffect(() => {
-    const getProducts = async () => {
-      setLoading(true);
-      const response = await fetch('https://fakestoreapi.com/products');
-      if (componentMounted) {
-        setData(await response.clone().json());
-        setFilter(await response.json());
+    axios
+      .get(URL)
+      .then(response => response.data)
+      .then(data => {
+        setData(data);
+        setFilter(data);
         setLoading(false);
-      }
-      return () => {
-        componentMounted = false;
-      };
+      });
+    return () => {
+      componentMounted = false;
     };
-    getProducts();
   }, []);
-
-  const Loading = () => {
-    return (
-      <>
-        <Text>Loading.......</Text>
-      </>
-    );
-  };
 
   const filterProduct = cat => {
     const updateList = data.filter(x => x.category === cat);
@@ -88,7 +81,7 @@ const Products = ({navigation}) => {
       </>
     );
   };
-  return <>{loading ? <Loading /> : <ShowProduct />}</>;
+  return <>{loading ? <Text>Loading.......</Text> : <ShowProduct />}</>;
 };
 
 export default Products;

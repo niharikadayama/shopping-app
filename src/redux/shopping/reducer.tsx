@@ -1,35 +1,56 @@
-import * as actionTypes from './types';
+import ACTION_TYPES from './types';
 
-const cart = [];
+const initialState = {
+  products: [],
+  cart: [],
+  loading: false,
+  data: '',
+  error: '',
+};
 
-const shopReducer = (state = cart, action) => {
-  const product = action.payload;
+const shopReducer = (state = initialState, action) => {
   switch (action.type) {
-    case actionTypes.ADD_TO_CART:
-      //get the item data from products array
-      const item = state.find(prod => prod.id === action.payload.id);
-      // check if item is in cart already
-      const inCart = state.find((item: any) => item.id === action.payload.id);
+    case ACTION_TYPES.API_PENDING:
+      return {
+        ...state,
+        loading: true,
+      };
+    case ACTION_TYPES.API_SUCCESS:
+      return {
+        ...state,
+        data: action.payload,
+        loading: false,
+      };
+    case ACTION_TYPES.API_ERROR:
+      return {
+        ...state,
+        error: action.payload,
+        loading: false,
+      };
+    case ACTION_TYPES.ADD_TO_CART:
+      const inCart = state.cart.find(
+        (item: any) => item.id === action.payload.id,
+      );
 
       return {
         ...state,
         cart: inCart
-          ? state.map((item: any) =>
+          ? state.cart.map((item: any) =>
               item.id === action.payload.id
                 ? {...item, qty: item.qty + 1}
                 : item,
             )
-          : [...state, {qty: 1}],
+          : [...state.cart, {qty: 1}],
       };
-    case actionTypes.REMOVE_FROM_CART:
+    case ACTION_TYPES.REMOVE_FROM_CART:
       return {
         ...state,
-        cart: state.filter((item: any) => item.id !== action.payload.id),
+        cart: state.cart.filter((item: any) => item.id !== action.payload.id),
       };
-    case actionTypes.AdjustQty:
+    case ACTION_TYPES.AdjustQty:
       return {
         ...state,
-        cart: state.map((item: any) =>
+        cart: state.cart.map((item: any) =>
           item.id === action.payload.id
             ? {...item, qty: action.payload.qty}
             : item,
