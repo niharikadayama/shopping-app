@@ -1,7 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
-import {useSelector} from 'react-redux';
 import styles from './styles';
 
 const Products = ({navigation}) => {
@@ -9,7 +8,6 @@ const Products = ({navigation}) => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(false);
-  let componentMounted = true;
 
   useEffect(() => {
     axios
@@ -20,9 +18,7 @@ const Products = ({navigation}) => {
         setFilter(data);
         setLoading(false);
       });
-    return () => {
-      componentMounted = false;
-    };
+    return () => {};
   }, []);
 
   const filterProduct = cat => {
@@ -62,8 +58,7 @@ const Products = ({navigation}) => {
             return (
               <TouchableOpacity
                 style={styles.card}
-                onPress={() => navigation.navigate('ItemDetail', item)}
-                key={item.id}>
+                onPress={() => navigation.navigate('ItemDetail', item)}>
                 <View>
                   <Image source={{uri: item.image}} style={styles.cardImg} />
                 </View>

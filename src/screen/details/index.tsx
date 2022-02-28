@@ -7,8 +7,6 @@ import styles from './styles';
 
 const Details = ({navigation, route}) => {
   const item = route.params;
-  const DataType = item.key;
-  const FilteredArray = materials.filter(item => DataType === item.type);
 
   return (
     <View style={styles.container}>

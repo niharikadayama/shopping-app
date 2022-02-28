@@ -13,7 +13,6 @@ import Icon from 'react-native-vector-icons/Ionicons';
 import StarRating from 'react-native-star-rating';
 import {Button} from 'components';
 import {Colors} from 'theme';
-import style from 'screen/support/styles';
 
 const ItemDetail = ({navigation, route}) => {
   const item = route.params;
@@ -60,7 +59,7 @@ const ItemDetail = ({navigation, route}) => {
               name={'Add To Cart'}
               onPress={() => {
                 navigation.navigate('cart', item);
-                dispatch(addToCart(item.id));
+                dispatch(addToCart(item));
               }}
               theme={'secondary'}
             />

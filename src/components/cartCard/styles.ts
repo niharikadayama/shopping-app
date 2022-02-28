@@ -3,12 +3,10 @@ import {Colors} from 'theme';
 
 const styles = StyleSheet.create({
   cartCard: {
-    height: 176,
+    height: 180,
     backgroundColor: Colors.white,
     marginVertical: 16,
     marginHorizontal: 16,
-    flexDirection: 'row',
-    justifyContent: 'flex-start',
     borderRadius: 16,
     shadowColor: '#000',
     shadowOffset: {
@@ -18,11 +16,20 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 4,
+    flexDirection:'row',
+  },
+  imageColumn:{
+    
+  },
+  detailColumn:{
+    justifyContent:'space-evenly',
+    alignItems:'flex-start',
+   
   },
   cardImg: {
     width: 140,
     height: '100%',
-    //borderRadius:15,
+    borderRadius:15,
     borderTopLeftRadius: 16,
     borderBottomLeftRadius: 16,
   },
@@ -33,7 +40,7 @@ const styles = StyleSheet.create({
   },
   cardTitle: {
     marginTop: 4,
-    fontSize: 24,
+    fontSize: 18,
     fontWeight: 'bold',
   },
   cardInfo: {
@@ -55,7 +62,7 @@ const styles = StyleSheet.create({
   },
   quant: {
     flexDirection: 'row',
-    paddingVertical: 16,
+    paddingVertical: 12,
     justifyContent: 'space-around',
     alignItems: 'center',
   },

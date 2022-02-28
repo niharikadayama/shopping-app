@@ -170,6 +170,8 @@ export const materials = [
   },
 ];
 
+export const products = [];
+
 export const supportMaterial = [
   {
     iconName: 'wallet-giftcard',
