@@ -24,7 +24,7 @@ const ItemDetail = ({navigation, route}) => {
         resizeMode={'cover'}
         style={styles.image}>
         <Icon
-          name="ios-chevron-back"
+          name="chevron-back"
           size={26}
           color={Colors.mediumGrey}
           style={styles.icon}

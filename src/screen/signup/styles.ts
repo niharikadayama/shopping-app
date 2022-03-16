@@ -9,7 +9,6 @@ const styles = StyleSheet.create({
   },
   inputContainer:{
     alignItems:'flex-start',
-    marginTop:30,
     paddingHorizontal:16
   },
   inputTitle:{

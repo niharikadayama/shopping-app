@@ -5,13 +5,13 @@ const styles = StyleSheet.create({
   cartCard: {
     height: 180,
     backgroundColor: Colors.white,
-    marginVertical: 16,
-    marginHorizontal: 16,
+    marginVertical: 12,
+    marginHorizontal: 12,
     borderRadius: 16,
     shadowColor: '#000',
     shadowOffset: {
       width: 0,
-      height: 6,
+      height: 8,
     },
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
@@ -23,8 +23,7 @@ const styles = StyleSheet.create({
   },
   detailColumn:{
     justifyContent:'space-evenly',
-    alignItems:'flex-start',
-   
+    flexShrink:1,
   },
   cardImg: {
     width: 140,
@@ -36,7 +35,6 @@ const styles = StyleSheet.create({
   cardText: {
     paddingLeft: 20,
     paddingVertical: 12,
-    flexShrink: 1,
   },
   cardTitle: {
     marginTop: 4,
@@ -50,7 +48,7 @@ const styles = StyleSheet.create({
   removeButton: {
     flexDirection:'row',
     alignItems:'center',
-    justifyContent:'center'
+    justifyContent:'flex-start'
   },
   RemoveButtonIcon: {
     color: Colors.darkRed,
@@ -63,13 +61,13 @@ const styles = StyleSheet.create({
   quant: {
     flexDirection: 'row',
     paddingVertical: 12,
-    justifyContent: 'space-around',
     alignItems: 'center',
+    justifyContent:'flex-start',
   },
   quantText: {
     fontSize: 18,
     fontWeight: '600',
-    paddingHorizontal: 4,
+    paddingHorizontal:12
   },
   quantRupeeIcon: {
     color: Colors.darkGrey,

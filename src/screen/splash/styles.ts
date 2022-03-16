@@ -18,12 +18,12 @@ const styles = StyleSheet.create({
     },
     cardTitle:{
        fontSize:30,
-       fontWeight:'800',
+       fontWeight:'700',
        paddingBottom:10
     },
     cardSubTitle:{
         fontSize:20,
-        fontWeight:'600',
+        fontWeight:'500',
         textAlign:'center',
         paddingBottom:6
      },

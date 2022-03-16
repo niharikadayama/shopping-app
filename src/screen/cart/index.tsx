@@ -42,9 +42,8 @@ const Cart = ({navigation, route}) => {
 
       <FlatList
         data={myCart}
-        renderItem={({item}) => {
-          console.log(item.id);
-          return <CartCard itemData={item} />;
+        renderItem={item => {
+          return <CartCard itemData={item.item} />;
         }}
       />
 

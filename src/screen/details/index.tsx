@@ -1,7 +1,6 @@
 import React from 'react';
-import {View, Text, Image, TouchableOpacity, FlatList} from 'react-native';
+import {View} from 'react-native';
 import {Products} from 'components';
-import {materials} from 'constant';
 import {Header} from 'components';
 import styles from './styles';
 
@@ -11,7 +10,7 @@ const Details = ({navigation, route}) => {
   return (
     <View style={styles.container}>
       <Header
-        leftIcon={'ios-chevron-back'}
+        leftIcon={'chevron-back'}
         rightIcon={'cart'}
         iconSize={28}
         onLeftIconPress={() => {

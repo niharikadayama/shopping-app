@@ -5,7 +5,7 @@ const styles = StyleSheet.create({
     buttons:{
       position:'absolute',
       right:110,
-      bottom:200,
+      bottom:240,
       backgroundColor:Colors.transparentdarkBg,
       paddingHorizontal:24,
       paddingVertical:16

@@ -19,15 +19,14 @@ const CartCard = ({itemData}) => {
           <Text style={styles.cardInfo}>
             {itemData.description.substring(0, 20)}
           </Text>
-
           <View style={styles.quant}>
             <View>
               <InputSpinner
                 max={9}
                 min={1}
                 step={1}
-                fontSize={16}
-                width={100}
+                fontSize={18}
+                width={90}
                 height={30}
                 value={itemData.qty}
                 onChange={(num: number) => {

@@ -1,5 +1,5 @@
 import {StyleSheet} from 'react-native';
-import {Colors, screenWidth} from 'theme';
+import {Colors, screenWidth, screenHeight} from 'theme';
 
 const width = screenWidth / 2 - 30;
 

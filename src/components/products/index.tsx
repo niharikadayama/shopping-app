@@ -1,13 +1,14 @@
 import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
+import Loader from '../loader';
 import styles from './styles';
 
 const Products = ({navigation}) => {
   const URL = 'https://fakestoreapi.com/products';
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
-  const [loading, setLoading] = useState(false);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     axios
@@ -76,7 +77,7 @@ const Products = ({navigation}) => {
       </>
     );
   };
-  return <>{loading ? <Text>Loading.......</Text> : <ShowProduct />}</>;
+  return <>{loading ? <Loader /> : <ShowProduct />}</>;
 };
 
 export default Products;

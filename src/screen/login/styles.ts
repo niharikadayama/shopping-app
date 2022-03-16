@@ -9,18 +9,18 @@ const styles = StyleSheet.create({
    },
    inputContainer:{
     alignItems:'flex-start',
-    marginTop:30,
+    marginTop:20,
     paddingHorizontal:16
   },
   inputTitle:{
     fontSize:22,
     fontWeight:'600',
-    marginBottom:10
+    marginBottom:8,
   }, 
    forgetpassword:{
     textAlign:'right',
     paddingHorizontal:16,
-    paddingVertical:20,
+    paddingVertical:16,
     fontSize:16
   },
   

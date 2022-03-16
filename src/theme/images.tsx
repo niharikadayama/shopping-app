@@ -1,21 +1,5 @@
 export const Images = {
-    logo:  require('assets/images/nida.png'),
-    splashBg: require('assets/images/splashBg2.jpg'),
-    profile: require('assets/images/profile.jpg'),
-    w1:    require('assets/images/woman/w1.jpg'),
-    w2:    require('assets/images/woman/w2.jpg'),
-    w3:    require('assets/images/woman/w3.jpg'),
-    w4:    require('assets/images/woman/w4.jpg'),
-    w5:    require('assets/images/woman/w5.jpg'),
-    w6:    require('assets/images/woman/w6.jpg'),
-    w7:    require('assets/images/woman/w7.jpg'),
-    w8:    require('assets/images/woman/w8.jpg'),
-    m1:    require('assets/images/man/m1.jpg'),
-    m2:    require('assets/images/man/m2.jpg'),
-    m3:    require('assets/images/man/m3.jpg'),
-    m4:    require('assets/images/man/m4.jpg'),
-    m5:    require('assets/images/man/m5.jpg'),
-    m6:    require('assets/images/man/m6.jpg'),
-    m7:    require('assets/images/man/m7.jpg'),
-    m8:    require('assets/images/man/m8.jpg')
-}
+  logo: require('assets/images/Nida.jpg'),
+  splashBg: require('assets/images/splashBg2.jpg'),
+  profile: require('assets/images/profile.jpg'),
+};

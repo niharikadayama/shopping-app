@@ -20,7 +20,7 @@ const styles = StyleSheet.create({
 
   detailsContainer: {
     position: 'absolute',
-    bottom: 2,
+    bottom: 80,
     width: '90%',
     backgroundColor: Colors.transparentlightBg,
     borderRadius: 20,
