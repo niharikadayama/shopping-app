@@ -18,7 +18,7 @@ const Cart = ({navigation, route}) => {
     setTotalItem(items);
     setTotalPrice(price);
   }, [myCart]);
-
+  console.log(myCart);
   return (
     <View style={styles.container}>
       <Header
@@ -42,10 +42,12 @@ const Cart = ({navigation, route}) => {
 
       <FlatList
         data={myCart}
+        keyExtractor={(item, index) => index.toString()}
         renderItem={item => {
-          return <CartCard itemData={item.item} />;
+          return <CartCard itemData={item} />;
         }}
       />
+      {/* <CartCard itemData={item} /> */}
 
       <View style={styles.totalCard}>
         <Text style={styles.totalCardText}>{totalItem} items</Text>

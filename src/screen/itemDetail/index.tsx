@@ -52,7 +52,12 @@ const ItemDetail = ({navigation, route}) => {
           </Text>
 
           <View style={styles.detailBottom}>
-            <TouchableOpacity style={styles.button}>
+            <TouchableOpacity
+              style={styles.button}
+              onPress={() => {
+                navigation.navigate('wishlist', item);
+                dispatch(addToWishlist(item));
+              }}>
               <Text style={styles.buttonText}>Add to Wishlist</Text>
             </TouchableOpacity>
             <Button

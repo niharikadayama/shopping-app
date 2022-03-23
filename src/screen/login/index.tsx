@@ -22,7 +22,7 @@ const Login = ({navigation}) => {
       <AuthHeader />
       <View style={styles.inputContainer}>
         <Text style={styles.inputTitle}>Welcome Back,</Text>
-        <AuthInputContainer
+        {/* <AuthInputContainer
           name="username"
           control={control}
           placeholder="Enter Username"
@@ -43,7 +43,7 @@ const Login = ({navigation}) => {
               message: 'Password should be minimum 6 characters long',
             },
           }}
-        />
+        /> */}
         <Button
           name={'Login'}
           onPress={handleSubmit(onSignInPressed)}

@@ -45,7 +45,8 @@ const styles = StyleSheet.create({
   },
   informationInput: {
     fontSize:18,
-    paddingHorizontal:8
+    paddingHorizontal:8,
+    color: 'black'
   },
   horizontalLine: {
     borderBottomColor: Colors.mediumGrey,

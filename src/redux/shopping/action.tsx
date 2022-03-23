@@ -20,11 +20,9 @@ export const adjustQty = (itemID, value: number) => ({
   },
 });
 
-export const addToWishlist = (itemID: number) => ({
+export const addToWishlist = item => ({
   type: ACTION_TYPES.ADD_TO_WISHLIST,
-  payload: {
-    id: itemID,
-  },
+  payload: item,
 });
 
 export const removeFromWishlist = (itemID: number) => ({

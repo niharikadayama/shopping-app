@@ -2,12 +2,14 @@ import React, {useState, useEffect} from 'react';
 import axios from 'axios';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import Loader from '../loader';
+import {Colors} from 'theme';
 import styles from './styles';
 
 const Products = ({navigation}) => {
   const URL = 'https://fakestoreapi.com/products';
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
+  const [colors, setColor] = useState(Colors.lightGrey);
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
@@ -33,22 +35,30 @@ const Products = ({navigation}) => {
         <View style={styles.container}>
           <TouchableOpacity
             style={styles.subContainer}
-            onPress={() => setFilter(data)}>
+            onPress={() => {
+              setFilter(data), setColor(Colors.coralbg);
+            }}>
             <Text style={styles.textStyling}>ALL</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.subContainer}
-            onPress={() => filterProduct("men's clothing")}>
+            onPress={() => {
+              filterProduct("men's clothing"), setColor(Colors.coralbg);
+            }}>
             <Text style={styles.textStyling}>MEN</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.subContainer}
-            onPress={() => filterProduct("women's clothing")}>
+            onPress={() => {
+              filterProduct("women's clothing"), setColor(Colors.coralbg);
+            }}>
             <Text style={styles.textStyling}>WOMEN</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.subContainer}
-            onPress={() => filterProduct('jewelery')}>
+            onPress={() => {
+              filterProduct('jewelery'), setColor(Colors.coralbg);
+            }}>
             <Text style={styles.textStyling}>JEWELERY</Text>
           </TouchableOpacity>
         </View>

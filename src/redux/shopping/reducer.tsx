@@ -2,12 +2,14 @@ import ACTION_TYPES from './types';
 
 const initialState = {
   cart: [],
+  // wishlist: [],
 };
 
 const shopReducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_TYPES.ADD_TO_CART:
       const item = action.payload;
+      console.log(item.id);
       const inCart =
         state.cart.findIndex((item: any) => item.id === action.payload.id) !==
         -1;
@@ -29,8 +31,18 @@ const shopReducer = (state = initialState, action) => {
             : item,
         ),
       };
+    // case ACTION_TYPES.ADD_TO_WISHLIST:
+    //   const wishlistItem = action.payload;
+    //   const inWishlist =
+    //     state.cart.findIndex((item: any) => item.id === action.payload.id) !==
+    //     -1;
+    //   return {
+    //     ...state,
+    //     cart: inWishlist ? [state.wishlist] : [...state.wishlist, wishlistItem],
+    //   };
     default:
       return state;
   }
 };
+
 export default shopReducer;
