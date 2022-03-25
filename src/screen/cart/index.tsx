@@ -8,7 +8,7 @@ const Cart = ({navigation, route}) => {
   const item = route.params;
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItem, setTotalItem] = useState(0);
-  const myCart = useSelector(state => state.shop.cart);
+  const myCart = useSelector(state => state.shop);
   useEffect(() => {
     let items = myCart.reduce((items, item) => items + item.qty, 0);
     let price = myCart.reduce(
@@ -42,12 +42,10 @@ const Cart = ({navigation, route}) => {
 
       <FlatList
         data={myCart}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={item => {
-          return <CartCard itemData={item} />;
+        renderItem={items => {
+          return <CartCard itemData={items} />;
         }}
       />
-      {/* <CartCard itemData={item} /> */}
 
       <View style={styles.totalCard}>
         <Text style={styles.totalCardText}>{totalItem} items</Text>

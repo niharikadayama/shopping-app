@@ -4,18 +4,30 @@ import {Colors} from 'theme';
 
 interface IAddress {
   name: string;
-  flatNo?: any;
-  locality?: string;
+  flatNo: any;
+  locality: string;
   city: string;
   state: string;
   pincode: number;
   phoneNumber: number;
   typeTag: string;
+  onPressEdit?: () => void;
+  onPressDelete?: () => void;
 }
 
 const AddressCard = (props: IAddress) => {
-  const {name, flatNo, locality, city, state, pincode, phoneNumber, typeTag} =
-    props;
+  const {
+    name,
+    flatNo,
+    locality,
+    city,
+    state,
+    pincode,
+    phoneNumber,
+    typeTag,
+    onPressDelete,
+    onPressEdit,
+  } = props;
 
   return (
     <View style={styles.container}>
@@ -36,7 +48,7 @@ const AddressCard = (props: IAddress) => {
       </Text>
       <View style={styles.horizontalLine} />
       <View style={styles.bottomContainer}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPressEdit}>
           <Text style={styles.edit}>Edit</Text>
         </TouchableOpacity>
         <TouchableOpacity>

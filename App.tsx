@@ -1,16 +1,35 @@
-import React from 'react';
-import reduxStore from './src/redux/store';
+import React, {useEffect, useState} from 'react';
+// import reduxStore from './src/redux/store';
 import {Provider} from 'react-redux';
 import MainStackNavigator from './src/navigation/stackNavigation';
 import {PersistGate} from 'redux-persist/integration/react';
-import {NavigationContainer} from '@react-navigation/native';
+import {persistor, store} from './src/redux/store';
+import {
+  NavigationContainer,
+  DefaultTheme,
+  DarkTheme,
+  useTheme,
+} from '@react-navigation/native';
+import {EventRegister} from 'react-native-event-listeners';
 
 const App = () => {
-  const {store, persistor} = reduxStore();
+  const [darkApp, setDarkApp] = useState(false);
+  const appTheme = darkApp ? DarkTheme : DefaultTheme;
+  useEffect(() => {
+    let EventListener = EventRegister.addEventListener(
+      'changeThemeEvent',
+      data => {
+        setDarkApp(data);
+      },
+    );
+    return () => {
+      EventRegister.removeEventListener('EventListener');
+    };
+  }, []);
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <NavigationContainer>
+        <NavigationContainer theme={appTheme}>
           <MainStackNavigator />
         </NavigationContainer>
       </PersistGate>

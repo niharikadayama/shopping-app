@@ -20,9 +20,7 @@ const data = Object.keys(categories).map(i => ({
 
 const Category = ({navigation}) => {
   const [currentIndex, setCurrentIndex] = useState(0);
-
   const scrollX = useRef(new Animated.Value(0)).current;
-
   const slidesRef = useRef(null);
 
   const onViewableItemsChanged = (({viewableItems, changed}) => {

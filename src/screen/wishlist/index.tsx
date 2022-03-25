@@ -1,14 +1,16 @@
 import React from 'react';
 import {View, Text, FlatList} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import styles from './styles';
 import {Header, WishlistCard} from 'components';
 import {useSelector} from 'react-redux';
 
 const Wishlist = ({navigation, route}) => {
   const item = route.params;
-  const wishlist = useSelector(state => state.shop.wishlist);
+  const wishlist = useSelector(state => state.wishlist);
+  const {colors} = useTheme();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: colors.card}]}>
       <Header
         leftIcon={'ios-chevron-back'}
         rightIcon={'cart'}
@@ -22,18 +24,18 @@ const Wishlist = ({navigation, route}) => {
         showLogo={false}
       />
       <View style={styles.titleView}>
-        <Text style={styles.title}>Wishlist</Text>
-        <Text style={styles.subTitle}>Buy it before its gone</Text>
+        <Text style={[styles.title, {color: colors.text}]}>Wishlist</Text>
+        <Text style={[styles.subTitle, {color: colors.text}]}>
+          Buy it before its gone
+        </Text>
       </View>
-      {/* <FlatList
+      <FlatList
         data={wishlist}
         keyExtractor={(item, index) => index.toString()}
-        renderItem={item => {
-          console.log(item);
+        renderItem={({item}) => {
           return <WishlistCard items={item} />;
         }}
-      /> */}
-      <WishlistCard items={item} navigation={navigation} />
+      />
     </View>
   );
 };

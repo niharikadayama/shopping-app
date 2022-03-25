@@ -1,14 +1,15 @@
 import React from 'react';
 import {View} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import {Products} from 'components';
 import {Header} from 'components';
 import styles from './styles';
 
 const Details = ({navigation, route}) => {
   const item = route.params;
-
+  const {colors} = useTheme();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: colors.card}]}>
       <Header
         leftIcon={'chevron-back'}
         rightIcon={'cart'}

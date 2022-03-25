@@ -3,7 +3,7 @@ import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
 import {useDispatch, useSelector} from 'react-redux';
-import {removeFromWishlist, addToCart} from 'redux/shopping/action';
+import {addToCart} from 'redux/shopping/action';
 
 const WishlistCard = ({items, navigation}) => {
   const dispatch = useDispatch();

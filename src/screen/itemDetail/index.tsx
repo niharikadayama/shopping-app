@@ -7,7 +7,8 @@ import {
   TouchableOpacity,
 } from 'react-native';
 import {useDispatch} from 'react-redux';
-import {addToCart, addToWishlist} from 'redux/shopping/action';
+import {addToCart} from 'redux/shopping/action';
+import {addToWishlist} from 'redux/wishlist/action';
 import styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import StarRating from 'react-native-star-rating';
@@ -52,14 +53,14 @@ const ItemDetail = ({navigation, route}) => {
           </Text>
 
           <View style={styles.detailBottom}>
-            <TouchableOpacity
-              style={styles.button}
+            <Button
+              name={'Add To Wishlist'}
               onPress={() => {
                 navigation.navigate('wishlist', item);
                 dispatch(addToWishlist(item));
-              }}>
-              <Text style={styles.buttonText}>Add to Wishlist</Text>
-            </TouchableOpacity>
+              }}
+              theme={'tertiary'}
+            />
             <Button
               name={'Add To Cart'}
               onPress={() => {

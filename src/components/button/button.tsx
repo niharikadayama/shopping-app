@@ -1,5 +1,6 @@
 import React from 'react';
 import {TouchableOpacity, Text, StyleSheet} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import {Colors} from 'theme';
 
 interface button {
@@ -8,18 +9,25 @@ interface button {
   onPress?: () => void;
 }
 const Button = (props: button) => {
+  const {colors} = useTheme();
   const {name, theme, onPress} = props;
   return (
     <TouchableOpacity
       style={
-        theme === 'primary' ? styles.primaryButton : styles.secondaryButton
+        theme === 'primary'
+          ? styles.primaryButton
+          : theme === 'secondary'
+          ? styles.secondaryButton
+          : styles.tertiaryButton
       }
       onPress={onPress}>
       <Text
         style={
           theme === 'primary'
             ? styles.primaryButtonText
-            : styles.secondaryButtonText
+            : theme === 'secondary'
+            ? styles.secondaryButtonText
+            : styles.tertiaryButtonText
         }>
         {name}
       </Text>
@@ -50,6 +58,19 @@ const styles = StyleSheet.create({
   },
   secondaryButtonText: {
     color: Colors.white,
+    textAlign: 'center',
+    fontSize: 20,
+    fontWeight: '600',
+  },
+  tertiaryButton: {
+    backgroundColor: Colors.offwhite,
+    paddingVertical: 12,
+    paddingHorizontal: 24,
+    marginRight: 6,
+    borderRadius: 12,
+  },
+  tertiaryButtonText: {
+    color: Colors.buttonBgdark,
     textAlign: 'center',
     fontSize: 20,
     fontWeight: '600',

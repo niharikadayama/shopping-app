@@ -9,6 +9,8 @@ import Details from 'screen/details';
 import Cart from 'screen/cart';
 import EditProfile from 'screen/edit-profile/editProfile';
 import AddressScreen from 'screen/addressScreen';
+import AddAddress from 'screen/addressScreen/addAddress';
+import EditAddress from 'screen/addressScreen/editAddress';
 import Feedback from 'screen/feedback';
 import ItemDetail from 'screen/itemDetail';
 
@@ -20,7 +22,7 @@ const Stack = createStackNavigator();
 const MainStackNavigator = () => {
   return (
     <Stack.Navigator
-        screenOptions={{
+      screenOptions={{
         headerShown: false,
       }}>
       <Stack.Screen name="Splash" component={Splash} />
@@ -31,6 +33,8 @@ const MainStackNavigator = () => {
       <Stack.Screen name="cart" component={Cart} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="address" component={AddressScreen} />
+      <Stack.Screen name="addAddress" component={AddAddress} />
+      <Stack.Screen name="EditAddress" component={EditAddress} />
       <Stack.Screen name="feedback" component={Feedback} />
       <Stack.Screen name="ItemDetail" component={ItemDetail} />
     </Stack.Navigator>
