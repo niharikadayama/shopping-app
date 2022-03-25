@@ -6,6 +6,16 @@ import Header from './header';
 import Loader from './loader';
 import Category from './list';
 import WishlistCard from './wishlistCard';
+import CustomRadioButton from './customRadioButton';
 import Products from './products';
 
-export {Button, CartCard, Header, Loader, Category, WishlistCard, Products};
+export {
+  Button,
+  CartCard,
+  Header,
+  Loader,
+  CustomRadioButton,
+  Category,
+  WishlistCard,
+  Products,
+};

@@ -5954,6 +5954,11 @@
   dependencies:
     "warn-once" "^0.1.0"
 
+"react-native-slide@^0.2.2":
+  "integrity" "sha1-ktIdAVDxoxag7uVpvp4nTRfzbrE="
+  "resolved" "https://registry.npmjs.org/react-native-slide/-/react-native-slide-0.2.2.tgz"
+  "version" "0.2.2"
+
 "react-native-star-rating@^1.1.0":
   "integrity" "sha512-ocOYx+BKUvfruvXm45MBbQZtpkVO3PQieBDepB0FaLuxE3vUtDTPzHqXuBes3iCM5oRi5umrnmMUMsM0mEq5ZA=="
   "resolved" "https://registry.npmjs.org/react-native-star-rating/-/react-native-star-rating-1.1.0.tgz"
