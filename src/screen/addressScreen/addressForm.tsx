@@ -6,6 +6,7 @@ import {
   TextInput,
   StyleSheet,
   Text,
+  Switch,
 } from 'react-native';
 import {Field, reduxForm, destroy} from 'redux-form';
 
@@ -24,14 +25,11 @@ const Form = props => {
       />
     );
   };
-  const checkboxField = ({input: {onChange, ...input}, ...rest}) => {
+  const checkboxField = ({input: {onChange, value}}) => {
     return (
-      <TextInput
-        style={styles.input}
-        onChangeText={onChange}
-        {...input}
-        {...rest}
-      />
+      <View>
+        <Switch onValueChange={value => onChange(value)} value={value} />
+      </View>
     );
   };
 

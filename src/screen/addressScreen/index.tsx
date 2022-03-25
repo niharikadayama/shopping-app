@@ -8,7 +8,7 @@ import styles from './styles';
 
 const AddressScreen = ({navigation}) => {
   const formState = useSelector(state => state.form);
-
+  console.log(formState);
   return (
     <View style={styles.container}>
       <Header

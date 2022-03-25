@@ -1,27 +1,27 @@
 import React, {useState, useEffect} from 'react';
-import axios from 'axios';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import Loader from '../loader';
 import {Colors} from 'theme';
 import styles from './styles';
 
 const Products = ({navigation}) => {
-  const URL = 'https://fakestoreapi.com/products';
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
-  const [colors, setColor] = useState(Colors.lightGrey);
   const [loading, setLoading] = useState(true);
 
+  const getData = async () => {
+    try {
+      const request = await fetch('https://fakestoreapi.com/products');
+      const response = await request.json();
+      setData(response);
+      setFilter(response);
+      setLoading(false);
+    } catch (error) {
+      console.log(error);
+    }
+  };
   useEffect(() => {
-    axios
-      .get(URL)
-      .then(response => response.data)
-      .then(data => {
-        setData(data);
-        setFilter(data);
-        setLoading(false);
-      });
-    return () => {};
+    getData();
   }, []);
 
   const filterProduct = cat => {
@@ -36,28 +36,28 @@ const Products = ({navigation}) => {
           <TouchableOpacity
             style={styles.subContainer}
             onPress={() => {
-              setFilter(data), setColor(Colors.coralbg);
+              setFilter(data);
             }}>
             <Text style={styles.textStyling}>ALL</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.subContainer}
             onPress={() => {
-              filterProduct("men's clothing"), setColor(Colors.coralbg);
+              filterProduct("men's clothing");
             }}>
             <Text style={styles.textStyling}>MEN</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.subContainer}
             onPress={() => {
-              filterProduct("women's clothing"), setColor(Colors.coralbg);
+              filterProduct("women's clothing");
             }}>
             <Text style={styles.textStyling}>WOMEN</Text>
           </TouchableOpacity>
           <TouchableOpacity
             style={styles.subContainer}
             onPress={() => {
-              filterProduct('jewelery'), setColor(Colors.coralbg);
+              filterProduct('jewelery');
             }}>
             <Text style={styles.textStyling}>JEWELERY</Text>
           </TouchableOpacity>

@@ -7,7 +7,7 @@ import {Colors} from 'theme';
 
 const EditAddress = ({navigation}) => {
   const formState = useSelector(state => state.form);
-
+  console.log(formState);
   return (
     <ScrollView style={styles.container}>
       <Header
