@@ -5,7 +5,6 @@ const styles = StyleSheet.create({
   headerContainer: {
     justifyContent: 'center',
     alignItems: 'center',
-    marginTop: 24,
   },
   inputField: {
     flexDirection: 'row',
@@ -13,13 +12,18 @@ const styles = StyleSheet.create({
     borderWidth: 1,
     borderColor: Colors.transparentlightBg,
     width: 350,
-    padding: 16,
-    marginVertical: 12,
+    padding: 4,
+    marginVertical: 8,
     backgroundColor: Colors.transparentlightBg,
   },
   inputFieldIcon: {
     color: Colors.mediumGrey,
-    paddingRight: 10,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
+  },
+  textInputFont: {
+    fontSize: 16,
+    paddingVertical: 6,
   },
   errorStyle: {
     color: Colors.red,
@@ -27,9 +31,9 @@ const styles = StyleSheet.create({
   },
   BottomContainer: {
     paddingHorizontal: 16,
-    marginVertical: 12,
     height: 152,
-    justifyContent: 'space-around',
+    justifyContent: 'space-evenly',
+    paddingBottom: 6,
   },
   bottomContainerIcon: {
     flexDirection: 'row',

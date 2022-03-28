@@ -1,5 +1,6 @@
 import React from 'react';
 import {View, Text, Image} from 'react-native';
+import {useTheme} from '@react-navigation/native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 import {Images} from 'theme';
@@ -24,26 +25,27 @@ const Header = (props: Iheader) => {
     showLogo,
   } = props;
 
+  const {colors} = useTheme();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: colors.card}]}>
       <View style={styles.headerSection}>
         <Icon
           name={leftIcon}
           size={iconSize}
-          style={styles.iconLeft}
+          style={[styles.iconLeft, {color: colors.text}]}
           onPress={onLeftIconPress}
         />
 
         {showLogo ? (
           <Image source={Images.logo} style={styles.logo} />
         ) : (
-          <Text style={styles.title}>{title}</Text>
+          <Text style={[styles.title, {color: colors.text}]}>{title}</Text>
         )}
 
         <Icon
           name={rightIcon}
           size={iconSize}
-          style={styles.iconRight}
+          style={[styles.iconRight, {color: colors.text}]}
           onPress={onRightIconPress}
         />
       </View>

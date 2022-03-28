@@ -1,67 +1,38 @@
-import React,{useEffect} from 'react';
-import * as actionTypes from './types';
-import { materials } from 'constant';
+import ACTION_TYPES from './types';
 
-const INITIAL_STATE = {
-    materials,
-    cart: [],
-    wishlist:[],
-}
+const initialState = {
+  cart: [],
+};
 
-const shopReducer = (state = INITIAL_STATE,action) =>{
-    
-    switch(action.type){
-      case actionTypes.ADD_TO_CART:
-        //get the item data from products array
-        const item = materials.find(prod => prod.id === action.payload.id) 
-        // check if item is in cart already
-        const inCart = state.cart.find((item:any)=> 
-        item.id === action.payload.id 
-        );
-        
-        return {
-           ...state,
-           cart: inCart
-            ? state.cart.map((item:any) => 
-               item.id === action.payload.id 
-                ? {...item, qty: item.qty + 1} 
-                : item
-            )
-            : [...state.cart,{...item, qty: 1}]
-            };
-        case actionTypes.REMOVE_FROM_CART:
-            return {
-                ...state,
-                cart: state.cart.filter((item:any) => item.id !== action.payload.id)
-            };
-        case actionTypes.AdjustQty:
-            return{
-                ...state,
-                cart: state.cart.map((item:any) => item.id === action.payload.id ? {...item, qty: action.payload.qty}: item)
-            };
-        case actionTypes.ADD_TO_WISHLIST:
-            // check if item is in wishlist already
-            const inWishlist = state.wishlist.find((item:any)=> 
-            item.id === action.payload.id ? true : false
-            );
-            
-            return {
-               ...state,
-               wishlist: inWishlist
-                ? state.wishlist.map((item:any) => 
-                   item.id === action.payload.id 
-                    ? {...item} 
-                    : item
-                )
-                : [...state.wishlist]
-            };
-        case actionTypes.REMOVE_FROM_WISHLIST:
-            return {
-                ...state,
-                wishlist: state.wishlist.filter((item:any) => item.id !== action.payload.id)
-            };
-        default:
-            return state;
-    }
-}
+const shopReducer = (state = initialState, action) => {
+  switch (action.type) {
+    case ACTION_TYPES.ADD_TO_CART:
+      const cartItem = action.payload;
+      const inCart =
+        state.cart.findIndex((item: any) => item.id === cartItem.id) !== -1;
+      return {
+        ...state,
+        cart: inCart ? state.cart : [...state.cart, cartItem],
+      };
+    case ACTION_TYPES.REMOVE_FROM_CART:
+      return {
+        ...state,
+        cart: state.cart.filter(
+          (removeItem: any) => removeItem.id !== action.payload.id,
+        ),
+      };
+    case ACTION_TYPES.AdjustQty:
+      return {
+        ...state,
+        cart: state.cart.map((item: any) =>
+          item.id === action.payload.id
+            ? {...item, qty: action.payload.qty}
+            : item,
+        ),
+      };
+    default:
+      return state;
+  }
+};
+
 export default shopReducer;

@@ -4,22 +4,23 @@ import styles from './styles';
 import {Header, CartCard, Button} from 'components';
 import {useSelector} from 'react-redux';
 
-const Cart = ({navigation, route}) => {
-  const item = route.params;
+const Cart = ({navigation}) => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItem, setTotalItem] = useState(0);
-  const myCart = useSelector(state => state.shop.cart);
-
+  const myCart = useSelector(state => state.cart.cart);
   useEffect(() => {
-    let items = myCart.reduce((items, item) => items + item.qty, 0);
+    let items = myCart.reduce(
+      (items: number, item: {qty: number}) => items + item.qty,
+      0,
+    );
     let price = myCart.reduce(
-      (price, item) => (price += item.qty * item.price),
+      (price: number, item: {qty: number; price: number}) =>
+        (price += item.qty * item.price),
       0,
     );
     setTotalItem(items);
     setTotalPrice(price);
   }, [myCart]);
-
   return (
     <View style={styles.container}>
       <Header
@@ -43,9 +44,8 @@ const Cart = ({navigation, route}) => {
 
       <FlatList
         data={myCart}
-        keyExtractor={(item, index) => index.toString()}
-        renderItem={({item}) => {
-          return <CartCard itemData={item} />;
+        renderItem={items => {
+          return <CartCard itemData={items.item} />;
         }}
       />
 

@@ -1,11 +1,19 @@
-import React from "react";
+import Button from './button/button';
+import CartCard from './cartCard';
+import Header from './header';
+import Loader from './loader';
+import Category from './list';
+import WishlistCard from './wishlistCard';
+import LinkNotFound from './error/linkNotFound';
+import Products from './products';
 
-import Button from "./button/button";
-import CartCard from "./cartCard";
-import Header from "./header";
-import SearchBar from "./searchBar";
-import Category from "./list";
-import WishlistCard from "./wishlistCard";
-
-
-export {Button,CartCard,Header,SearchBar,Category,WishlistCard}
+export {
+  Button,
+  CartCard,
+  Header,
+  Loader,
+  LinkNotFound,
+  Category,
+  WishlistCard,
+  Products,
+};

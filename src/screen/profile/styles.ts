@@ -5,14 +5,14 @@ const styles = StyleSheet.create({
   container: {
     width: '100%',
     height: screenHeight,
-    backgroundColor:Colors.white
+    backgroundColor: Colors.white,
   },
-  headerSection:{
-    paddingTop:16
+  headerSection: {
+    paddingTop: 16,
   },
   header: {
     marginTop: 60,
-    marginBottom:20,
+    marginBottom: 20,
     marginHorizontal: 20,
     flexDirection: 'row',
     alignItems: 'center',
@@ -20,48 +20,47 @@ const styles = StyleSheet.create({
   headerHeading: {
     fontSize: 20,
     fontWeight: '600',
-    paddingHorizontal:120
+    paddingHorizontal: 120,
   },
-  profile:{
-    width: 160, 
-    height: 160, 
+  profile: {
+    width: 160,
+    height: 160,
     borderRadius: 160 / 2,
-    alignSelf:'center'
+    alignSelf: 'center',
   },
-  profileName:{
-   fontSize:20,
-   fontWeight: '600',
-   alignSelf:'center',
-   marginVertical:16,
+  profileName: {
+    fontSize: 20,
+    fontWeight: '600',
+    alignSelf: 'center',
+    marginVertical: 16,
   },
-  section:{
-    marginTop:16,
-    marginHorizontal:20,
-    backgroundColor:Colors.lightGrey,
+  section: {
+    marginTop: 16,
+    marginHorizontal: 20,
+    backgroundColor: Colors.lightGrey,
   },
-  sectionHeading:{
-    fontSize:18,
-    fontWeight:'500',
+  sectionHeading: {
+    fontSize: 18,
+    fontWeight: '500',
   },
-  sectionBody:{
-     flexDirection:'row',
-     alignItems:'center',
-     justifyContent:'space-between',
-     marginHorizontal:16,
-     marginVertical:16,
+  sectionBody: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: 16,
+    marginVertical: 16,
   },
-  sectionIcon:{
-    color:Colors.mediumGrey
+  sectionIcon: {
+    color: Colors.mediumGrey,
   },
-  body:{
-    flexDirection:'row',
-    alignItems:'center',
+  body: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  sectionText:{
-    marginLeft:12,
-    fontSize:18
+  sectionText: {
+    marginLeft: 12,
+    fontSize: 18,
   },
-  
 });
 
 export default styles;

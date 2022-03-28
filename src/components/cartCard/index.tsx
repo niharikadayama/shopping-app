@@ -7,44 +7,48 @@ import {useDispatch} from 'react-redux';
 import {removeFromCart, adjustQty} from 'redux/shopping/action';
 
 const CartCard = ({itemData}) => {
-  const dispatch = useDispatch()
+  const dispatch = useDispatch();
   return (
     <View style={styles.cartCard}>
-      <Image source={itemData.img} style={styles.cardImg} />
-
-      <View style={styles.cardText}>
-        <Text style={styles.cardTitle}>{itemData.name}</Text>
-        <Text style={styles.cardInfo}>{itemData.info}</Text>
-
-        <View style={styles.quant}>
-          <View>
-            <InputSpinner
-              max={9}
-              min={1}
-              step={1}
-              fontSize={16}
-              width={100}
-              height={30}
-              value={itemData.qty}
-              onChange={(num:number) => {
-                dispatch(adjustQty(itemData.id, num));
-              }}
-            />
+      <View>
+        <Image source={{uri: itemData.image}} style={styles.cardImg} />
+      </View>
+      <View style={styles.detailColumn}>
+        <View style={styles.cardText}>
+          <Text style={styles.cardTitle}>{itemData.title}</Text>
+          <Text style={styles.cardInfo}>
+            {itemData.description?.substring(0, 12)}
+          </Text>
+          <View style={styles.quant}>
+            <View>
+              <InputSpinner
+                max={9}
+                min={1}
+                step={1}
+                fontSize={18}
+                width={90}
+                height={30}
+                value={itemData.qty}
+                onChange={(num: number) => {
+                  dispatch(adjustQty(itemData.id, num));
+                }}
+              />
+            </View>
+            <Text style={styles.quantText}>|</Text>
+            <View style={styles.Price}>
+              <Icon name="rupee" size={18} style={styles.quantRupeeIcon} />
+              <Text style={styles.priceStyle}>{itemData.price}</Text>
+            </View>
           </View>
-          <Text style={styles.quantText}>|</Text>
-          <View style={styles.Price}>
-            <Icon name="rupee" size={18} style={styles.quantRupeeIcon} />
-            <Text style={styles.priceStyle}>{itemData.price}</Text>
-          </View>
-        </View>
-        <Pressable
+          <Pressable
             style={styles.removeButton}
             onPress={() => {
               dispatch(removeFromCart(itemData.id));
             }}>
             <Icon name="trash" size={22} style={styles.RemoveButtonIcon} />
             <Text style={styles.RemoveButtonText}>Remove </Text>
-        </Pressable>
+          </Pressable>
+        </View>
       </View>
     </View>
   );

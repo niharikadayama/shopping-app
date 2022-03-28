@@ -29,26 +29,27 @@ interface BottomCard {
 }
 
 const AuthInputContainer = (props: Authentication) => {
-  const {control, name,placeholder, icon,secureTextEntry, rules = {}} = props;
+  const {control, name, placeholder, icon, secureTextEntry, rules = {}} = props;
   return (
     <Controller
       control={control}
       name={name}
       rules={rules}
-      render={({field: {value,onChange ,onBlur}, fieldState: {error}}) => (
+      render={({field: {value, onChange, onBlur}, fieldState: {error}}) => (
         <>
           <View
             style={[
               styles.inputField,
               {borderColor: error ? Colors.red : Colors.transparentlightBg},
             ]}>
-            <Icon name={icon} size={20} style={styles.inputFieldIcon}/>
+            <Icon name={icon} size={22} style={styles.inputFieldIcon} />
             <TextInput
               value={value}
               onChangeText={onChange}
               onBlur={onBlur}
               placeholder={placeholder}
               secureTextEntry={secureTextEntry}
+              style={styles.textInputFont}
             />
           </View>
           {error && (
@@ -65,10 +66,10 @@ const AuthBottomCard = (props: BottomCard) => {
   return (
     <View style={styles.BottomContainer}>
       <View style={styles.bottomContainerIcon}>
-        <Icon name="logo-google" style={[styles.icon,styles.googleIcon]} />
-        <Icon name="logo-facebook" style={[styles.icon,styles.facebookIcon]} />
-        <Icon name="logo-twitter" style={[styles.icon,styles.twitterIcon]}/>
-        <Icon name="ios-logo-apple" style={[styles.icon,styles.appleIcon]}/>
+        <Icon name="logo-google" style={[styles.icon, styles.googleIcon]} />
+        <Icon name="logo-facebook" style={[styles.icon, styles.facebookIcon]} />
+        <Icon name="logo-twitter" style={[styles.icon, styles.twitterIcon]} />
+        <Icon name="ios-logo-apple" style={[styles.icon, styles.appleIcon]} />
       </View>
 
       <View style={styles.BottomContainerQuestion}>
