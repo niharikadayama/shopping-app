@@ -1,6 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
-import {getData} from 'components/services/apiService';
+import {getData} from 'services/apiService';
 // import Loader from '../loader';
 import styles from './styles';
 // import {LinkNotFound} from '..';
