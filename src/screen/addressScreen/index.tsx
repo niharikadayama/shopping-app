@@ -1,14 +1,15 @@
 import React from 'react';
-import {View, Text, TouchableOpacity} from 'react-native';
-import {useSelector} from 'react-redux';
+import {View, Text, TouchableOpacity, FlatList} from 'react-native';
+import {useSelector, useDispatch} from 'react-redux';
+import {removeFromAddress} from 'redux/address/action';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Header from 'components/header';
 import AddressCard from './addressCard';
 import styles from './styles';
 
-const AddressScreen = ({navigation}) => {
-  const formState = useSelector(state => state.form);
-  console.log(formState);
+const AddressScreen = ({navigation, value}) => {
+  const formState = useSelector(state => state.address.addressInfo);
+  const dispatch = useDispatch();
   return (
     <View style={styles.container}>
       <Header
@@ -23,20 +24,28 @@ const AddressScreen = ({navigation}) => {
       />
 
       <Text style={styles.subContainerHeading}>All Address</Text>
-      <AddressCard
-        name={formState.AddressInfo.values.name}
-        flatNo={'A-02'}
-        locality={formState.AddressInfo.values.locality}
-        city={formState.AddressInfo.values.city}
-        state={formState.AddressInfo.values.state}
-        pincode={446601}
-        phoneNumber={formState.AddressInfo.values.phoneNumber}
-        typeTag="default"
-        onPressEdit={() => {
-          navigation.navigate('EditAddress');
+      <FlatList
+        data={formState}
+        renderItem={item => {
+          return (
+            <AddressCard
+              name={item.item.Fullname}
+              flatNo={item.item.flatNo}
+              locality={item.item.locality}
+              city={item.item.city}
+              state={item.item.state}
+              pincode={item.item.pincode}
+              phoneNumber={item.item.phoneNumber}
+              onPressEdit={() => {
+                navigation.navigate('EditAddress', item);
+              }}
+              onPressDelete={() => {
+                dispatch(removeFromAddress(item.item.phoneNumber));
+              }}
+            />
+          );
         }}
       />
-
       <TouchableOpacity
         style={styles.addNewAddress}
         onPress={() => {

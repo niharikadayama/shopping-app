@@ -10,7 +10,6 @@ interface IAddress {
   state: string;
   pincode: number;
   phoneNumber: number;
-  typeTag: string;
   onPressEdit?: () => void;
   onPressDelete?: () => void;
 }
@@ -24,18 +23,12 @@ const AddressCard = (props: IAddress) => {
     state,
     pincode,
     phoneNumber,
-    typeTag,
     onPressDelete,
     onPressEdit,
   } = props;
 
   return (
     <View style={styles.container}>
-      {typeTag === 'default' && (
-        <View style={styles.typeTag}>
-          <Text style={styles.typeTagText}>DEFAULT</Text>
-        </View>
-      )}
       <Text style={styles.name}>{name}</Text>
       <Text style={styles.address}>
         {flatNo}, {locality}, {city}
@@ -51,14 +44,9 @@ const AddressCard = (props: IAddress) => {
         <TouchableOpacity onPress={onPressEdit}>
           <Text style={styles.edit}>Edit</Text>
         </TouchableOpacity>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={onPressDelete}>
           <Text style={styles.delete}>Delete</Text>
         </TouchableOpacity>
-        {typeTag != 'default' && (
-          <TouchableOpacity>
-            <Text style={styles.makeDefault}>Make Default</Text>
-          </TouchableOpacity>
-        )}
       </View>
     </View>
   );
@@ -69,7 +57,7 @@ const styles = StyleSheet.create({
     backgroundColor: Colors.white,
     alignSelf: 'center',
     width: '89%',
-    height: 200,
+    flex: 1,
     borderRadius: 16,
     shadowColor: '#000',
     shadowOffset: {
@@ -80,19 +68,7 @@ const styles = StyleSheet.create({
     shadowRadius: 3.84,
     elevation: 5,
     paddingHorizontal: 16,
-    paddingVertical: 16,
-  },
-  typeTag: {
-    backgroundColor: Colors.dullGreen,
-    width: '28%',
-    borderWidth: 1,
-    borderRadius: 8,
-    borderColor: Colors.dullGreen,
-  },
-  typeTagText: {
-    color: Colors.white,
-    fontWeight: '500',
-    alignSelf: 'center',
+    paddingVertical: 10,
   },
   name: {
     fontSize: 18,
@@ -129,11 +105,6 @@ const styles = StyleSheet.create({
   delete: {
     fontSize: 16,
     color: Colors.red,
-    paddingLeft: 28,
-  },
-  makeDefault: {
-    fontSize: 16,
-    color: Colors.blue,
     paddingLeft: 28,
   },
 });

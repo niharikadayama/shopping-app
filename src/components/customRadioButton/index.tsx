@@ -15,17 +15,19 @@ export default class CustomRadioButton extends Component {
       <View>
         {PROP.map(res => {
           return (
-            <View key={res.key} style={styles.rbWrapper}>
-              <Text style={styles.textStyle}>{res.text}</Text>
-              <TouchableOpacity
-                style={styles.rbStyle}
-                onPress={() => {
-                  this.setState({
-                    value: res.key,
-                  });
-                }}>
-                {value === res.key && <View style={styles.selected} />}
-              </TouchableOpacity>
+            <View style={{flexDirection: 'row'}}>
+              <View key={res.key} style={styles.rbWrapper}>
+                <Text style={styles.textStyle}>{res.text}</Text>
+                <TouchableOpacity
+                  style={styles.rbStyle}
+                  onPress={() => {
+                    this.setState({
+                      value: res.key,
+                    });
+                  }}>
+                  {value === res.key && <View style={styles.selected} />}
+                </TouchableOpacity>
+              </View>
             </View>
           );
         })}

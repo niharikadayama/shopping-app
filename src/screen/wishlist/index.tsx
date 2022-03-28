@@ -7,7 +7,7 @@ import {useSelector} from 'react-redux';
 
 const Wishlist = ({navigation, route}) => {
   const item = route.params;
-  const wishlist = useSelector(state => state.wishlist);
+  const wishlist = useSelector(state => state.wishlist.wishlist);
   const {colors} = useTheme();
   return (
     <View style={[styles.container, {backgroundColor: colors.card}]}>
@@ -33,7 +33,7 @@ const Wishlist = ({navigation, route}) => {
         data={wishlist}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item}) => {
-          return <WishlistCard items={item} />;
+          return <WishlistCard items={item} navigation={navigation} />;
         }}
       />
     </View>

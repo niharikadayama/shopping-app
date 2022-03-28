@@ -5,7 +5,8 @@ const styles = StyleSheet.create({
     container: {
         paddingHorizontal: 8,
         paddingVertical:12,
-        width:'100%'
+        width:'100%',
+        marginTop:36,
     },
     headerSection:{
         flexDirection: 'row',
@@ -15,7 +16,6 @@ const styles = StyleSheet.create({
     title:{
        fontSize:20,
        fontWeight:'500',
-       
     },
     logo:{
         width:100,

@@ -3,11 +3,13 @@ import { Colors } from "theme";
 
 const styles = StyleSheet.create({
     cartCard:{
-         width: '50%',
-         height: 300,
+         width: '45%',
+         flex:1,
          backgroundColor:Colors.white,
          marginVertical:16,
          marginHorizontal:16,
+         paddingVertical:8,
+         paddingHorizontal:8,
         justifyContent:'space-between',
         borderRadius:2,
         shadowColor: "#000",
@@ -25,13 +27,14 @@ const styles = StyleSheet.create({
         borderRadius:2,
     },
     cardText:{
-        position:'absolute',
-        bottom:4,
-        left:4
+        // position:'absolute',
+        // bottom:4,
+        // left:4
     },
     cardTitle:{
         fontSize:20,
-        fontWeight:'bold'
+        fontWeight:'600',
+        flexShrink:1
     },
     cardInfo:{
         fontSize:18,
@@ -43,14 +46,14 @@ const styles = StyleSheet.create({
         alignItems:'center' 
     },
     pricestyle:{
-        fontWeight:'bold',
+        fontWeight:'500',
         fontSize:18,
         marginLeft:6
     },
     cardBottom:{
         flexDirection:'row',
         alignItems:'center',
-        justifyContent:'space-around',
+        justifyContent:'space-between',
         paddingTop:6,
     },
     cardBottomButtons:{

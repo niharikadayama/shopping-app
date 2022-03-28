@@ -58,13 +58,13 @@ const ItemDetail = ({navigation, route}) => {
               onPress={() => {
                 navigation.navigate('wishlist', item);
                 dispatch(addToWishlist(item));
+                console.log(item);
               }}
               theme={'tertiary'}
             />
             <Button
               name={'Add To Cart'}
               onPress={() => {
-                navigation.navigate('cart', item);
                 dispatch(addToCart(item));
               }}
               theme={'secondary'}

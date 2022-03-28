@@ -1,8 +1,9 @@
-import React from 'react';
-import axios from 'axios';
-
-const instance = axios.create({
-  baseURL: 'https://fakestoreapi.com/products',
-});
-
-export default instance;
+export async function getData() {
+  try {
+    let request = await fetch('https://fakestoreapi.com/products');
+    let response = await request.json();
+    return response;
+  } catch (error) {
+    console.log(error);
+  }
+}

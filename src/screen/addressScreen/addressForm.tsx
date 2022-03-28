@@ -1,97 +1,87 @@
 import React from 'react';
-import {
-  View,
-  ScrollView,
-  Button,
-  TextInput,
-  StyleSheet,
-  Text,
-  Switch,
-} from 'react-native';
-import {Field, reduxForm, destroy} from 'redux-form';
+import {View, ScrollView, Text, StyleSheet} from 'react-native';
+import {Button} from 'components';
+import {useForm, Controller} from 'react-hook-form';
+import {useDispatch} from 'react-redux';
+import {addToAddress} from 'redux/address/action';
+import {AuthInputContainer} from 'components/auth';
 
-const Form = props => {
-  const {handleSubmit} = props;
+let Form = ({navigation}) => {
+  const {control, handleSubmit} = useForm();
+  const dispatch = useDispatch();
 
-  const onSubmit = values => {};
-
-  const renderInput = ({input: {onChange, ...input}, ...rest}) => {
-    return (
-      <TextInput
-        style={styles.input}
-        onChangeText={onChange}
-        {...input}
-        {...rest}
-      />
-    );
+  const onSubmit = values => {
+    navigation.navigate('address');
+    dispatch(addToAddress(values));
   };
-  const checkboxField = ({input: {onChange, value}}) => {
-    return (
-      <View>
-        <Switch onValueChange={value => onChange(value)} value={value} />
-      </View>
-    );
-  };
-
   return (
     <ScrollView style={styles.root}>
       <View style={styles.subContainer}>
         <Text style={styles.subContainerText}>Contact Info</Text>
-        <Field
-          name={'name'}
-          props={{
-            placeholder: 'Name',
-          }}
-          component={renderInput}
+        <AuthInputContainer
+          name="Fullname"
+          control={control}
+          placeholder="Enter Full Name"
+          icon="ios-mail"
+          secureTextEntry={false}
+          rules={{required: 'FullName is required'}}
         />
-        <Field
-          name={'phoneNumber'}
-          props={{
-            placeholder: 'Contact Number',
-          }}
-          component={renderInput}
+        <AuthInputContainer
+          name="phoneNumber"
+          control={control}
+          placeholder="Enter Phone Number"
+          icon="ios-mail"
+          secureTextEntry={false}
+          rules={{required: 'phoneNumber is required'}}
         />
       </View>
       <View style={styles.subContainer}>
         <Text style={styles.subContainerText}>Address Info</Text>
-        <View>
-          <Field
-            name={'pincode'}
-            props={{
-              placeholder: 'Pincode',
-            }}
-            component={renderInput}
-          />
-          <Field
-            name={'city'}
-            props={{
-              placeholder: 'City',
-            }}
-            component={renderInput}
-          />
-        </View>
-        <Field
-          name={'state'}
-          props={{
-            placeholder: 'State',
-          }}
-          component={renderInput}
+        <AuthInputContainer
+          name="pincode"
+          control={control}
+          placeholder="Enter Pincode"
+          icon="ios-mail"
+          secureTextEntry={false}
+          rules={{required: 'pincode is required'}}
         />
-        <Field
-          name={'locality'}
-          props={{
-            placeholder: 'Locality/ Area/ Street',
-          }}
-          component={renderInput}
+        <AuthInputContainer
+          name="city"
+          control={control}
+          placeholder="Enter City"
+          icon="ios-mail"
+          secureTextEntry={false}
+          rules={{required: 'City is required'}}
         />
-        <Field
-          name={'flatNo'}
-          props={{
-            placeholder: 'Flat no/Building Name',
-          }}
-          component={renderInput}
+        <AuthInputContainer
+          name="state"
+          control={control}
+          placeholder="Enter State"
+          icon="ios-mail"
+          secureTextEntry={false}
+          rules={{required: 'State is required'}}
         />
-        <Button title={'Submit'} onPress={handleSubmit(onSubmit)} />
+        <AuthInputContainer
+          name="locality"
+          control={control}
+          placeholder="Enter Locality/Area/Street"
+          icon="ios-mail"
+          secureTextEntry={false}
+          rules={{required: 'locality is required'}}
+        />
+        <AuthInputContainer
+          name="flatNo"
+          control={control}
+          placeholder="Enter flat No / Building Name"
+          icon="ios-mail"
+          secureTextEntry={false}
+          rules={{required: 'flatNo is required'}}
+        />
+        <Button
+          name="Submit"
+          theme="tertiary"
+          onPress={handleSubmit(onSubmit)}
+        />
       </View>
     </ScrollView>
   );
@@ -108,4 +98,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default reduxForm({form: 'AddressInfo'})(Form);
+export default Form;

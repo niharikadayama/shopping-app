@@ -3,7 +3,7 @@ import {Colors} from 'theme';
 
 const styles = StyleSheet.create({
   cartCard: {
-    height: 180,
+    flex:1,
     backgroundColor: Colors.white,
     marginVertical: 12,
     marginHorizontal: 12,

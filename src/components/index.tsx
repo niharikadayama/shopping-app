@@ -7,6 +7,7 @@ import Loader from './loader';
 import Category from './list';
 import WishlistCard from './wishlistCard';
 import CustomRadioButton from './customRadioButton';
+import CustomCheckbox from './checkbox';
 import Products from './products';
 
 export {
@@ -15,6 +16,7 @@ export {
   Header,
   Loader,
   CustomRadioButton,
+  CustomCheckbox,
   Category,
   WishlistCard,
   Products,

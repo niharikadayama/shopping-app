@@ -18,6 +18,13 @@ const wishlistReducer = (state = initialState, action) => {
           ? state.wishlist
           : [...state.wishlist, wishlistItem],
       };
+    case ACTION_TYPES.REMOVE_FROM_WISHLIST:
+      return {
+        ...state,
+        wishlist: state.wishlist.filter(
+          (item: any) => item.id !== action.payload.id,
+        ),
+      };
     default:
       return state;
   }

@@ -16,7 +16,7 @@ const AddAddress = ({navigation}) => {
         showLogo={false}
         title={'Your Address'}
       />
-      <Form />
+      <Form navigation={navigation} />
     </View>
   );
 };

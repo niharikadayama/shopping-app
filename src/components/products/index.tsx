@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
+import {getData} from 'components/services/apiService';
 import Loader from '../loader';
 import {Colors} from 'theme';
 import styles from './styles';
@@ -9,19 +10,10 @@ const Products = ({navigation}) => {
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(true);
 
-  const getData = async () => {
-    try {
-      const request = await fetch('https://fakestoreapi.com/products');
-      const response = await request.json();
-      setData(response);
-      setFilter(response);
-      setLoading(false);
-    } catch (error) {
-      console.log(error);
-    }
-  };
   useEffect(() => {
-    getData();
+    getData().then(data => {
+      setData(data), setFilter(data), setLoading(false);
+    });
   }, []);
 
   const filterProduct = cat => {

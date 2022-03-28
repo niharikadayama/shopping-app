@@ -16,7 +16,9 @@ const CartCard = ({itemData}) => {
       <View style={styles.detailColumn}>
         <View style={styles.cardText}>
           <Text style={styles.cardTitle}>{itemData.title}</Text>
-          <Text style={styles.cardInfo}>{itemData.description}</Text>
+          <Text style={styles.cardInfo}>
+            {itemData.description.substring(0, 12)}
+          </Text>
           <View style={styles.quant}>
             <View>
               <InputSpinner

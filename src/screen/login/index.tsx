@@ -9,8 +9,9 @@ import {AuthBottomCard, AuthHeader, AuthInputContainer} from 'components/auth';
 const Login = ({navigation}) => {
   const {control, handleSubmit} = useForm();
 
-  const onSignInPressed = () => {
+  const onSignInPressed = value => {
     navigation.navigate('root');
+    // console.log(value);
   };
 
   const onForgetPasswordPressed = () => {

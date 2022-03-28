@@ -7,28 +7,28 @@ const initialState = {
 const shopReducer = (state = initialState, action) => {
   switch (action.type) {
     case ACTION_TYPES.ADD_TO_CART:
-      const item = action.payload;
-      let qty = 1;
+      const cartItem = action.payload;
       const inCart =
-        state.cart.findIndex(
-          (cartItem: any) => cartItem.id === action.payload.id,
-        ) !== -1;
+        state.cart.findIndex((item: any) => item.id === action.payload.id) !==
+        -1;
       return {
         ...state,
-        cart: inCart ? state.cart : [...state.cart, ...item, {qty: 1}],
+        cart: inCart ? state.cart : [...state.cart, cartItem],
       };
     case ACTION_TYPES.REMOVE_FROM_CART:
       return {
         ...state,
-        cart: state.cart.filter((item: any) => item.id !== action.payload.id),
+        cart: state.cart.filter(
+          (cartItem: any) => cartItem.id !== action.payload.id,
+        ),
       };
     case ACTION_TYPES.AdjustQty:
       return {
         ...state,
-        cart: state.cart.map((item: any) =>
-          item.id === action.payload.id
-            ? {...item, qty: action.payload.qty}
-            : item,
+        cart: state.cart.map((cartItem: any) =>
+          cartItem.id === action.payload.id
+            ? {...cartItem, qty: action.payload.qty}
+            : cartItem,
         ),
       };
     default:

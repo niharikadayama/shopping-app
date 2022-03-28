@@ -1,13 +1,17 @@
 import React from 'react';
 import {View, Text, TextInput, StyleSheet, ScrollView} from 'react-native';
-import {useSelector} from 'react-redux';
-import {Field, reduxForm} from 'redux-form';
+import {useDispatch} from 'react-redux';
+import {editAddress} from 'redux/address/action';
 import {Button, Header} from 'components';
 import {Colors} from 'theme';
 
-const EditAddress = ({navigation}) => {
-  const formState = useSelector(state => state.form);
-  console.log(formState);
+const EditAddress = ({navigation, route}) => {
+  const item = route.params;
+  const dispatch = useDispatch();
+  const onSubmit = data => {
+    // dispatch(editAddress(data));
+    console.log(data);
+  };
   return (
     <ScrollView style={styles.container}>
       <Header
@@ -22,39 +26,46 @@ const EditAddress = ({navigation}) => {
       />
       <View style={styles.informationSection}>
         <Text style={styles.informationLabel}>Name</Text>
-        <TextInput style={styles.informationInput}>
-          {formState.AddressInfo.values.name}
-        </TextInput>
+        <TextInput style={styles.informationInput} value={item.item.Fullname} />
+
         <View style={styles.horizontalLine} />
+
         <Text style={styles.informationLabel}>Phone number</Text>
         <TextInput style={styles.informationInput}>
-          {formState.AddressInfo.values.phoneNumber}
+          {item.item.phoneNumber}
         </TextInput>
+
         <View style={styles.horizontalLine} />
+
         <Text style={styles.informationLabel}>Pincode</Text>
         <TextInput style={styles.informationInput}>
-          {formState.AddressInfo.values.pincode}
+          {item.item.pincode}
         </TextInput>
+
         <View style={styles.horizontalLine} />
+
         <Text style={styles.informationLabel}>City</Text>
-        <TextInput style={styles.informationInput}>
-          {formState.AddressInfo.values.city}
-        </TextInput>
+        <TextInput style={styles.informationInput}>{item.item.city}</TextInput>
+
         <View style={styles.horizontalLine} />
+
         <Text style={styles.informationLabel}>State</Text>
-        <TextInput style={styles.informationInput}>
-          {formState.AddressInfo.values.state}
-        </TextInput>
+        <TextInput style={styles.informationInput}>{item.item.state}</TextInput>
+
         <View style={styles.horizontalLine} />
+
         <Text style={styles.informationLabel}>Locality/Area</Text>
         <TextInput style={styles.informationInput}>
-          {formState.AddressInfo.values.locality}
+          {item.item.locality}
         </TextInput>
+
         <View style={styles.horizontalLine} />
+
         <Text style={styles.informationLabel}>Flat no/ Building name</Text>
         <TextInput style={styles.informationInput}>
-          {formState.AddressInfo.values.flatNo}
+          {item.item.flatNo}
         </TextInput>
+
         <View style={styles.horizontalLine} />
       </View>
       <Button
