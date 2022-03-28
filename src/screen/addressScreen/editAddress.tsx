@@ -1,9 +1,10 @@
 import React from 'react';
+import * as RootNavigation from '../../services/navigationServices';
 import {View, Text, TextInput, StyleSheet, ScrollView} from 'react-native';
 import {Button, Header} from 'components';
 import {Colors} from 'theme';
 
-const EditAddress = ({navigation, route}) => {
+const EditAddress = ({route}) => {
   const item = route.params?.item;
   return (
     <ScrollView style={styles.container}>
@@ -12,7 +13,7 @@ const EditAddress = ({navigation, route}) => {
         rightIcon={'close'}
         iconSize={28}
         onLeftIconPress={() => {
-          navigation.navigate('address');
+          RootNavigation.navigate('address');
         }}
         showLogo={false}
         title={'Your Address'}
@@ -59,7 +60,7 @@ const EditAddress = ({navigation, route}) => {
         name="Save Address"
         theme="secondary"
         onPress={() => {
-          navigation.navigate('address');
+          RootNavigation.navigate('address');
         }}
       />
     </ScrollView>

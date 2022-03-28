@@ -1,4 +1,5 @@
 import React, {useState} from 'react';
+import * as RootNavigation from '../../services/navigationServices';
 import {View, Text, TouchableOpacity, Switch} from 'react-native';
 import styles from './styles';
 import Header from 'components/header';
@@ -7,7 +8,7 @@ import {Colors} from 'theme';
 import {useTheme} from '@react-navigation/native';
 import {EventRegister} from 'react-native-event-listeners';
 
-const Settings = ({navigation}) => {
+const Settings = () => {
   let year = new Date().getFullYear();
   const [darkMode, setDarkMode] = useState(false);
   const {colors} = useTheme();
@@ -18,10 +19,10 @@ const Settings = ({navigation}) => {
         rightIcon={'close'}
         iconSize={25}
         onLeftIconPress={() => {
-          navigation.navigate('profile');
+          RootNavigation.navigate('profile');
         }}
         onRightIconPress={() => {
-          navigation.navigate('profile');
+          RootNavigation.navigate('profile');
         }}
         showLogo={false}
         title={'Settings'}
@@ -33,7 +34,7 @@ const Settings = ({navigation}) => {
         <TouchableOpacity
           style={[styles.sectionBody, {backgroundColor: colors.card}]}
           onPress={() => {
-            navigation.navigate('profile');
+            RootNavigation.navigate('profile');
           }}>
           <View style={styles.body}>
             <Icon name="person-circle" size={35} color={Colors.darkCoral} />
@@ -93,7 +94,7 @@ const Settings = ({navigation}) => {
         <TouchableOpacity
           style={[styles.sectionBody, {backgroundColor: colors.card}]}
           onPress={() => {
-            navigation.navigate('feedback');
+            RootNavigation.navigate('feedback');
           }}>
           <View style={styles.body}>
             <Icon name="paper-plane-sharp" size={29} color={Colors.orange} />

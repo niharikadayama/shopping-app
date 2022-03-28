@@ -1,10 +1,11 @@
 import React from 'react';
+import * as RootNavigation from '../../services/navigationServices';
 import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Images} from 'theme';
 import styles from './styles';
 
-const Splash = ({navigation}) => {
+const Splash = () => {
   return (
     <View>
       <ImageBackground source={Images.splashBg} style={styles.bgStyle}>
@@ -15,7 +16,7 @@ const Splash = ({navigation}) => {
           </Text>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('Login');
+              RootNavigation.navigate('Login');
             }}
             style={styles.cardButton}>
             <Text style={styles.cardButtonTitle}>Get Started</Text>

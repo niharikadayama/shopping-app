@@ -1,11 +1,12 @@
 import React from 'react';
+import * as RootNavigation from '../../services/navigationServices';
 import {View} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import {Products} from 'components';
 import {Header} from 'components';
 import styles from './styles';
 
-const Details = ({navigation}) => {
+const Details = () => {
   const {colors} = useTheme();
   return (
     <View style={[styles.container, {backgroundColor: colors.card}]}>
@@ -14,15 +15,15 @@ const Details = ({navigation}) => {
         rightIcon={'cart'}
         iconSize={28}
         onLeftIconPress={() => {
-          navigation.navigate('root');
+          RootNavigation.navigate('root');
         }}
         onRightIconPress={() => {
-          navigation.navigate('cart');
+          RootNavigation.navigate('cart');
         }}
         showLogo={true}
         title={'Details'}
       />
-      <Products navigation={navigation} />
+      <Products />
     </View>
   );
 };

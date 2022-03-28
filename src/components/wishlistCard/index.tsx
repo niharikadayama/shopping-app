@@ -1,4 +1,5 @@
 import React from 'react';
+import * as RootNavigation from '../../services/navigationServices';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
@@ -6,7 +7,7 @@ import {useDispatch} from 'react-redux';
 import {addToCart} from 'redux/shopping/action';
 import {removeFromWishlist} from 'redux/wishlist/action';
 
-const WishlistCard = ({navigation, items}) => {
+const WishlistCard = ({items}) => {
   const dispatch = useDispatch();
   return (
     <View style={styles.cartCard}>
@@ -29,7 +30,7 @@ const WishlistCard = ({navigation, items}) => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('cart', items);
+              RootNavigation.navigate('cart', items);
               dispatch(addToCart(items));
             }}
             style={styles.cardBottomButtons}>

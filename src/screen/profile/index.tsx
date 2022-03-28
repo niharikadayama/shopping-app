@@ -1,4 +1,5 @@
 import React from 'react';
+import * as RootNavigation from '../../services/navigationServices';
 import {View, Text, Image} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import styles from './styles';
@@ -6,7 +7,7 @@ import Header from 'components/header';
 import {Images} from 'theme';
 import CustomProfileOption from './customProfileOption';
 
-const Profile = ({navigation}) => {
+const Profile = () => {
   const {colors} = useTheme();
   return (
     <View style={[styles.container, {backgroundColor: colors.card}]}>
@@ -15,10 +16,10 @@ const Profile = ({navigation}) => {
         rightIcon={'close'}
         iconSize={25}
         onLeftIconPress={() => {
-          navigation.navigate('profile');
+          RootNavigation.navigate('profile');
         }}
         onRightIconPress={() => {
-          navigation.navigate('profile');
+          RootNavigation.navigate('profile');
         }}
         showLogo={false}
         title={'Profile'}
@@ -33,7 +34,7 @@ const Profile = ({navigation}) => {
       <View style={[styles.section, {backgroundColor: colors.card}]}>
         <CustomProfileOption
           onPress={() => {
-            navigation.navigate('EditProfile');
+            RootNavigation.navigate('EditProfile');
           }}
           optionIconName={'person'}
           optionIconSize={26}
@@ -44,7 +45,7 @@ const Profile = ({navigation}) => {
 
         <CustomProfileOption
           onPress={() => {
-            navigation.navigate('address');
+            RootNavigation.navigate('address');
           }}
           optionIconName={'location-sharp'}
           optionIconSize={29}
@@ -55,7 +56,7 @@ const Profile = ({navigation}) => {
 
         <CustomProfileOption
           onPress={() => {
-            navigation.navigate('wishlist');
+            RootNavigation.navigate('wishlist');
           }}
           optionIconName={'heart-sharp'}
           optionIconSize={29}
@@ -66,7 +67,7 @@ const Profile = ({navigation}) => {
 
         <CustomProfileOption
           onPress={() => {
-            navigation.navigate('root');
+            RootNavigation.navigate('root');
           }}
           optionIconName={'receipt-sharp'}
           optionIconSize={29}
@@ -77,7 +78,7 @@ const Profile = ({navigation}) => {
 
         <CustomProfileOption
           onPress={() => {
-            navigation.navigate('root');
+            RootNavigation.navigate('root');
           }}
           optionIconName={'notifications'}
           optionIconSize={29}
@@ -88,7 +89,7 @@ const Profile = ({navigation}) => {
 
         <CustomProfileOption
           onPress={() => {
-            navigation.navigate('root');
+            RootNavigation.navigate('root');
           }}
           optionIconName={'card'}
           optionIconSize={29}

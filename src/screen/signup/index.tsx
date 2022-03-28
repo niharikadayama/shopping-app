@@ -1,4 +1,5 @@
 import React from 'react';
+import * as RootNavigation from '../../services/navigationServices';
 import {View, Text} from 'react-native';
 import {useForm} from 'react-hook-form';
 import {Button} from 'components';
@@ -7,7 +8,7 @@ import styles from './styles';
 
 import {AuthBottomCard, AuthHeader, AuthInputContainer} from 'components/auth';
 
-const SignUp = ({navigation}) => {
+const SignUp = () => {
   const {control, handleSubmit, watch} = useForm();
   const pswd = watch('password');
   const onSignUpPressed = () => {};
@@ -70,7 +71,7 @@ const SignUp = ({navigation}) => {
       </View>
 
       <AuthBottomCard
-        onPress={() => navigation.navigate('Login')}
+        onPress={() => RootNavigation.navigate('Login')}
         question={'Already Have An Account?'}
         location={'Login'}
       />

@@ -1,4 +1,5 @@
 import React from 'react';
+import * as RootNavigation from '../../services/navigationServices';
 import {View, Text, ImageBackground, SafeAreaView} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {addToCart} from 'redux/shopping/action';
@@ -9,7 +10,7 @@ import StarRating from 'react-native-star-rating';
 import {Button} from 'components';
 import {Colors} from 'theme';
 
-const ItemDetail = ({navigation, route}) => {
+const ItemDetail = ({route}) => {
   const item = route.params;
   const dispatch = useDispatch();
   return (
@@ -23,7 +24,7 @@ const ItemDetail = ({navigation, route}) => {
           size={26}
           color={Colors.mediumGrey}
           style={styles.icon}
-          onPress={() => navigation.navigate('root')}
+          onPress={() => RootNavigation.navigate('root')}
         />
 
         <View style={styles.detailsContainer}>
@@ -50,7 +51,7 @@ const ItemDetail = ({navigation, route}) => {
             <Button
               name={'Add To Wishlist'}
               onPress={() => {
-                navigation.navigate('wishlist', item);
+                RootNavigation.navigate('wishlist', item);
                 dispatch(addToWishlist(item));
               }}
               theme={'tertiary'}
@@ -58,7 +59,7 @@ const ItemDetail = ({navigation, route}) => {
             <Button
               name={'Add To Cart'}
               onPress={() => {
-                navigation.navigate('cart', item);
+                RootNavigation.navigate('cart', item);
                 dispatch(addToCart(item));
               }}
               theme={'secondary'}

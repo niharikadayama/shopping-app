@@ -1,4 +1,5 @@
 import React, {useState, useEffect} from 'react';
+import * as RootNavigation from '../../services/navigationServices';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import {getData} from 'services/apiService';
 // import Loader from '../loader';
@@ -15,7 +16,7 @@ interface IProducts {
   rating?: any;
 }
 
-const Products = ({navigation}) => {
+const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   // const [loading, setLoading] = useState(true);
@@ -77,7 +78,7 @@ const Products = ({navigation}) => {
             return (
               <TouchableOpacity
                 style={styles.card}
-                onPress={() => navigation.navigate('ItemDetail', item)}>
+                onPress={() => RootNavigation.navigate('ItemDetail', item)}>
                 <View>
                   <Image source={{uri: item.image}} style={styles.cardImg} />
                 </View>

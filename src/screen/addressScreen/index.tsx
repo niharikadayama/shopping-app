@@ -1,4 +1,5 @@
 import React from 'react';
+import * as RootNavigation from '../../services/navigationServices';
 import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {removeFromAddress} from 'redux/address/action';
@@ -7,7 +8,7 @@ import Header from 'components/header';
 import AddressCard from './addressCard';
 import styles from './styles';
 
-const AddressScreen = ({navigation}) => {
+const AddressScreen = () => {
   const formState = useSelector(state => state.address.addressInfo);
   const dispatch = useDispatch();
   return (
@@ -17,7 +18,7 @@ const AddressScreen = ({navigation}) => {
         rightIcon={'close'}
         iconSize={28}
         onLeftIconPress={() => {
-          navigation.navigate('profile');
+          RootNavigation.navigate('profile');
         }}
         showLogo={false}
         title={'Your Address'}
@@ -37,7 +38,7 @@ const AddressScreen = ({navigation}) => {
               pincode={item.item.pincode}
               phoneNumber={item.item.phoneNumber}
               onPressEdit={() => {
-                navigation.navigate('EditAddress', item);
+                RootNavigation.navigate('EditAddress', item);
               }}
               onPressDelete={() => {
                 dispatch(removeFromAddress(item.item.phoneNumber));
@@ -49,7 +50,7 @@ const AddressScreen = ({navigation}) => {
       <TouchableOpacity
         style={styles.addNewAddress}
         onPress={() => {
-          navigation.navigate('addAddress');
+          RootNavigation.navigate('addAddress');
         }}>
         <Icon name="ios-add" size={26} style={styles.addNewAddressIcon} />
         <Text style={styles.addNewAddressText}>Add New Address</Text>

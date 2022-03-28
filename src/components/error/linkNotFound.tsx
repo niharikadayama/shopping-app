@@ -5,7 +5,7 @@ import {Images, screenHeight, screenWidth} from 'theme';
 const LinkNotFound = () => {
   return (
     <View style={styles.container}>
-      <Image source={Images.linkError} style={styles.imageStyle} />
+      <Image source={Images.error} style={styles.imageStyle} />
       <Text style={styles.textStyle}>Something Went Wrong</Text>
     </View>
   );

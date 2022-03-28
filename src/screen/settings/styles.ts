@@ -15,39 +15,39 @@ const styles = StyleSheet.create({
   headerHeading: {
     fontSize: 20,
     fontWeight: '600',
-    paddingHorizontal:120,
+    paddingHorizontal: 120,
   },
-  section:{
-    marginTop:30,
-    marginHorizontal:20
+  section: {
+    marginTop: 30,
+    marginHorizontal: 20,
   },
-  sectionHeading:{
-    fontSize:18,
-    fontWeight:'500',
+  sectionHeading: {
+    fontSize: 18,
+    fontWeight: '500',
   },
-  sectionBody:{
-     flexDirection:'row',
-     alignItems:'center',
-     justifyContent:'space-between',
-     marginHorizontal:16,
-     marginVertical:16,
+  sectionBody: {
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'space-between',
+    marginHorizontal: 16,
+    marginVertical: 16,
   },
-  sectionIcon:{
-    color:Colors.mediumGrey
+  sectionIcon: {
+    color: Colors.mediumGrey,
   },
-  body:{
-    flexDirection:'row',
-    alignItems:'center',
+  body: {
+    flexDirection: 'row',
+    alignItems: 'center',
   },
-  sectionText:{
-    marginLeft:12,
-    fontSize:18
+  sectionText: {
+    marginLeft: 12,
+    fontSize: 18,
   },
-  footer:{
-   flexDirection:'column',
-   alignItems:'center',
-   marginTop: 150
-  }
+  footer: {
+    flexDirection: 'column',
+    alignItems: 'center',
+    marginTop: 150,
+  },
 });
 
 export default styles;
