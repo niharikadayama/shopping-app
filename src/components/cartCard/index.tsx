@@ -7,6 +7,7 @@ import {useDispatch} from 'react-redux';
 import {removeFromCart, adjustQty} from 'redux/shopping/action';
 
 const CartCard = ({itemData}) => {
+  console.log(itemData);
   const dispatch = useDispatch();
   return (
     <View style={styles.cartCard}>

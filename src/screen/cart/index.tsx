@@ -8,15 +8,15 @@ const Cart = ({navigation, route}) => {
   const item = route.params;
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItem, setTotalItem] = useState(0);
-  const myCart = useSelector(state => state.shop.cart);
+  const myCart = useSelector(state => state.cart.cart);
   useEffect(() => {
-    // let items = myCart.reduce((items, item) => items + item.qty, 0);
-    // let price = myCart.reduce(
-    //   (price, item) => (price += item.qty * item.price),
-    //   0,
-    // );
-    // setTotalItem(items);
-    // setTotalPrice(price);
+    let items = myCart.reduce((items, item) => items + item.qty, 0);
+    let price = myCart.reduce(
+      (price, item) => (price += item.qty * item.price),
+      0,
+    );
+    setTotalItem(items);
+    setTotalPrice(price);
   }, [myCart]);
   return (
     <View style={styles.container}>
@@ -42,7 +42,7 @@ const Cart = ({navigation, route}) => {
       <FlatList
         data={myCart}
         renderItem={items => {
-          return <CartCard itemData={items} />;
+          return <CartCard itemData={items.item} />;
         }}
       />
 
