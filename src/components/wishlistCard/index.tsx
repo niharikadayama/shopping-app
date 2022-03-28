@@ -2,7 +2,7 @@ import React from 'react';
 import {View, Text, Image, TouchableOpacity} from 'react-native';
 import Icon from 'react-native-vector-icons/FontAwesome';
 import styles from './styles';
-import {useDispatch, useSelector} from 'react-redux';
+import {useDispatch} from 'react-redux';
 import {addToCart} from 'redux/shopping/action';
 import {removeFromWishlist} from 'redux/wishlist/action';
 
@@ -29,7 +29,8 @@ const WishlistCard = ({navigation, items}) => {
           </TouchableOpacity>
           <TouchableOpacity
             onPress={() => {
-              navigation.navigate('cart', items), dispatch(addToCart(items));
+              navigation.navigate('cart', items);
+              dispatch(addToCart(items));
             }}
             style={styles.cardBottomButtons}>
             <Icon name="shopping-cart" size={20} />

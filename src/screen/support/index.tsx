@@ -24,7 +24,7 @@ const Support = () => {
       style={style.container}>
       <Header
         leftIcon={'ios-chevron-back'}
-        rightIcon={''}
+        rightIcon={'close'}
         iconSize={25}
         onLeftIconPress={() => {}}
         onRightIconPress={() => {}}
@@ -49,11 +49,7 @@ const Support = () => {
                   <Icon name={item.iconName} size={29} color={item.textColor} />
                   <Text style={style.cardHeading}>{item.heading}</Text>
                 </View>
-                <Icon
-                  name="chevron-right"
-                  size={25}
-                  style={{position: 'absolute', right: 10, top: 25}}
-                />
+                <Icon name="chevron-right" size={25} style={style.iconStyle} />
                 {index === currentIndex && (
                   <View style={style.subHeadinglist}>
                     {item.subHeading.map(subHeading => (

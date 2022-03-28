@@ -1,6 +1,5 @@
 import React from 'react';
 import {TouchableOpacity, Text, StyleSheet} from 'react-native';
-import {useTheme} from '@react-navigation/native';
 import {Colors} from 'theme';
 
 interface button {
@@ -9,7 +8,6 @@ interface button {
   onPress?: () => void;
 }
 const Button = (props: button) => {
-  const {colors} = useTheme();
   const {name, theme, onPress} = props;
   return (
     <TouchableOpacity

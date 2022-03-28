@@ -1,12 +1,5 @@
-import React, {useState, useEffect, useRef} from 'react';
-import {
-  View,
-  Image,
-  StyleSheet,
-  Text,
-  Animated,
-  TouchableOpacity,
-} from 'react-native';
+import React, {useState, useRef} from 'react';
+import {View, Image, StyleSheet, Animated} from 'react-native';
 import {categories} from 'constant';
 import Paginator from 'components/paginator';
 import SelectedCategory from 'components/selectedCategory';
@@ -23,7 +16,7 @@ const Category = ({navigation}) => {
   const scrollX = useRef(new Animated.Value(0)).current;
   const slidesRef = useRef(null);
 
-  const onViewableItemsChanged = (({viewableItems, changed}) => {
+  const onViewableItemsChanged = (({viewableItems}) => {
     setCurrentIndex(viewableItems[0].index);
   }).current;
 

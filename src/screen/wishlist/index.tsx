@@ -5,8 +5,7 @@ import styles from './styles';
 import {Header, WishlistCard} from 'components';
 import {useSelector} from 'react-redux';
 
-const Wishlist = ({navigation, route}) => {
-  const item = route.params;
+const Wishlist = ({navigation}) => {
   const wishlist = useSelector(state => state.wishlist.wishlist);
   const {colors} = useTheme();
   return (

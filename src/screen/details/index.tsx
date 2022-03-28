@@ -5,8 +5,7 @@ import {Products} from 'components';
 import {Header} from 'components';
 import styles from './styles';
 
-const Details = ({navigation, route}) => {
-  const item = route.params;
+const Details = ({navigation}) => {
   const {colors} = useTheme();
   return (
     <View style={[styles.container, {backgroundColor: colors.card}]}>

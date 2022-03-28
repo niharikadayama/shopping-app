@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, ScrollView, Text, StyleSheet} from 'react-native';
 import {Button} from 'components';
-import {useForm, Controller} from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import {useDispatch} from 'react-redux';
 import {addToAddress} from 'redux/address/action';
 import {AuthInputContainer} from 'components/auth';

@@ -24,6 +24,7 @@ const Header = (props: Iheader) => {
     onRightIconPress,
     showLogo,
   } = props;
+
   const {colors} = useTheme();
   return (
     <View style={[styles.container, {backgroundColor: colors.card}]}>

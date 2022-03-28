@@ -7,18 +7,17 @@ import {useDispatch} from 'react-redux';
 import {removeFromCart, adjustQty} from 'redux/shopping/action';
 
 const CartCard = ({itemData}) => {
-  console.log(itemData);
   const dispatch = useDispatch();
   return (
     <View style={styles.cartCard}>
-      <View style={styles.imageColumn}>
+      <View>
         <Image source={{uri: itemData.image}} style={styles.cardImg} />
       </View>
       <View style={styles.detailColumn}>
         <View style={styles.cardText}>
           <Text style={styles.cardTitle}>{itemData.title}</Text>
           <Text style={styles.cardInfo}>
-            {itemData.description.substring(0, 12)}
+            {itemData.description?.substring(0, 12)}
           </Text>
           <View style={styles.quant}>
             <View>

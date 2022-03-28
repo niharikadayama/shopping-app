@@ -1,11 +1,8 @@
 import React from 'react';
-import {createStackNavigator} from '@react-navigation/stack';
 import {View, Text, TouchableOpacity, ImageBackground} from 'react-native';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {Images} from 'theme';
 import styles from './styles';
-
-const Stack = createStackNavigator();
 
 const Splash = ({navigation}) => {
   return (

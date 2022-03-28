@@ -1,11 +1,5 @@
 import React from 'react';
-import {
-  View,
-  Text,
-  ImageBackground,
-  SafeAreaView,
-  TouchableOpacity,
-} from 'react-native';
+import {View, Text, ImageBackground, SafeAreaView} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {addToCart} from 'redux/shopping/action';
 import {addToWishlist} from 'redux/wishlist/action';
@@ -43,13 +37,13 @@ const ItemDetail = ({navigation, route}) => {
               fullStarColor={Colors.yellow}
               emptyStarColor={Colors.mediumGrey}
               starSize={20}
-              containerStyle={{width: 120}}
+              containerStyle={styles.starRating}
             />
             <Text style={styles.ratingText}>{item.rating.count}</Text>
           </View>
           <Text style={styles.detailPrice}>Rs. {item.price}</Text>
           <Text style={styles.detailInfo}>
-            {item.description.substring(0, 120)}
+            {item.description?.substring(0, 120)}
           </Text>
 
           <View style={styles.detailBottom}>

@@ -18,7 +18,7 @@ const styles = StyleSheet.create({
     fontSize: 20,
   },
   headerIcon: {
-    color:Colors.blue
+    color: Colors.blue,
   },
   profileSection: {
     marginVertical: 16,
@@ -33,25 +33,25 @@ const styles = StyleSheet.create({
     fontSize: 18,
     alignSelf: 'center',
     marginVertical: 8,
-    color:Colors.blue
+    color: Colors.blue,
   },
   informationSection: {
-    paddingHorizontal:8,
+    paddingHorizontal: 8,
   },
   informationLabel: {
-    color:Colors.mediumGrey,
-    paddingVertical:12,
-    fontSize:16
+    color: Colors.mediumGrey,
+    paddingVertical: 12,
+    fontSize: 16,
   },
   informationInput: {
-    fontSize:18,
-    paddingHorizontal:8,
-    color: 'black'
+    fontSize: 18,
+    paddingHorizontal: 8,
+    color: 'black',
   },
   horizontalLine: {
     borderBottomColor: Colors.mediumGrey,
     borderBottomWidth: 1,
-    paddingTop:4,
+    paddingTop: 4,
   },
 });
 

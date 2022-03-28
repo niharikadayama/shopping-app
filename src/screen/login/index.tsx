@@ -1,7 +1,7 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {Button} from 'components';
-import {useForm, Controller} from 'react-hook-form';
+import {useForm} from 'react-hook-form';
 import styles from './styles';
 
 import {AuthBottomCard, AuthHeader, AuthInputContainer} from 'components/auth';
@@ -9,9 +9,8 @@ import {AuthBottomCard, AuthHeader, AuthInputContainer} from 'components/auth';
 const Login = ({navigation}) => {
   const {control, handleSubmit} = useForm();
 
-  const onSignInPressed = value => {
+  const onSignInPressed = () => {
     navigation.navigate('root');
-    // console.log(value);
   };
 
   const onForgetPasswordPressed = () => {
@@ -23,7 +22,7 @@ const Login = ({navigation}) => {
       <AuthHeader />
       <View style={styles.inputContainer}>
         <Text style={styles.inputTitle}>Welcome Back,</Text>
-        {/* <AuthInputContainer
+        <AuthInputContainer
           name="username"
           control={control}
           placeholder="Enter Username"
@@ -44,7 +43,7 @@ const Login = ({navigation}) => {
               message: 'Password should be minimum 6 characters long',
             },
           }}
-        /> */}
+        />
         <Button
           name={'Login'}
           onPress={handleSubmit(onSignInPressed)}

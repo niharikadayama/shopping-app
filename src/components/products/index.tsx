@@ -2,22 +2,40 @@ import React, {useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import {getData} from 'components/services/apiService';
 import Loader from '../loader';
-import {Colors} from 'theme';
 import styles from './styles';
+import {LinkNotFound} from '..';
+
+interface IProducts {
+  id?: number;
+  category?: string;
+  description?: string;
+  image?: any;
+  title?: string;
+  price?: number;
+  rating?: any;
+}
 
 const Products = ({navigation}) => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
   const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(false);
 
   useEffect(() => {
-    getData().then(data => {
-      setData(data), setFilter(data), setLoading(false);
-    });
+    getData()
+      .then(dataItem => {
+        setData(dataItem);
+        setFilter(dataItem);
+        setLoading(false);
+      })
+      .catch(err => {
+        setLoading(false);
+        setError(true);
+      });
   }, []);
 
   const filterProduct = cat => {
-    const updateList = data.filter(x => x.category === cat);
+    const updateList = data.filter((x: IProducts) => x.category === cat);
     setFilter(updateList);
   };
 
@@ -51,13 +69,13 @@ const Products = ({navigation}) => {
             onPress={() => {
               filterProduct('jewelery');
             }}>
-            <Text style={styles.textStyling}>JEWELERY</Text>
+            <Text style={styles.textStyling}>JEWELRY</Text>
           </TouchableOpacity>
         </View>
         <FlatList
           numColumns={2}
           data={filter}
-          renderItem={({item}) => {
+          renderItem={({item}: {item: IProducts}) => {
             return (
               <TouchableOpacity
                 style={styles.card}
@@ -68,7 +86,7 @@ const Products = ({navigation}) => {
 
                 <View style={styles.cardBottom}>
                   <Text style={styles.cardText}>
-                    {item.title.substring(0, 12)}
+                    {item.title?.substring(0, 12)}
                   </Text>
                   <Text style={styles.cardPrice}>Rs. {item.price}</Text>
                 </View>
@@ -79,7 +97,10 @@ const Products = ({navigation}) => {
       </>
     );
   };
-  return <>{loading ? <Loader /> : <ShowProduct />}</>;
+
+  return (
+    <>{loading ? <Loader /> : error ? <LinkNotFound /> : <ShowProduct />}</>
+  );
 };
 
 export default Products;

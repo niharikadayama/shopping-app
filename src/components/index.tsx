@@ -1,13 +1,10 @@
-import React from 'react';
-
 import Button from './button/button';
 import CartCard from './cartCard';
 import Header from './header';
 import Loader from './loader';
 import Category from './list';
 import WishlistCard from './wishlistCard';
-import CustomRadioButton from './customRadioButton';
-import CustomCheckbox from './checkbox';
+import LinkNotFound from './error/linkNotFound';
 import Products from './products';
 
 export {
@@ -15,8 +12,7 @@ export {
   CartCard,
   Header,
   Loader,
-  CustomRadioButton,
-  CustomCheckbox,
+  LinkNotFound,
   Category,
   WishlistCard,
   Products,

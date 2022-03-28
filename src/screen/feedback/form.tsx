@@ -1,7 +1,6 @@
 import React from 'react';
 import {View, Text, TextInput, TouchableOpacity} from 'react-native';
 import {Button} from 'components';
-import RadioButtonComponenet from './radioButton';
 import Icon from 'react-native-vector-icons/Ionicons';
 import styles from './styles';
 
@@ -40,11 +39,10 @@ class Form extends React.Component {
         <Text style={styles.subHeading}>
           Do you have any thoughts you'd like to share?
         </Text>
-        <TextInput style={styles.feedbackInputBox}></TextInput>
+        <TextInput style={styles.feedbackInputBox} />
         <Text style={styles.subHeading}>
           May we follow you up on your feedback?
         </Text>
-        <RadioButtonComponenet />
         <View style={styles.buttonContainer}>
           <Button name="Send" theme="secondary" />
           <Button name="Clear" theme="tertiary" />

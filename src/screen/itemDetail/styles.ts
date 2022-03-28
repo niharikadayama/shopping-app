@@ -27,10 +27,10 @@ const styles = StyleSheet.create({
     padding: 10,
     paddingLeft: 20,
   },
-  detailCategory:{
-    textTransform:'uppercase',
+  detailCategory: {
+    textTransform: 'uppercase',
     color: Colors.darkGrey,
-    paddingVertical:12
+    paddingVertical: 12,
   },
   detailName: {
     fontSize: 24,
@@ -39,35 +39,35 @@ const styles = StyleSheet.create({
   detailInfo: {
     fontSize: 15,
     marginBottom: 8,
-    textTransform:'capitalize'
+    textTransform: 'capitalize',
   },
-  rating:{
-    flexDirection:'row',
-    justifyContent:'flex-start',
-    alignItems:'center'
+  rating: {
+    flexDirection: 'row',
+    justifyContent: 'flex-start',
+    alignItems: 'center',
   },
-  ratingText:{
-    fontWeight:'500',
-    paddingLeft:8
+  ratingText: {
+    fontWeight: '500',
+    paddingLeft: 8,
   },
   detailPrice: {
     fontSize: 24,
     fontWeight: 'bold',
-    paddingVertical:12
+    paddingVertical: 12,
   },
   detailBottom: {
     flexDirection: 'row',
-    justifyContent:'space-evenly',
+    justifyContent: 'space-evenly',
     alignItems: 'center',
-    marginTop:8,
+    marginTop: 8,
   },
   button: {
     backgroundColor: Colors.transparentlightBg,
-    borderWidth:1/4,
-    borderColor:Colors.buttonBgdark,
+    borderWidth: 1 / 4,
+    borderColor: Colors.buttonBgdark,
     paddingVertical: 12,
     paddingHorizontal: 16,
-    marginRight:12,
+    marginRight: 12,
     borderRadius: 12,
   },
   buttonText: {
@@ -75,6 +75,9 @@ const styles = StyleSheet.create({
     textAlign: 'center',
     fontSize: 20,
     fontWeight: '500',
+  },
+  starRating: {
+    width: 120,
   },
 });
 

@@ -3,7 +3,7 @@ import {Colors} from 'theme';
 
 const styles = StyleSheet.create({
   cartCard: {
-    flex:1,
+    flex: 1,
     backgroundColor: Colors.white,
     marginVertical: 12,
     marginHorizontal: 12,
@@ -16,19 +16,16 @@ const styles = StyleSheet.create({
     shadowOpacity: 0.25,
     shadowRadius: 3.84,
     elevation: 4,
-    flexDirection:'row',
+    flexDirection: 'row',
   },
-  imageColumn:{
-    
-  },
-  detailColumn:{
-    justifyContent:'space-evenly',
-    flexShrink:1,
+  detailColumn: {
+    justifyContent: 'space-evenly',
+    flexShrink: 1,
   },
   cardImg: {
     width: 140,
     height: '100%',
-    borderRadius:15,
+    borderRadius: 15,
     borderTopLeftRadius: 16,
     borderBottomLeftRadius: 16,
   },
@@ -46,28 +43,28 @@ const styles = StyleSheet.create({
     paddingVertical: 6,
   },
   removeButton: {
-    flexDirection:'row',
-    alignItems:'center',
-    justifyContent:'flex-start'
+    flexDirection: 'row',
+    alignItems: 'center',
+    justifyContent: 'flex-start',
   },
   RemoveButtonIcon: {
     color: Colors.darkRed,
   },
-  RemoveButtonText:{
+  RemoveButtonText: {
     paddingLeft: 6,
     fontSize: 18,
-    color:Colors.darkGrey,
+    color: Colors.darkGrey,
   },
   quant: {
     flexDirection: 'row',
     paddingVertical: 12,
     alignItems: 'center',
-    justifyContent:'flex-start',
+    justifyContent: 'flex-start',
   },
   quantText: {
     fontSize: 18,
     fontWeight: '600',
-    paddingHorizontal:12
+    paddingHorizontal: 12,
   },
   quantRupeeIcon: {
     color: Colors.darkGrey,
@@ -81,7 +78,7 @@ const styles = StyleSheet.create({
   priceStyle: {
     fontWeight: 'bold',
     fontSize: 18,
-  }
+  },
 });
 
 export default styles;

@@ -9,8 +9,7 @@ const shopReducer = (state = initialState, action) => {
     case ACTION_TYPES.ADD_TO_CART:
       const cartItem = action.payload;
       const inCart =
-        state.cart.findIndex((item: any) => item.id === action.payload.id) !==
-        -1;
+        state.cart.findIndex((item: any) => item.id === cartItem.id) !== -1;
       return {
         ...state,
         cart: inCart ? state.cart : [...state.cart, cartItem],
@@ -19,16 +18,16 @@ const shopReducer = (state = initialState, action) => {
       return {
         ...state,
         cart: state.cart.filter(
-          (cartItem: any) => cartItem.id !== action.payload.id,
+          (removeItem: any) => removeItem.id !== action.payload.id,
         ),
       };
     case ACTION_TYPES.AdjustQty:
       return {
         ...state,
-        cart: state.cart.map((cartItem: any) =>
-          cartItem.id === action.payload.id
-            ? {...cartItem, qty: action.payload.qty}
-            : cartItem,
+        cart: state.cart.map((Item: any) =>
+          Item.id === action.payload.id
+            ? {...Item, qty: action.payload.qty}
+            : Item,
         ),
       };
     default:

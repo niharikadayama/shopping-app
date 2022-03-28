@@ -7,14 +7,14 @@ import Header from 'components/header';
 import AddressCard from './addressCard';
 import styles from './styles';
 
-const AddressScreen = ({navigation, value}) => {
+const AddressScreen = ({navigation}) => {
   const formState = useSelector(state => state.address.addressInfo);
   const dispatch = useDispatch();
   return (
     <View style={styles.container}>
       <Header
         leftIcon={'chevron-back'}
-        rightIcon={''}
+        rightIcon={'close'}
         iconSize={28}
         onLeftIconPress={() => {
           navigation.navigate('profile');

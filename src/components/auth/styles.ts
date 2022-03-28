@@ -18,12 +18,12 @@ const styles = StyleSheet.create({
   },
   inputFieldIcon: {
     color: Colors.mediumGrey,
-    paddingHorizontal:10,
-    paddingVertical:10,
+    paddingHorizontal: 10,
+    paddingVertical: 10,
   },
-  textInputFont:{
-     fontSize:16,
-     paddingVertical:6,
+  textInputFont: {
+    fontSize: 16,
+    paddingVertical: 6,
   },
   errorStyle: {
     color: Colors.red,
@@ -33,7 +33,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 16,
     height: 152,
     justifyContent: 'space-evenly',
-    paddingBottom:6
+    paddingBottom: 6,
   },
   bottomContainerIcon: {
     flexDirection: 'row',

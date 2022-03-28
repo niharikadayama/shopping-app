@@ -8,7 +8,7 @@ const AddAddress = ({navigation}) => {
     <View style={Styles.container}>
       <Header
         leftIcon={'chevron-back'}
-        rightIcon={''}
+        rightIcon={'close'}
         iconSize={28}
         onLeftIconPress={() => {
           navigation.navigate('address');

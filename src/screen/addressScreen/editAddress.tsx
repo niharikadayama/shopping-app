@@ -1,22 +1,15 @@
 import React from 'react';
 import {View, Text, TextInput, StyleSheet, ScrollView} from 'react-native';
-import {useDispatch} from 'react-redux';
-import {editAddress} from 'redux/address/action';
 import {Button, Header} from 'components';
 import {Colors} from 'theme';
 
 const EditAddress = ({navigation, route}) => {
   const item = route.params;
-  const dispatch = useDispatch();
-  const onSubmit = data => {
-    // dispatch(editAddress(data));
-    console.log(data);
-  };
   return (
     <ScrollView style={styles.container}>
       <Header
         leftIcon={'chevron-back'}
-        rightIcon={''}
+        rightIcon={'close'}
         iconSize={28}
         onLeftIconPress={() => {
           navigation.navigate('address');

@@ -12,7 +12,7 @@ const Profile = ({navigation}) => {
     <View style={[styles.container, {backgroundColor: colors.card}]}>
       <Header
         leftIcon={'ios-chevron-back'}
-        rightIcon={''}
+        rightIcon={'close'}
         iconSize={25}
         onLeftIconPress={() => {
           navigation.navigate('profile');
