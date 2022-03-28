@@ -4,7 +4,7 @@ import {Button, Header} from 'components';
 import {Colors} from 'theme';
 
 const EditAddress = ({navigation, route}) => {
-  const item = route.params;
+  const item = route.params?.item;
   return (
     <ScrollView style={styles.container}>
       <Header
@@ -19,45 +19,39 @@ const EditAddress = ({navigation, route}) => {
       />
       <View style={styles.informationSection}>
         <Text style={styles.informationLabel}>Name</Text>
-        <TextInput style={styles.informationInput} value={item.item.Fullname} />
+        <TextInput style={styles.informationInput} value={item.fullName} />
 
         <View style={styles.horizontalLine} />
 
         <Text style={styles.informationLabel}>Phone number</Text>
         <TextInput style={styles.informationInput}>
-          {item.item.phoneNumber}
+          {item.phoneNumber}
         </TextInput>
 
         <View style={styles.horizontalLine} />
 
         <Text style={styles.informationLabel}>Pincode</Text>
-        <TextInput style={styles.informationInput}>
-          {item.item.pincode}
-        </TextInput>
+        <TextInput style={styles.informationInput}>{item.pincode}</TextInput>
 
         <View style={styles.horizontalLine} />
 
         <Text style={styles.informationLabel}>City</Text>
-        <TextInput style={styles.informationInput}>{item.item.city}</TextInput>
+        <TextInput style={styles.informationInput}>{item.city}</TextInput>
 
         <View style={styles.horizontalLine} />
 
         <Text style={styles.informationLabel}>State</Text>
-        <TextInput style={styles.informationInput}>{item.item.state}</TextInput>
+        <TextInput style={styles.informationInput}>{item.state}</TextInput>
 
         <View style={styles.horizontalLine} />
 
         <Text style={styles.informationLabel}>Locality/Area</Text>
-        <TextInput style={styles.informationInput}>
-          {item.item.locality}
-        </TextInput>
+        <TextInput style={styles.informationInput}>{item.locality}</TextInput>
 
         <View style={styles.horizontalLine} />
 
         <Text style={styles.informationLabel}>Flat no/ Building name</Text>
-        <TextInput style={styles.informationInput}>
-          {item.item.flatNo}
-        </TextInput>
+        <TextInput style={styles.informationInput}>{item.flatNo}</TextInput>
 
         <View style={styles.horizontalLine} />
       </View>

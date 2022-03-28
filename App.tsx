@@ -1,5 +1,4 @@
 import React, {useEffect, useState} from 'react';
-// import reduxStore from './src/redux/store';
 import {Provider} from 'react-redux';
 import MainStackNavigator from './src/navigation/stackNavigation';
 import {PersistGate} from 'redux-persist/integration/react';
@@ -8,7 +7,6 @@ import {
   NavigationContainer,
   DefaultTheme,
   DarkTheme,
-  useTheme,
 } from '@react-navigation/native';
 import {EventRegister} from 'react-native-event-listeners';
 
@@ -16,12 +14,6 @@ const App = () => {
   const [darkApp, setDarkApp] = useState(false);
   const appTheme = darkApp ? DarkTheme : DefaultTheme;
   useEffect(() => {
-    let EventListener = EventRegister.addEventListener(
-      'changeThemeEvent',
-      data => {
-        setDarkApp(data);
-      },
-    );
     return () => {
       EventRegister.removeEventListener('EventListener');
     };

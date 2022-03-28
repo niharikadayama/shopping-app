@@ -29,7 +29,7 @@ const AddressScreen = ({navigation}) => {
         renderItem={item => {
           return (
             <AddressCard
-              name={item.item.Fullname}
+              name={item.item.fullName}
               flatNo={item.item.flatNo}
               locality={item.item.locality}
               city={item.item.city}

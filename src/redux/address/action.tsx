@@ -6,7 +6,7 @@ export const addToAddress = item => ({
 });
 
 export const editAddress = (
-  Fullname,
+  fullName,
   phoneNumber,
   pincode,
   city,
@@ -16,7 +16,7 @@ export const editAddress = (
 ) => ({
   type: ACTION_TYPES.EDIT_ADDRESS,
   payload: {
-    Fullname: Fullname,
+    fullName: fullName,
     phoneNumber: phoneNumber,
     pincode: pincode,
     city: city,

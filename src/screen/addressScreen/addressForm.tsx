@@ -19,7 +19,7 @@ let Form = ({navigation}) => {
       <View style={styles.subContainer}>
         <Text style={styles.subContainerText}>Contact Info</Text>
         <AuthInputContainer
-          name="Fullname"
+          name="fullName"
           control={control}
           placeholder="Enter Full Name"
           icon="ios-mail"

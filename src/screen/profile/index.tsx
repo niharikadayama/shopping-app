@@ -1,10 +1,10 @@
 import React from 'react';
-import {View, Text, TouchableOpacity, Image} from 'react-native';
+import {View, Text, Image} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import styles from './styles';
 import Header from 'components/header';
-import Icon from 'react-native-vector-icons/Ionicons';
-import {Colors, Images} from 'theme';
+import {Images} from 'theme';
+import CustomProfileOption from './customProfileOption';
 
 const Profile = ({navigation}) => {
   const {colors} = useTheme();
@@ -31,117 +31,71 @@ const Profile = ({navigation}) => {
       </View>
 
       <View style={[styles.section, {backgroundColor: colors.card}]}>
-        <TouchableOpacity
-          style={styles.sectionBody}
+        <CustomProfileOption
           onPress={() => {
             navigation.navigate('EditProfile');
-          }}>
-          <View style={styles.body}>
-            <Icon name="person" size={26} color={Colors.mediumGrey} />
-            <Text style={[styles.sectionText, {color: colors.text}]}>
-              Edit Profile
-            </Text>
-          </View>
-          <Icon
-            name="ios-chevron-forward"
-            size={25}
-            style={[styles.sectionIcon, {color: colors.text}]}
-          />
-        </TouchableOpacity>
+          }}
+          optionIconName={'person'}
+          optionIconSize={26}
+          title={'Edit Profile'}
+          rightIconName={'ios-chevron-forward'}
+          rightIconSize={25}
+        />
 
-        <TouchableOpacity
-          style={styles.sectionBody}
+        <CustomProfileOption
           onPress={() => {
             navigation.navigate('address');
-          }}>
-          <View style={styles.body}>
-            <Icon name="location-sharp" size={29} color={Colors.mediumGrey} />
-            <Text style={[styles.sectionText, {color: colors.text}]}>
-              Shopping Address
-            </Text>
-          </View>
-          <Icon
-            name="ios-chevron-forward"
-            size={25}
-            style={[styles.sectionIcon, {color: colors.text}]}
-          />
-        </TouchableOpacity>
+          }}
+          optionIconName={'location-sharp'}
+          optionIconSize={29}
+          title={'Shopping Address'}
+          rightIconName={'ios-chevron-forward'}
+          rightIconSize={25}
+        />
 
-        <TouchableOpacity
-          style={styles.sectionBody}
+        <CustomProfileOption
           onPress={() => {
             navigation.navigate('wishlist');
-          }}>
-          <View style={styles.body}>
-            <Icon name="heart-sharp" size={29} color={Colors.mediumGrey} />
-            <Text style={[styles.sectionText, {color: colors.text}]}>
-              Wishlist
-            </Text>
-          </View>
-          <Icon
-            name="ios-chevron-forward"
-            size={25}
-            style={[styles.sectionIcon, {color: colors.text}]}
-          />
-        </TouchableOpacity>
+          }}
+          optionIconName={'heart-sharp'}
+          optionIconSize={29}
+          title={'Wishlist'}
+          rightIconName={'ios-chevron-forward'}
+          rightIconSize={25}
+        />
 
-        <TouchableOpacity
-          style={styles.sectionBody}
+        <CustomProfileOption
           onPress={() => {
             navigation.navigate('root');
-          }}>
-          <View style={styles.body}>
-            <Icon
-              name="ios-receipt-sharp"
-              size={29}
-              color={Colors.mediumGrey}
-            />
-            <Text style={[styles.sectionText, {color: colors.text}]}>
-              Order History
-            </Text>
-          </View>
-          <Icon
-            name="ios-chevron-forward"
-            size={25}
-            style={[styles.sectionIcon, {color: colors.text}]}
-          />
-        </TouchableOpacity>
+          }}
+          optionIconName={'receipt-sharp'}
+          optionIconSize={29}
+          title={'Order History'}
+          rightIconName={'ios-chevron-forward'}
+          rightIconSize={25}
+        />
 
-        <TouchableOpacity
-          style={styles.sectionBody}
+        <CustomProfileOption
           onPress={() => {
             navigation.navigate('root');
-          }}>
-          <View style={styles.body}>
-            <Icon name="notifications" size={29} color={Colors.mediumGrey} />
-            <Text style={[styles.sectionText, {color: colors.text}]}>
-              Notification
-            </Text>
-          </View>
-          <Icon
-            name="ios-chevron-forward"
-            size={25}
-            style={[styles.sectionIcon, {color: colors.text}]}
-          />
-        </TouchableOpacity>
+          }}
+          optionIconName={'notifications'}
+          optionIconSize={29}
+          title={'Notification'}
+          rightIconName={'ios-chevron-forward'}
+          rightIconSize={25}
+        />
 
-        <TouchableOpacity
-          style={styles.sectionBody}
+        <CustomProfileOption
           onPress={() => {
             navigation.navigate('root');
-          }}>
-          <View style={styles.body}>
-            <Icon name="ios-card" size={29} color={Colors.mediumGrey} />
-            <Text style={[styles.sectionText, {color: colors.text}]}>
-              Cards
-            </Text>
-          </View>
-          <Icon
-            name="ios-chevron-forward"
-            size={25}
-            style={[styles.sectionIcon, {color: colors.text}]}
-          />
-        </TouchableOpacity>
+          }}
+          optionIconName={'card'}
+          optionIconSize={29}
+          title={'Cards'}
+          rightIconName={'ios-chevron-forward'}
+          rightIconSize={25}
+        />
       </View>
     </View>
   );
