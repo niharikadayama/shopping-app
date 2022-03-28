@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import {getData} from 'components/services/apiService';
-import Loader from '../loader';
+// import Loader from '../loader';
 import styles from './styles';
-import {LinkNotFound} from '..';
+// import {LinkNotFound} from '..';
 
 interface IProducts {
   id?: number;
@@ -18,19 +18,17 @@ interface IProducts {
 const Products = ({navigation}) => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
-  const [loading, setLoading] = useState(true);
-  const [error, setError] = useState(false);
+  // const [loading, setLoading] = useState(true);
+  // const [error, setError] = useState(false);
 
   useEffect(() => {
     getData()
       .then(dataItem => {
         setData(dataItem);
         setFilter(dataItem);
-        setLoading(false);
       })
       .catch(err => {
-        setLoading(false);
-        setError(true);
+        console.log(err);
       });
   }, []);
 
@@ -99,7 +97,9 @@ const Products = ({navigation}) => {
   };
 
   return (
-    <>{loading ? <Loader /> : error ? <LinkNotFound /> : <ShowProduct />}</>
+    <>
+      <ShowProduct />
+    </>
   );
 };
 

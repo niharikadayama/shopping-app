@@ -6,7 +6,6 @@ import Splash from 'screen/splash';
 import Login from 'screen/login';
 import SignUp from 'screen/signup';
 import Details from 'screen/details';
-import {LinkNotFound} from 'components';
 import Cart from 'screen/cart';
 import EditProfile from 'screen/edit-profile/editProfile';
 import AddressScreen from 'screen/addressScreen';
@@ -31,7 +30,6 @@ const MainStackNavigator = () => {
       <Stack.Screen name="SignUp" component={SignUp} />
       <Stack.Screen name="root" component={BottomTabNavigator} />
       <Stack.Screen name="details" component={Details} />
-      <Stack.Screen name="linkNotFound" component={LinkNotFound} />
       <Stack.Screen name="cart" component={Cart} />
       <Stack.Screen name="EditProfile" component={EditProfile} />
       <Stack.Screen name="address" component={AddressScreen} />

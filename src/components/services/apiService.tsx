@@ -5,6 +5,6 @@ export async function getData() {
     let response = await request.json();
     return response;
   } catch (error) {
-    return error;
+    console.log(error);
   }
 }
