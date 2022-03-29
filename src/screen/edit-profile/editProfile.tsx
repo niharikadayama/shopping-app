@@ -1,11 +1,12 @@
 import React from 'react';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, Image} from 'react-native';
 import styles from './styles';
 import Header from 'components/header';
 import ProfileInfo from './profileInfo';
 import {Images} from 'theme';
 
-const EditProfile = ({navigation}) => {
+const EditProfile = () => {
   return (
     <View style={styles.container}>
       <Header
@@ -13,10 +14,10 @@ const EditProfile = ({navigation}) => {
         rightIcon={'checkmark'}
         iconSize={25}
         onLeftIconPress={() => {
-          navigation.navigate('profile');
+          RootNavigation.pop();
         }}
         onRightIconPress={() => {
-          navigation.navigate('profile');
+          RootNavigation.navigate('profile');
         }}
         showLogo={false}
         title={'Edit Profile'}

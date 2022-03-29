@@ -1,4 +1,5 @@
 import React from 'react';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {Button} from 'components';
 import {useForm} from 'react-hook-form';
@@ -6,11 +7,11 @@ import styles from './styles';
 
 import {AuthBottomCard, AuthHeader, AuthInputContainer} from 'components/auth';
 
-const Login = ({navigation}) => {
+const Login = () => {
   const {control, handleSubmit} = useForm();
 
   const onSignInPressed = () => {
-    navigation.navigate('root');
+    RootNavigation.navigate('root');
   };
 
   const onForgetPasswordPressed = () => {
@@ -56,7 +57,7 @@ const Login = ({navigation}) => {
       </TouchableOpacity>
 
       <AuthBottomCard
-        onPress={() => navigation.navigate('SignUp')}
+        onPress={() => RootNavigation.navigate('SignUp')}
         question={"Don't Have An Account?"}
         location={'Sign Up'}
       />

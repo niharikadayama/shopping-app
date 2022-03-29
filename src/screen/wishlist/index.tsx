@@ -1,11 +1,12 @@
 import React from 'react';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, FlatList} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import styles from './styles';
 import {Header, WishlistCard} from 'components';
 import {useSelector} from 'react-redux';
 
-const Wishlist = ({navigation}) => {
+const Wishlist = () => {
   const wishlist = useSelector(state => state.wishlist.wishlist);
   const {colors} = useTheme();
   return (
@@ -15,10 +16,10 @@ const Wishlist = ({navigation}) => {
         rightIcon={'cart'}
         iconSize={28}
         onLeftIconPress={() => {
-          navigation.navigate('root');
+          RootNavigation.pop();
         }}
         onRightIconPress={() => {
-          navigation.navigate('cart');
+          RootNavigation.navigate('cart');
         }}
         showLogo={false}
       />
@@ -32,7 +33,7 @@ const Wishlist = ({navigation}) => {
         data={wishlist}
         keyExtractor={(item, index) => index.toString()}
         renderItem={({item}) => {
-          return <WishlistCard items={item} navigation={navigation} />;
+          return <WishlistCard items={item} />;
         }}
       />
     </View>

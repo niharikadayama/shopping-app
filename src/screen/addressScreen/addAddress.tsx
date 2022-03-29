@@ -1,9 +1,10 @@
 import React from 'react';
+import * as RootNavigation from 'services/navigationServices';
 import {View, StyleSheet} from 'react-native';
 import {Header} from 'components';
 import Form from './addressForm';
 
-const AddAddress = ({navigation}) => {
+const AddAddress = () => {
   return (
     <View style={Styles.container}>
       <Header
@@ -11,12 +12,12 @@ const AddAddress = ({navigation}) => {
         rightIcon={'close'}
         iconSize={28}
         onLeftIconPress={() => {
-          navigation.navigate('address');
+          RootNavigation.pop();
         }}
         showLogo={false}
         title={'Your Address'}
       />
-      <Form navigation={navigation} />
+      <Form />
     </View>
   );
 };

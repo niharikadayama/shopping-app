@@ -1,4 +1,5 @@
 import React from 'react';
+import * as RootNavigation from 'services/navigationServices';
 import {View, ScrollView, Text, StyleSheet} from 'react-native';
 import {Button} from 'components';
 import {useForm} from 'react-hook-form';
@@ -6,12 +7,12 @@ import {useDispatch} from 'react-redux';
 import {addToAddress} from 'redux/address/action';
 import {AuthInputContainer} from 'components/auth';
 
-let Form = ({navigation}) => {
+const Form = () => {
   const {control, handleSubmit} = useForm();
   const dispatch = useDispatch();
 
   const onSubmit = values => {
-    navigation.navigate('address');
+    RootNavigation.navigate('address');
     dispatch(addToAddress(values));
   };
   return (

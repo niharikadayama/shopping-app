@@ -1,5 +1,6 @@
 import React, {useEffect, useState} from 'react';
 import {Provider} from 'react-redux';
+import {navigationRef} from './src/services/navigationServices';
 import MainStackNavigator from './src/navigation/stackNavigation';
 import {PersistGate} from 'redux-persist/integration/react';
 import {persistor, store} from './src/redux/store';
@@ -21,7 +22,7 @@ const App = () => {
   return (
     <Provider store={store}>
       <PersistGate loading={null} persistor={persistor}>
-        <NavigationContainer theme={appTheme}>
+        <NavigationContainer ref={navigationRef} theme={appTheme}>
           <MainStackNavigator />
         </NavigationContainer>
       </PersistGate>

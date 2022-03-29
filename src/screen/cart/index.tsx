@@ -1,10 +1,11 @@
 import React, {useState, useEffect} from 'react';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, FlatList} from 'react-native';
 import styles from './styles';
 import {Header, CartCard, Button} from 'components';
 import {useSelector} from 'react-redux';
 
-const Cart = ({navigation}) => {
+const Cart = () => {
   const [totalPrice, setTotalPrice] = useState(0);
   const [totalItem, setTotalItem] = useState(0);
   const myCart = useSelector(state => state.cart.cart);
@@ -28,10 +29,10 @@ const Cart = ({navigation}) => {
         rightIcon={'person-circle-sharp'}
         iconSize={30}
         onLeftIconPress={() => {
-          navigation.navigate('root');
+          RootNavigation.pop();
         }}
         onRightIconPress={() => {
-          navigation.navigate('profile');
+          RootNavigation.navigate('profile');
         }}
         showLogo={false}
         title={''}
@@ -58,7 +59,7 @@ const Cart = ({navigation}) => {
         name={'Checkout'}
         theme={'primary'}
         onPress={() => {
-          navigation.navigate('Home');
+          RootNavigation.navigate('Home');
         }}
       />
     </View>

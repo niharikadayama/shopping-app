@@ -11,7 +11,7 @@ const data = Object.keys(categories).map(i => ({
   image: categories[i],
 }));
 
-const Category = ({navigation}) => {
+const Category = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const scrollX = useRef(new Animated.Value(0)).current;
   const slidesRef = useRef(null);
@@ -43,7 +43,7 @@ const Category = ({navigation}) => {
               <View
                 style={[StyleSheet.absoluteFillObject, styles.overlayStyle]}
               />
-              <SelectedCategory item={item} navigation={navigation} />
+              <SelectedCategory item={item} />
             </View>
           );
         }}
