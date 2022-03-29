@@ -1,5 +1,5 @@
 import React from 'react';
-import {View, Text, TextInput, StyleSheet} from 'react-native';
+import {View, Text, TextInput, StyleSheet, Platform} from 'react-native';
 import {Colors} from 'theme';
 
 interface Information {
@@ -39,21 +39,22 @@ const ProfileInfo = (props: Information) => {
 
 const styles = StyleSheet.create({
   informationSection: {
-    paddingHorizontal: 8,
+    paddingHorizontal: Platform.OS === 'ios' ? 12 : 20,
   },
   informationLabel: {
     color: Colors.mediumGrey,
-    paddingVertical: 12,
+    paddingTop: 12,
     fontSize: 16,
   },
   informationInput: {
     fontSize: 17,
     paddingHorizontal: 8,
+    paddingVertical: Platform.OS === 'ios' ? 4 : 2,
   },
   horizontalLine: {
     borderBottomColor: Colors.mediumGrey,
     borderBottomWidth: 1,
-    paddingTop: 4,
+    paddingTop: Platform.OS === 'ios' ? 4 : 1,
   },
 });
 

@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {Colors, screenHeight} from 'theme';
 
 const styles = StyleSheet.create({
@@ -21,7 +21,7 @@ const styles = StyleSheet.create({
     color: Colors.blue,
   },
   profileSection: {
-    marginVertical: 16,
+    marginVertical: Platform.OS === 'ios' ? 16 : 4,
   },
   profile: {
     height: 140,
@@ -32,7 +32,7 @@ const styles = StyleSheet.create({
   profileText: {
     fontSize: 18,
     alignSelf: 'center',
-    marginVertical: 8,
+    marginVertical: Platform.OS === 'ios' ? 8 : 4,
     color: Colors.blue,
   },
   informationSection: {

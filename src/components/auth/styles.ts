@@ -13,6 +13,7 @@ const styles = StyleSheet.create({
   },
   inputField: {
     flexDirection: 'row',
+    alignSelf: 'center',
     borderRadius: 12,
     borderWidth: 1,
     borderColor: Colors.transparentlightBg,
