@@ -29,28 +29,30 @@ const AddressScreen = () => {
       <Text style={[styles.subContainerHeading, {color: colors.text}]}>
         All Address
       </Text>
-      <FlatList
-        data={formState}
-        renderItem={item => {
-          return (
-            <AddressCard
-              name={item.item.fullName}
-              flatNo={item.item.flatNo}
-              locality={item.item.locality}
-              city={item.item.city}
-              state={item.item.state}
-              pincode={item.item.pincode}
-              phoneNumber={item.item.phoneNumber}
-              onPressEdit={() => {
-                RootNavigation.navigate('EditAddress', item);
-              }}
-              onPressDelete={() => {
-                dispatch(removeFromAddress(item.item.phoneNumber));
-              }}
-            />
-          );
-        }}
-      />
+      <View>
+        <FlatList
+          data={formState}
+          renderItem={item => {
+            return (
+              <AddressCard
+                name={item.item.fullName}
+                flatNo={item.item.flatNo}
+                locality={item.item.locality}
+                city={item.item.city}
+                state={item.item.state}
+                pincode={item.item.pincode}
+                phoneNumber={item.item.phoneNumber}
+                onPressEdit={() => {
+                  RootNavigation.navigate('EditAddress', item);
+                }}
+                onPressDelete={() => {
+                  dispatch(removeFromAddress(item.item.phoneNumber));
+                }}
+              />
+            );
+          }}
+        />
+      </View>
       <TouchableOpacity
         style={styles.addNewAddress}
         onPress={() => {

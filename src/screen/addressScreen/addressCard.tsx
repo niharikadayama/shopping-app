@@ -73,6 +73,8 @@ const styles = StyleSheet.create({
     elevation: 5,
     paddingHorizontal: 16,
     paddingVertical: 10,
+    marginBottom: 10,
+    marginTop: 4,
   },
   name: {
     fontSize: 18,

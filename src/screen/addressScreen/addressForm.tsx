@@ -1,6 +1,6 @@
 import React from 'react';
 import * as RootNavigation from 'services/navigationServices';
-import {View, ScrollView, Text, StyleSheet} from 'react-native';
+import {View, ScrollView, Text, StyleSheet, Platform} from 'react-native';
 import {Button} from 'components';
 import {useForm} from 'react-hook-form';
 import {useTheme} from '@react-navigation/native';
@@ -95,7 +95,7 @@ const Form = () => {
 
 const styles = StyleSheet.create({
   root: {
-    padding: 16,
+    padding: Platform.OS === 'ios' ? 16 : 8,
   },
   subContainer: {
     paddingBottom: 8,
@@ -105,7 +105,7 @@ const styles = StyleSheet.create({
   },
   input: {
     padding: 8,
-    marginBottom: 8,
+    marginBottom: Platform.OS === 'ios' ? 8 : 4,
     borderWidth: 1,
   },
 });
