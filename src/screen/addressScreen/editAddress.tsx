@@ -13,7 +13,7 @@ const EditAddress = ({route}) => {
         rightIcon={'close'}
         iconSize={28}
         onLeftIconPress={() => {
-          RootNavigation.navigate('address');
+          RootNavigation.pop();
         }}
         showLogo={false}
         title={'Your Address'}

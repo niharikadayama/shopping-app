@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import * as RootNavigation from '../../services/navigationServices';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import {getData} from 'services/apiService';
 // import Loader from '../loader';

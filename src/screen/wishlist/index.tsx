@@ -1,5 +1,5 @@
 import React from 'react';
-import * as RootNavigation from '../../services/navigationServices';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, FlatList} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import styles from './styles';
@@ -16,7 +16,7 @@ const Wishlist = () => {
         rightIcon={'cart'}
         iconSize={28}
         onLeftIconPress={() => {
-          RootNavigation.navigate('root');
+          RootNavigation.pop();
         }}
         onRightIconPress={() => {
           RootNavigation.navigate('cart');

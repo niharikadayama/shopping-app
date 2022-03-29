@@ -1,5 +1,5 @@
 import React from 'react';
-import * as RootNavigation from '../../services/navigationServices';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, Image} from 'react-native';
 import styles from './styles';
 import Header from 'components/header';
@@ -14,7 +14,7 @@ const EditProfile = () => {
         rightIcon={'checkmark'}
         iconSize={25}
         onLeftIconPress={() => {
-          RootNavigation.navigate('profile');
+          RootNavigation.pop();
         }}
         onRightIconPress={() => {
           RootNavigation.navigate('profile');

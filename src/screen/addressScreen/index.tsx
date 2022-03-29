@@ -1,5 +1,5 @@
 import React from 'react';
-import * as RootNavigation from '../../services/navigationServices';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, TouchableOpacity, FlatList} from 'react-native';
 import {useSelector, useDispatch} from 'react-redux';
 import {removeFromAddress} from 'redux/address/action';
@@ -18,7 +18,7 @@ const AddressScreen = () => {
         rightIcon={'close'}
         iconSize={28}
         onLeftIconPress={() => {
-          RootNavigation.navigate('profile');
+          RootNavigation.pop();
         }}
         showLogo={false}
         title={'Your Address'}

@@ -1,5 +1,5 @@
 import React from 'react';
-import * as RootNavigation from '../../services/navigationServices';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, Image} from 'react-native';
 import {useTheme} from '@react-navigation/native';
 import styles from './styles';
@@ -16,7 +16,7 @@ const Profile = () => {
         rightIcon={'close'}
         iconSize={25}
         onLeftIconPress={() => {
-          RootNavigation.navigate('profile');
+          RootNavigation.pop();
         }}
         onRightIconPress={() => {
           RootNavigation.navigate('profile');

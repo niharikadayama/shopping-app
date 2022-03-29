@@ -1,5 +1,5 @@
 import React from 'react';
-import * as RootNavigation from '../../services/navigationServices';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, ImageBackground, SafeAreaView} from 'react-native';
 import {useDispatch} from 'react-redux';
 import {addToCart} from 'redux/shopping/action';
@@ -24,7 +24,7 @@ const ItemDetail = ({route}) => {
           size={26}
           color={Colors.mediumGrey}
           style={styles.icon}
-          onPress={() => RootNavigation.navigate('root')}
+          onPress={() => RootNavigation.pop()}
         />
 
         <View style={styles.detailsContainer}>

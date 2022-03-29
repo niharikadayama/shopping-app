@@ -1,5 +1,5 @@
 import React, {useState, useEffect} from 'react';
-import * as RootNavigation from '../../services/navigationServices';
+import * as RootNavigation from 'services/navigationServices';
 import {View, Text, FlatList} from 'react-native';
 import styles from './styles';
 import {Header, CartCard, Button} from 'components';
@@ -29,7 +29,7 @@ const Cart = () => {
         rightIcon={'person-circle-sharp'}
         iconSize={30}
         onLeftIconPress={() => {
-          RootNavigation.navigate('root');
+          RootNavigation.pop();
         }}
         onRightIconPress={() => {
           RootNavigation.navigate('profile');
