@@ -3,13 +3,14 @@ import * as RootNavigation from 'services/navigationServices';
 import {View, Text, TouchableOpacity} from 'react-native';
 import {Button} from 'components';
 import {useForm} from 'react-hook-form';
+import {useTheme} from '@react-navigation/native';
 import styles from './styles';
 
 import {AuthBottomCard, AuthHeader, AuthInputContainer} from 'components/auth';
 
 const Login = () => {
   const {control, handleSubmit} = useForm();
-
+  const {colors} = useTheme();
   const onSignInPressed = () => {
     RootNavigation.navigate('root');
   };
@@ -19,10 +20,12 @@ const Login = () => {
   };
 
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: colors.card}]}>
       <AuthHeader />
       <View style={styles.inputContainer}>
-        <Text style={styles.inputTitle}>Welcome Back,</Text>
+        <Text style={[styles.inputTitle, {color: colors.text}]}>
+          Welcome Back,
+        </Text>
         <AuthInputContainer
           name="username"
           control={control}

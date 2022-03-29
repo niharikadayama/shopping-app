@@ -8,6 +8,8 @@ const persistConfig = {
   storage: AsyncStorage,
 };
 
+export type IRootState = ReturnType<typeof rootReducer>;
+
 const persistedReducer = persistReducer(persistConfig, rootReducer);
 
 export const store = createStore(persistedReducer);

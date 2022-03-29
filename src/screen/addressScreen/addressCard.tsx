@@ -1,4 +1,5 @@
 import React from 'react';
+import {useTheme} from '@react-navigation/native';
 import {View, Text, StyleSheet, TouchableOpacity} from 'react-native';
 import {Colors} from 'theme';
 
@@ -26,18 +27,21 @@ const AddressCard = (props: IAddress) => {
     onPressDelete,
     onPressEdit,
   } = props;
-
+  const {colors} = useTheme();
   return (
-    <View style={styles.container}>
-      <Text style={styles.name}>{name}</Text>
-      <Text style={styles.address}>
+    <View style={[styles.container, {backgroundColor: colors.background}]}>
+      <Text style={[styles.name, {color: colors.text}]}>{name}</Text>
+      <Text style={[styles.address, {color: colors.text}]}>
         {flatNo}, {locality}, {city}
       </Text>
-      <Text style={styles.address}>
+      <Text style={[styles.address, {color: colors.text}]}>
         {state} - {pincode}
       </Text>
-      <Text style={styles.contact}>
-        Phone: <Text style={styles.contactNo}>{phoneNumber}</Text>
+      <Text style={[styles.contact, {color: colors.text}]}>
+        Phone:{' '}
+        <Text style={[styles.contactNo, {color: colors.text}]}>
+          {phoneNumber}
+        </Text>
       </Text>
       <View style={styles.horizontalLine} />
       <View style={styles.bottomContainer}>

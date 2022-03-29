@@ -2,6 +2,7 @@ import React from 'react';
 import * as RootNavigation from 'services/navigationServices';
 import {View, Text} from 'react-native';
 import {useForm} from 'react-hook-form';
+import {useTheme} from '@react-navigation/native';
 import {Button} from 'components';
 import {EmailRegex} from 'constant';
 import styles from './styles';
@@ -12,13 +13,13 @@ const SignUp = () => {
   const {control, handleSubmit, watch} = useForm();
   const pswd = watch('password');
   const onSignUpPressed = () => {};
-
+  const {colors} = useTheme();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: colors.card}]}>
       <AuthHeader />
 
       <View style={styles.inputContainer}>
-        <Text style={styles.inputTitle}>Welcome!</Text>
+        <Text style={[styles.inputTitle, {color: colors.text}]}>Welcome!</Text>
 
         <AuthInputContainer
           name="username"

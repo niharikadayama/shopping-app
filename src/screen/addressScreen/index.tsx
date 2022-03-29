@@ -5,14 +5,16 @@ import {useSelector, useDispatch} from 'react-redux';
 import {removeFromAddress} from 'redux/address/action';
 import Icon from 'react-native-vector-icons/Ionicons';
 import Header from 'components/header';
+import {useTheme} from '@react-navigation/native';
 import AddressCard from './addressCard';
 import styles from './styles';
 
 const AddressScreen = () => {
   const formState = useSelector(state => state.address.addressInfo);
   const dispatch = useDispatch();
+  const {colors} = useTheme();
   return (
-    <View style={styles.container}>
+    <View style={[styles.container, {backgroundColor: colors.card}]}>
       <Header
         leftIcon={'chevron-back'}
         rightIcon={'close'}
@@ -24,7 +26,9 @@ const AddressScreen = () => {
         title={'Your Address'}
       />
 
-      <Text style={styles.subContainerHeading}>All Address</Text>
+      <Text style={[styles.subContainerHeading, {color: colors.text}]}>
+        All Address
+      </Text>
       <FlatList
         data={formState}
         renderItem={item => {
@@ -53,7 +57,9 @@ const AddressScreen = () => {
           RootNavigation.navigate('addAddress');
         }}>
         <Icon name="ios-add" size={26} style={styles.addNewAddressIcon} />
-        <Text style={styles.addNewAddressText}>Add New Address</Text>
+        <Text style={[styles.addNewAddressText, {color: colors.text}]}>
+          Add New Address
+        </Text>
       </TouchableOpacity>
     </View>
   );

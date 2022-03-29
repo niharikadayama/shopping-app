@@ -1,10 +1,15 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {Colors} from 'theme';
 
 const styles = StyleSheet.create({
   headerContainer: {
     justifyContent: 'center',
     alignItems: 'center',
+    marginTop: Platform.OS === 'ios' ? 50 : 10,
+  },
+  logostyle: {
+    height: 130,
+    width: 130,
   },
   inputField: {
     flexDirection: 'row',

@@ -2,9 +2,8 @@ import React, {useState, useEffect} from 'react';
 import * as RootNavigation from 'services/navigationServices';
 import {View, Text, TouchableOpacity, FlatList, Image} from 'react-native';
 import {getData} from 'services/apiService';
-// import Loader from '../loader';
+import {categoryList} from 'constant';
 import styles from './styles';
-// import {LinkNotFound} from '..';
 
 interface IProducts {
   id?: number;
@@ -19,8 +18,7 @@ interface IProducts {
 const Products = () => {
   const [data, setData] = useState([]);
   const [filter, setFilter] = useState(data);
-  // const [loading, setLoading] = useState(true);
-  // const [error, setError] = useState(false);
+  const [isSelected, setIsSelected] = useState(0);
 
   useEffect(() => {
     getData()
@@ -33,43 +31,51 @@ const Products = () => {
       });
   }, []);
 
-  const filterProduct = cat => {
-    const updateList = data.filter((x: IProducts) => x.category === cat);
-    setFilter(updateList);
+  const dataFilter = (cat?: string) => {
+    cat === ''
+      ? setFilter(data)
+      : setFilter(data.filter((x: IProducts) => x.category === cat));
   };
 
+  const SelectedCategory = () => {
+    return (
+      <FlatList
+        data={categoryList}
+        numColumns={4}
+        keyExtractor={(item, index) => index.toString()}
+        renderItem={item => {
+          return (
+            <View style={styles.categoryContainer}>
+              <TouchableOpacity
+                onPress={() => {
+                  setIsSelected(item.index);
+                  dataFilter(item.item.category);
+                }}
+                style={[
+                  isSelected === item.index
+                    ? [styles.subContainer, styles.activeCategory]
+                    : styles.subContainer,
+                ]}>
+                <Text
+                  style={[
+                    isSelected === item.index
+                      ? [styles.textStyling, styles.activeCategoryText]
+                      : styles.textStyling,
+                  ]}>
+                  {item.item.title}
+                </Text>
+              </TouchableOpacity>
+            </View>
+          );
+        }}
+      />
+    );
+  };
   const ShowProduct = () => {
     return (
       <>
         <View style={styles.container}>
-          <TouchableOpacity
-            style={styles.subContainer}
-            onPress={() => {
-              setFilter(data);
-            }}>
-            <Text style={styles.textStyling}>ALL</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.subContainer}
-            onPress={() => {
-              filterProduct("men's clothing");
-            }}>
-            <Text style={styles.textStyling}>MEN</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.subContainer}
-            onPress={() => {
-              filterProduct("women's clothing");
-            }}>
-            <Text style={styles.textStyling}>WOMEN</Text>
-          </TouchableOpacity>
-          <TouchableOpacity
-            style={styles.subContainer}
-            onPress={() => {
-              filterProduct('jewelery');
-            }}>
-            <Text style={styles.textStyling}>JEWELRY</Text>
-          </TouchableOpacity>
+          <SelectedCategory />
         </View>
         <FlatList
           numColumns={2}

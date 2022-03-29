@@ -10,6 +10,15 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     paddingBottom: 12,
   },
+  categoryContainer: {
+    paddingHorizontal: 10,
+  },
+  activeCategory: {
+    backgroundColor: Colors.buttonBglight,
+  },
+  activeCategoryText: {
+    color: Colors.white,
+  },
   subContainer: {
     borderWidth: 1,
     paddingHorizontal: 14,

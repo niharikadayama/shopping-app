@@ -1,5 +1,15 @@
 import ACTION_TYPES from './types';
 
+interface dataType {
+  id?: number;
+  category?: string;
+  description?: string;
+  image?: any;
+  title?: string;
+  price?: number;
+  rating?: any;
+}
+
 const initialState = {
   wishlist: [],
 };
@@ -9,8 +19,9 @@ const wishlistReducer = (state = initialState, action) => {
     case ACTION_TYPES.ADD_TO_WISHLIST:
       const wishlistItem = action.payload;
       const inWishlist =
-        state.wishlist.findIndex((item: any) => item.id === wishlistItem.id) !==
-        -1;
+        state.wishlist.findIndex(
+          (item: dataType) => item.id === wishlistItem.id,
+        ) !== -1;
       return {
         ...state,
         wishlist: inWishlist

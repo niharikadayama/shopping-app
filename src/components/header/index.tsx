@@ -37,7 +37,7 @@ const Header = (props: Iheader) => {
         />
 
         {showLogo ? (
-          <Image source={Images.logo} style={styles.logo} />
+          <Image source={Images.appLogo} style={styles.logo} />
         ) : (
           <Text style={[styles.title, {color: colors.text}]}>{title}</Text>
         )}
