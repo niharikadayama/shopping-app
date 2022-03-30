@@ -1,17 +1,20 @@
-import React, {useState} from 'react';
+import React from 'react';
 import {View, Text, TouchableOpacity, Switch} from 'react-native';
-import styles from './styles';
 import Icon from 'react-native-vector-icons/Ionicons';
 import {useTheme} from '@react-navigation/native';
+import {useDispatch, useSelector} from 'react-redux';
+import {setTheme} from 'redux/theme/action';
+import {IRootState} from 'redux/store';
+import styles from './styles';
 
 interface CustomSetting {
-  onPress: () => void;
+  onPress?: () => void;
   optionIconName: string;
   optionIconSize: number;
   OptionIconColor: any;
   title: string;
   rightIconName: string;
-  rightIconSize: number;
+  rightIconSize?: number;
 }
 
 const CustomSettingOption = (props: CustomSetting) => {
@@ -49,10 +52,17 @@ const CustomSettingOption = (props: CustomSetting) => {
 };
 
 const CustomSettingOptionWithSwitch = (props: CustomSetting) => {
-  const [darkMode, setDarkMode] = useState(false);
   const {optionIconName, optionIconSize, OptionIconColor, title} = props;
-
   const {colors} = useTheme();
+  const dispatch = useDispatch();
+  const theme = useSelector((state: IRootState) => state.theme.currentTheme);
+
+  const handleThemeChange = () => {
+    const nextTheme =
+      theme === 'System' ? 'Light' : theme === 'Light' ? 'Dark' : 'System';
+    dispatch(setTheme(nextTheme));
+  };
+
   return (
     <View style={[styles.sectionBody, {backgroundColor: colors.card}]}>
       <View style={styles.body}>
@@ -63,12 +73,7 @@ const CustomSettingOptionWithSwitch = (props: CustomSetting) => {
         />
         <Text style={[styles.sectionText, {color: colors.text}]}>{title}</Text>
       </View>
-      <Switch
-        value={darkMode}
-        onValueChange={val => {
-          setDarkMode(val);
-        }}
-      />
+      <Switch value={false} onValueChange={handleThemeChange} />
     </View>
   );
 };

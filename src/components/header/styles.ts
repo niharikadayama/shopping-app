@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {Colors} from 'theme';
 
 const styles = StyleSheet.create({
@@ -6,7 +6,7 @@ const styles = StyleSheet.create({
     paddingHorizontal: 8,
     paddingVertical: 12,
     width: '100%',
-    marginTop: 36,
+    marginTop: Platform.OS === 'ios' ? 36 : 12,
   },
   headerSection: {
     flexDirection: 'row',

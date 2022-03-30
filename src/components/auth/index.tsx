@@ -2,13 +2,15 @@ import React from 'react';
 import {View, Text, TouchableOpacity, Image, TextInput} from 'react-native';
 import {Controller} from 'react-hook-form';
 import Icon from 'react-native-vector-icons/Ionicons';
+import {useTheme} from '@react-navigation/native';
 import {Images, Colors} from 'theme';
 import styles from './styles';
 
 const AuthHeader = () => {
+  const {colors} = useTheme();
   return (
-    <View style={styles.headerContainer}>
-      <Image source={Images.logo} />
+    <View style={[styles.headerContainer, {backgroundColor: colors.card}]}>
+      <Image source={Images.appLogo} style={styles.logostyle} />
     </View>
   );
 };
@@ -62,9 +64,10 @@ const AuthInputContainer = (props: Authentication) => {
 };
 
 const AuthBottomCard = (props: BottomCard) => {
+  const {colors} = useTheme();
   const {question, location, onPress} = props;
   return (
-    <View style={styles.BottomContainer}>
+    <View style={[styles.BottomContainer, {backgroundColor: colors.card}]}>
       <View style={styles.bottomContainerIcon}>
         <Icon name="logo-google" style={[styles.icon, styles.googleIcon]} />
         <Icon name="logo-facebook" style={[styles.icon, styles.facebookIcon]} />
@@ -73,7 +76,10 @@ const AuthBottomCard = (props: BottomCard) => {
       </View>
 
       <View style={styles.BottomContainerQuestion}>
-        <Text style={styles.BottomContainerQuestionText}>{question}</Text>
+        <Text
+          style={[styles.BottomContainerQuestionText, {color: colors.text}]}>
+          {question}
+        </Text>
         <TouchableOpacity onPress={onPress}>
           <Text style={styles.BottomContainerQuestionLocation}>{location}</Text>
         </TouchableOpacity>

@@ -11,6 +11,24 @@ export const categories = {
 export const EmailRegex =
   /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
+export const categoryList = [
+  {
+    title: 'ALL',
+    category: 'all',
+  },
+  {
+    title: 'MEN',
+    category: "men's clothing",
+  },
+  {
+    title: 'WOMEN',
+    category: "women's clothing",
+  },
+  {
+    title: 'JEWELRY',
+    category: 'jewelery',
+  },
+];
 export const supportMaterial = [
   {
     iconName: 'wallet-giftcard',

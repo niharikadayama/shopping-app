@@ -1,8 +1,9 @@
 import React from 'react';
 import * as RootNavigation from 'services/navigationServices';
-import {View, ScrollView, Text, StyleSheet} from 'react-native';
+import {View, ScrollView, Text, StyleSheet, Platform} from 'react-native';
 import {Button} from 'components';
 import {useForm} from 'react-hook-form';
+import {useTheme} from '@react-navigation/native';
 import {useDispatch} from 'react-redux';
 import {addToAddress} from 'redux/address/action';
 import {AuthInputContainer} from 'components/auth';
@@ -10,7 +11,7 @@ import {AuthInputContainer} from 'components/auth';
 const Form = () => {
   const {control, handleSubmit} = useForm();
   const dispatch = useDispatch();
-
+  const {colors} = useTheme();
   const onSubmit = values => {
     RootNavigation.navigate('address');
     dispatch(addToAddress(values));
@@ -18,7 +19,9 @@ const Form = () => {
   return (
     <ScrollView style={styles.root}>
       <View style={styles.subContainer}>
-        <Text style={styles.subContainerText}>Contact Info</Text>
+        <Text style={[styles.subContainerText, {color: colors.text}]}>
+          Contact Info
+        </Text>
         <AuthInputContainer
           name="fullName"
           control={control}
@@ -31,18 +34,20 @@ const Form = () => {
           name="phoneNumber"
           control={control}
           placeholder="Enter Phone Number"
-          icon="ios-mail"
+          icon="call"
           secureTextEntry={false}
           rules={{required: 'phoneNumber is required'}}
         />
       </View>
       <View style={styles.subContainer}>
-        <Text style={styles.subContainerText}>Address Info</Text>
+        <Text style={[styles.subContainerText, {color: colors.text}]}>
+          Address Info
+        </Text>
         <AuthInputContainer
           name="pincode"
           control={control}
           placeholder="Enter Pincode"
-          icon="ios-mail"
+          icon="pin"
           secureTextEntry={false}
           rules={{required: 'pincode is required'}}
         />
@@ -50,7 +55,7 @@ const Form = () => {
           name="city"
           control={control}
           placeholder="Enter City"
-          icon="ios-mail"
+          icon="location"
           secureTextEntry={false}
           rules={{required: 'City is required'}}
         />
@@ -58,7 +63,7 @@ const Form = () => {
           name="state"
           control={control}
           placeholder="Enter State"
-          icon="ios-mail"
+          icon="location"
           secureTextEntry={false}
           rules={{required: 'State is required'}}
         />
@@ -66,7 +71,7 @@ const Form = () => {
           name="locality"
           control={control}
           placeholder="Enter Locality/Area/Street"
-          icon="ios-mail"
+          icon="location"
           secureTextEntry={false}
           rules={{required: 'locality is required'}}
         />
@@ -74,13 +79,13 @@ const Form = () => {
           name="flatNo"
           control={control}
           placeholder="Enter flat No / Building Name"
-          icon="ios-mail"
+          icon="home-outline"
           secureTextEntry={false}
           rules={{required: 'flatNo is required'}}
         />
         <Button
           name="Submit"
-          theme="tertiary"
+          theme="secondary"
           onPress={handleSubmit(onSubmit)}
         />
       </View>
@@ -89,12 +94,18 @@ const Form = () => {
 };
 
 const styles = StyleSheet.create({
-  root: {},
-  subContainer: {},
-  subContainerText: {},
+  root: {
+    padding: Platform.OS === 'ios' ? 16 : 8,
+  },
+  subContainer: {
+    paddingBottom: 8,
+  },
+  subContainerText: {
+    fontSize: 17,
+  },
   input: {
     padding: 8,
-    marginBottom: 8,
+    marginBottom: Platform.OS === 'ios' ? 8 : 4,
     borderWidth: 1,
   },
 });

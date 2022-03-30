@@ -1,4 +1,4 @@
-import {StyleSheet} from 'react-native';
+import {Platform, StyleSheet} from 'react-native';
 import {Colors, screenHeight} from 'theme';
 
 const styles = StyleSheet.create({
@@ -32,10 +32,10 @@ const styles = StyleSheet.create({
     fontSize: 20,
     fontWeight: '600',
     alignSelf: 'center',
-    marginVertical: 16,
+    marginVertical: Platform.OS === 'ios' ? 16 : 8,
   },
   section: {
-    marginTop: 16,
+    marginTop: Platform.OS === 'ios' ? 16 : 4,
     marginHorizontal: 20,
     backgroundColor: Colors.lightGrey,
   },
@@ -48,7 +48,7 @@ const styles = StyleSheet.create({
     alignItems: 'center',
     justifyContent: 'space-between',
     marginHorizontal: 16,
-    marginVertical: 16,
+    marginVertical: Platform.OS === 'ios' ? 16 : 10,
   },
   sectionIcon: {
     color: Colors.mediumGrey,
